@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aman Chhimpa | Software Engineer</title>
+
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      background:#020617;
+      padding:18px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      z-index:1000;
+    }
+
+    nav h1{
+      color:#38bdf8;
+      font-size:28px;
+    }
+
+    nav ul{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
+
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      font-size:18px;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#38bdf8;
+    }
+
+    /* HOME PAGE */
+
+    #home{
+      width:100%;
+      height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
+      url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1974&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .home-content{
+      max-width:800px;
+    }
+
+    .profile{
+      width:190px;
+      height:190px;
+      border-radius:50%;
+      object-fit:cover;
+      border:5px solid #38bdf8;
+      margin-bottom:25px;
+      box-shadow:0 0 25px #38bdf8;
+    }
+
+    .home-content h2{
+      font-size:60px;
+      margin-bottom:10px;
+    }
+
+    .home-content h3{
+      color:#38bdf8;
+      font-size:30px;
+      margin-bottom:20px;
+    }
+
+    .home-content p{
+      font-size:18px;
+      line-height:1.8;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 35px;
+      background:#38bdf8;
+      color:white;
+      text-decoration:none;
+      border-radius:50px;
+      transition:0.3s;
+      font-size:18px;
+    }
+
+    .btn:hover{
+      background:white;
+      color:#0f172a;
+    }
+
+    /* ABOUT */
+
+    section{
+      padding:100px 10%;
+    }
+
+    .title{
+      text-align:center;
+      font-size:45px;
+      color:#38bdf8;
+      margin-bottom:60px;
+    }
+
+    .about-container{
+      display:flex;
+      gap:50px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .about-container img{
+      width:350px;
+      border-radius:20px;
+      box-shadow:0 0 20px rgba(255,255,255,0.2);
+    }
+
+    .about-text{
+      max-width:600px;
+    }
+
+    .about-text p{
+      font-size:18px;
+      line-height:1.8;
+      margin-bottom:20px;
+    }
+
+    /* SERVICES */
+
+    .service-boxes{
+      display:flex;
+      gap:30px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .box{
+      background:#1e293b;
+      padding:35px;
+      width:300px;
+      border-radius:20px;
+      transition:0.3s;
+      text-align:center;
+    }
+
+    .box:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 20px #38bdf8;
+    }
+
+    .box h3{
+      color:#38bdf8;
+      margin-bottom:15px;
+      font-size:28px;
+    }
+
+    .box p{
+      line-height:1.8;
+    }
+
+    /* CONTACT */
+
+    .contact-container{
+      max-width:700px;
+      margin:auto;
+      background:#1e293b;
+      padding:40px;
+      border-radius:20px;
+    }
+
+    .contact-container input,
+    .contact-container textarea{
+      width:100%;
+      padding:15px;
+      margin-bottom:20px;
+      border:none;
+      border-radius:10px;
+      outline:none;
+      font-size:16px;
+    }
+
+    .contact-container button{
+      width:100%;
+      padding:15px;
+      border:none;
+      background:#38bdf8;
+      color:white;
+      font-size:18px;
+      border-radius:10px;
+      cursor:pointer;
+    }
+
+    .contact-container button:hover{
+      background:white;
+      color:#0f172a;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      background:#020617;
+      font-size:18px;
+    }
+
+    .insta{
+      color:#ff4d94;
+      text-decoration:none;
+    }
+
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        gap:15px;
+      }
+
+      .home-content h2{
+        font-size:40px;
+      }
+
+      .home-content h3{
+        font-size:24px;
+      }
+
+      .profile{
+        width:150px;
+        height:150px;
+      }
+
+      .about-container img{
+        width:100%;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <h1>Aman chhimpa</h1>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- HOME -->
+
+  <section id="home">
+
+    <div class="home-content">
+
+      <!-- APNI PHOTO -->
+      <img src="aman.jpeg" class="profile">
+
+      <h2>Aman Chhimpa</h2>
+
+      <h3>Software Engineer | IIT Jodhpur</h3>
+
+      <p>
+       Hello, my name is Aman Chhimpa. My village is Dabli Khurd, Tibbi, Hanumangarh. I am a software engineer at IIT Jodhpur.</p>
+
+      <!-- INSTAGRAM -->
+      <a href="https://instagram.com/itz.amanchhimpa"
+      target="_blank"
+      class="btn">
+      Instagram Profile
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <h1 class="title">About Me</h1>
+
+    <div class="about-container">
+
+      <img src="photo.jpeg">
+
+      <div class="about-text">
+
+        <p>
+          Hello! My name is Aman. I am a passionate Software Engineer currently associated with IIT Jodhpur. I enjoy building modern applications, solving real-world problems, and continuously learning new technologies.</p>
+
+        <p>
+          I work on web development, cloud computing,
+          modern applications and technology projects.
+        </p>
+
+        <p>
+          My dream is to become a top software engineer
+          and create powerful digital products.
+        </p>
+
+      </div>
+
+    </div>
+    </section><section>
+    <h2>Skills</h2>
+    <div class="card">
+        <ul>
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>Web Development (HTML, CSS)</li>
+            <li>Problem Solving</li>
+        </ul>
+    </div>
+</section><section>
+    <h2>Projects</h2>
+    <div class="card">
+        <p>• Personal Portfolio Website</p>
+        <p>• Python Automation Tools</p>
+        <p>• Data Analysis Projects</p>
+    </div>
+
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section id="services">
+
+    <h1 class="title">My Services</h1>
+
+    <div class="service-boxes">
+
+      <div class="box">
+        <h3>Web Design</h3>
+        <p>
+          Professional modern websites with attractive UI design.
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>App Development</h3>
+        <p>
+          Android and web applications with modern technology.
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Cloud Computing</h3>
+        <p>
+          Cloud services and hosting solutions for projects.
+        </p>
+        </DIV >
+        <DIV class="box">
+        <h3>pichat</h3>
+        <P>open this app </P>
+         <a href="pichat.html">pichat</a>
+
+      </div>
+
+    </div>
+
+  </section>
+  </section><section>
+     <h2> Overview </h2>
+    <div class="card">
+        <p>The Indian Institute of Technology Jodhpur (IIT Jodhpur) is one of the premier engineering institutions in India. Established in 2008, it is part of the prestigious IIT system, known for its academic excellence and innovative research. Located in the vibrant city of Jodhpur, Rajasthan, the institute offers a range of undergraduate, postgraduate, and doctoral programs in engineering, technology, and sciences.
+Academic Programs
+Undergraduate Programs
+IIT Jodhpur offers Bachelor of Technology (B.Tech) degrees in several disciplines:
+Computer Science and Engineering
+
+Electrical Engineering
+Mechanical Engineering
+
+Civil and Infrastructure Engineering
+Artificial Intelligence and Data Science
+
+Postgraduate Programs
+For postgraduate studies, IIT Jodhpur provides Master of Technology (M.Tech) degrees in areas such as:
+
+Cyber-Physical Systems
+Data and Computational Sciences
+Energy
+Sensors and Internet of Things
+Doctoral Programs
+Research is a cornerstone of IIT Jodhpur's mission, and the institute offers Ph.D. programs in various fields,
+ encouraging interdisciplinary research and innovation.
+Campus Facilities
+The IIT Jodhpur campus is equipped with state-of-the-art facilities to support both academic and extracurricular activities.
+ Key features include:
+Modern Laboratories: Cutting-edge labs that provide hands-on experience and foster innovation.
+Library: A comprehensive library with a vast collection of books, journals, and digital resources.
+
+Hostels: Comfortable and secure housing for students, with amenities to ensure a conducive living environment.
+Sports Facilities: Extensive sports infrastructure including fields, courts, and a gymnasium to promote physical well-being.
+
+Research and Innovation
+IIT Jodhpur is committed to pushing the boundaries of knowledge through research and innovation.
+ It collaborates with national and international institutions, industries, and government bodies to address global challenges. The institute focuses on areas such as:
+Sustainable technology
+Healthcare engineering
+Artificial intelligence
+Renewable energy
+Campus Life
+The vibrant campus life at IIT Jodhpur is enriched with cultural, technical, and sports activities. Students participate in various clubs and societies, organizing events such as:
+Varchas: The annual sports festival.
+Ignus: The annual techno-cultural fest that showcases talents in technology, culture, and arts.
+Admission Process
+Admission to IIT Jodhpur is highly competitive. For undergraduate programs, candidates must qualify through the Joint Entrance Examination (JEE) Advanced. For postgraduate and doctoral programs, candidates are selected based on their performance in the Graduate Aptitude Test in Engineering (GATE) and other specific criteria.
+Conclusion
+IIT Jodhpur stands as a beacon of knowledge, innovation, and excellence. It continues to nurture future leaders and innovators who contribute to the advancement of technology and society. With its robust academic programs, dynamic campus life, and commitment to research, IIT Jodhpur remains at the forefront of engineering education in India.</p>
+    </div>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <h1 class="title">Contact Me</h1>
+
+    <div class="contact-container">
+
+      <input type="text" placeholder="Your Name">
+
+      <input type="email" placeholder="Your Email">
+
+      <textarea rows="6" placeholder="Your Message"></textarea>
+
+      <button>Send Message</button>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+     <h2>Contact</h2>
+    <div class="card">
+        <p>Email :          amanchhimpa982@gmail.com</p>
+        <p>mobile no.:      9829836058</p>
+		<P>instagram id:    itz.amanchhimpa <P>
+		<P>facebook :       itz.amanchhimpa<P>
+    </div>
+
+    © 2026 Aman Chhimpa | iit jodhpur
+
+    <br><br>
+
+    Instagram :
+    <a class="insta"
+    href="https://instagram.com/itz.amanchhimpa"
+    target="_blank">
+    @itz.amanchhimpa
+    </a>
+
+  </footer>
+
+</body>
+</html>
