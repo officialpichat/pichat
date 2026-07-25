@@ -549,7 +549,7 @@ const db = firebase.firestore();
 // CLOUDINARY (file uploads: images, reel videos, snap photos, songs)
 // ===========================================================
 const CLOUDINARY_CLOUD_NAME = "kvuqhjk5";
-const CLOUDINARY_UPLOAD_PRESET = "pichat_unsigned";
+const CLOUDINARY_UPLOAD_PRESET = "pichat";
 
 // resourceType: 'image' for photos, 'video' for videos AND audio files (Cloudinary treats audio under the "video" resource type)
 async function uploadToCloudinary(file, resourceType){
