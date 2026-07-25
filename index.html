@@ -542,7 +542,30 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.firestore();
-const storage = firebase.storage();
+// NOTE: Firebase Storage is no longer used (requires Blaze billing plan).
+// All images/videos/audio now upload to Cloudinary instead — see uploadToCloudinary() below.
+
+// ===========================================================
+// CLOUDINARY (file uploads: images, reel videos, snap photos, songs)
+// ===========================================================
+const CLOUDINARY_CLOUD_NAME = "kvuqhjk5";
+const CLOUDINARY_UPLOAD_PRESET = "pichat_unsigned";
+
+// resourceType: 'image' for photos, 'video' for videos AND audio files (Cloudinary treats audio under the "video" resource type)
+async function uploadToCloudinary(file, resourceType){
+  const url = `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/${resourceType}/upload`;
+  const formData = new FormData();
+  formData.append('file', file);
+  formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+  const res = await fetch(url, { method: 'POST', body: formData });
+  if(!res.ok){
+    let errMsg = 'Upload failed';
+    try{ const errData = await res.json(); errMsg = errData.error?.message || errMsg; }catch(e){}
+    throw new Error(errMsg);
+  }
+  const data = await res.json();
+  return data.secure_url;
+}
 
 // Admin login credentials (as requested)
 const ADMIN_EMAIL = "amanchhimpa@iitjodhpur.ac.in";
@@ -856,10 +879,7 @@ document.getElementById('postBtn').addEventListener('click', async ()=>{
   try{
     let imageURL = null;
     if(selectedFile){
-      const path = `posts/${currentUser.uid}/${Date.now()}_${selectedFile.name}`;
-      const ref = storage.ref(path);
-      await ref.put(selectedFile);
-      imageURL = await ref.getDownloadURL();
+      imageURL = await uploadToCloudinary(selectedFile, 'image');
     }
     await db.collection('posts').add({
       uid: currentUser.uid, name: currentUserData.name || currentUser.displayName || 'User',
@@ -1214,17 +1234,11 @@ document.getElementById('reelPostBtn').addEventListener('click', async ()=>{
   const btn = document.getElementById('reelPostBtn');
   btn.disabled = true; btn.textContent = 'Posting reel...';
   try{
-    const vPath = `reels/${currentUser.uid}/${Date.now()}_${selectedReelVideo.name}`;
-    const vRef = storage.ref(vPath);
-    await vRef.put(selectedReelVideo);
-    const videoURL = await vRef.getDownloadURL();
+    const videoURL = await uploadToCloudinary(selectedReelVideo, 'video');
 
     let audioURL = null;
     if(selectedReelAudio){
-      const aPath = `songs/${currentUser.uid}/${Date.now()}_${selectedReelAudio.name}`;
-      const aRef = storage.ref(aPath);
-      await aRef.put(selectedReelAudio);
-      audioURL = await aRef.getDownloadURL();
+      audioURL = await uploadToCloudinary(selectedReelAudio, 'video');
     }
 
     await db.collection('posts').add({
@@ -1511,17 +1525,14 @@ document.getElementById('sendSnapBtn').addEventListener('click', async ()=>{
   const btn = document.getElementById('sendSnapBtn');
   btn.disabled = true; btn.textContent = 'Sending...';
   try{
-    const path = `snaps/${currentUser.uid}/${Date.now()}.jpg`;
-    const ref = storage.ref(path);
-    await ref.put(capturedBlob);
-    const mediaURL = await ref.getDownloadURL();
+    const mediaURL = await uploadToCloudinary(capturedBlob, 'image');
     await db.collection('snaps').add({
       uid: currentUser.uid, name: currentUserData.name || 'User',
       mediaURL: mediaURL, createdAt: firebase.firestore.FieldValue.serverTimestamp()
     });
-    alert('Snap bhej diya!');
+    alert('Snap sent!');
     goto('');
-  }catch(err){ alert('Snap bhejte waqt error: ' + err.message); btn.disabled = false; btn.textContent = 'Send snap'; }
+  }catch(err){ alert('Error sending snap: ' + err.message); btn.disabled = false; btn.textContent = 'Send snap'; }
 });
 
 document.getElementById('backFromSnap').addEventListener('click', ()=>{
