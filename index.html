@@ -196,8 +196,8 @@ table.users-table tr:last-child td{border-bottom:none;}
     </form>
 
     <form id="registerForm" class="hidden">
-      <div class="field"><label>Full name</label><input type="text" id="regName" placeholder="John Smith" required></div>
-      <div class="field"><label>Username</label><input type="text" id="regUsername" placeholder="john.codes" required pattern="[a-zA-Z0-9._]{3,20}"></div>
+      <div class="field"><label>Full name</label><input type="text" id="regName" placeholder="Aman Sharma" required></div>
+      <div class="field"><label>Username</label><input type="text" id="regUsername" placeholder="aman.codes" required pattern="[a-zA-Z0-9._]{3,20}"></div>
       <div class="field"><label>Email</label><input type="email" id="regEmail" placeholder="you@example.com" required></div>
       <div class="field"><label>Password</label><input type="password" id="regPassword" placeholder="At least 6 characters" required minlength="6"></div>
       <button type="submit" class="btn-primary" id="registerBtn">Register</button>
@@ -277,7 +277,7 @@ table.users-table tr:last-child td{border-bottom:none;}
     <div class="avatar" id="pAvatar">U</div>
     <h2 id="pName">—</h2>
     <div style="color:var(--muted);font-size:0.85rem;">@<span id="pUsername">—</span></div>
-    <p class="bio" id="pBio">Bio is empty right now.</p>
+    <p class="bio" id="pBio">Bio is empty.</p>
     <div class="stat-row">
       <div><b id="pPostCount">0</b><span>Posts</span></div>
       <div><b id="pFollowers">0</b><span>Followers</span></div>
@@ -285,7 +285,7 @@ table.users-table tr:last-child td{border-bottom:none;}
     </div>
     <div class="field" style="max-width:320px;margin:0 auto 8px;text-align:left;">
       <label>Edit bio</label>
-      <textarea id="bioInput" rows="2" placeholder="Write about yourself..."></textarea>
+      <textarea id="bioInput" rows="2" placeholder="Write something about yourself..."></textarea>
     </div>
     <button class="btn-primary" style="max-width:320px;" id="saveBioBtn">Save bio</button>
     <div class="auth-msg" id="bioMsg"></div>
@@ -328,7 +328,7 @@ table.users-table tr:last-child td{border-bottom:none;}
     <div style="width:34px;"></div>
   </div>
   <div class="composer">
-    <textarea id="reelCaption" placeholder="Write a reel caption..."></textarea>
+    <textarea id="reelCaption" placeholder="Write a caption for your reel..."></textarea>
     <div id="reelPreviewBox" class="preview hidden"><video id="reelPreviewVideo" controls style="width:100%;max-height:260px;"></video></div>
     <div class="composer-row" style="flex-wrap:wrap;gap:10px;">
       <label>
@@ -347,7 +347,7 @@ table.users-table tr:last-child td{border-bottom:none;}
   <div id="reelsFeed"></div>
   <div id="reelsEmpty" class="empty hidden">
     <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
-    No reels yet. Post the first reel!
+    No reels yet. Be the first to post one!
   </div>
 </div>
 
@@ -390,31 +390,31 @@ table.users-table tr:last-child td{border-bottom:none;}
   </div>
 
   <div class="composer" style="margin-top:16px;">
-    <h3 style="margin:0 0 12px;font-size:1rem;">Edit profile</h3>
+    <h3 style="margin:0 0 12px;font-size:1rem;">Edit Profile</h3>
     <div class="field"><label>Name</label><input type="text" id="setName"></div>
     <div class="field"><label>Username</label><input type="text" id="setUsername"></div>
     <div class="field"><label>Bio</label><textarea id="setBio" rows="2"></textarea></div>
-    <button class="btn-primary" id="saveProfileBtn">Save profile</button>
+    <button class="btn-primary" id="saveProfileBtn">Save Profile</button>
     <div class="auth-msg" id="setProfileMsg"></div>
   </div>
 
   <div class="composer">
-    <h3 style="margin:0 0 12px;font-size:1rem;">Change password</h3>
-    <div class="field"><label>Old password</label><input type="password" id="oldPassword"></div>
+    <h3 style="margin:0 0 12px;font-size:1rem;">Change Password</h3>
+    <div class="field"><label>Current password</label><input type="password" id="oldPassword"></div>
     <div class="field"><label>New password</label><input type="password" id="newPassword" minlength="6"></div>
-    <button class="btn-primary" id="changePasswordBtn">Change password</button>
+    <button class="btn-primary" id="changePasswordBtn">Change Password</button>
     <div class="auth-msg" id="setPasswordMsg"></div>
   </div>
 
   <div class="composer" id="verifyBox">
     <h3 style="margin:0 0 6px;font-size:1rem;display:flex;align-items:center;gap:6px;">Blue Tick Verification</h3>
-    <p style="font-size:0.85rem;color:var(--muted);margin:0 0 12px;">To get a blue tick on your profile, pay ₹50 to this UPI ID, then tap the button below. Once the payment is confirmed, admin will verify it manually.</p>
+    <p style="font-size:0.85rem;color:var(--muted);margin:0 0 12px;">Pay ₹50 to this UPI ID to get the blue tick on your profile, then tap the button below. Once payment is confirmed, the admin will manually verify you.</p>
     <div style="background:var(--paper);border:1.5px dashed var(--line);border-radius:var(--radius-sm);padding:14px;text-align:center;margin-bottom:12px;">
       <div style="font-size:0.75rem;color:var(--muted);margin-bottom:4px;">UPI ID</div>
       <div style="font-weight:700;font-size:1rem;color:var(--blue-deep);">9829836058-1@naviaxis</div>
       <div style="font-size:0.75rem;color:var(--muted);margin-top:6px;">Amount: ₹50</div>
     </div>
-    <button class="btn-primary" id="requestVerifyBtn">I have paid ₹50</button>
+    <button class="btn-primary" id="requestVerifyBtn">I've paid ₹50</button>
     <div class="auth-msg" id="verifyMsg"></div>
   </div>
 
@@ -440,7 +440,7 @@ table.users-table tr:last-child td{border-bottom:none;}
   </div>
   <div style="padding:22px;display:flex;justify-content:center;gap:20px;background:rgba(0,0,0,0.4);">
     <button class="btn-primary" id="captureSnapBtn" style="max-width:180px;">Capture</button>
-    <button class="btn-primary hidden" id="sendSnapBtn" style="max-width:180px;">Send snap</button>
+    <button class="btn-primary hidden" id="sendSnapBtn" style="max-width:180px;">Send Snap</button>
     <button class="mini-btn hidden" id="retakeSnapBtn" style="max-width:140px;">Retake</button>
   </div>
 </div>
@@ -504,7 +504,7 @@ table.users-table tr:last-child td{border-bottom:none;}
     <div class="admin-card"><b id="statUsers">0</b><span>Total registered users</span></div>
     <div class="admin-card"><b id="statPosts">0</b><span>Total posts</span></div>
     <div class="admin-card"><b id="statBlocked">0</b><span>Blocked users</span></div>
-    <div class="admin-card"><b id="statToday">0</b><span>New users (today)</span></div>
+    <div class="admin-card"><b id="statToday">0</b><span>Naye users (aaj)</span></div>
     <div class="admin-card"><b id="statPendingVerify">0</b><span>Pending blue-tick requests</span></div>
   </div>
 
@@ -529,7 +529,7 @@ table.users-table tr:last-child td{border-bottom:none;}
 <script>
 // ===========================================================
 // PICHAT — Firebase configuration
-// Put your Firebase project config here (see README)
+// Add your Firebase project config here (see README)
 // ===========================================================
 const firebaseConfig = {
   apiKey: "AIzaSyBv5yHdwgOIrkiLC6yT6p4XgOKuxxdmM_s",
@@ -542,32 +542,9 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.firestore();
-// NOTE: Firebase Storage is no longer used (requires Blaze billing plan).
-// All images/videos/audio now upload to Cloudinary instead — see uploadToCloudinary() below.
+const storage = firebase.storage();
 
-// ===========================================================
-// CLOUDINARY (file uploads: images, reel videos, snap photos, songs)
-// ===========================================================
-const CLOUDINARY_CLOUD_NAME = "kvuqhjk5";
-const CLOUDINARY_UPLOAD_PRESET = "pichat";
-
-// resourceType: 'image' for photos, 'video' for videos AND audio files (Cloudinary treats audio under the "video" resource type)
-async function uploadToCloudinary(file, resourceType){
-  const url = `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/${resourceType}/upload`;
-  const formData = new FormData();
-  formData.append('file', file);
-  formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
-  const res = await fetch(url, { method: 'POST', body: formData });
-  if(!res.ok){
-    let errMsg = 'Upload failed';
-    try{ const errData = await res.json(); errMsg = errData.error?.message || errMsg; }catch(e){}
-    throw new Error(errMsg);
-  }
-  const data = await res.json();
-  return data.secure_url;
-}
-
-// Admin login credentials (as requested)
+// Admin login credentials (jo maanga gaya tha)
 const ADMIN_EMAIL = "amanchhimpa@iitjodhpur.ac.in";
 const ADMIN_PASSWORD_HINT = "aman@chhimpa"; // Register/create the admin account in Firebase Auth with this password
 
@@ -612,8 +589,8 @@ function isAdminRoute(){
 
 // ===========================================================
 // AUTH STATE + ROUTING
-// (changing the hash now only re-renders, it does NOT reload the whole page,
-//  so the login page won't show again when switching tabs/screens)
+// (Changing the hash now only re-renders the view, it does NOT reload the
+//  whole page, so switching tabs won't show the login page again)
 // ===========================================================
 let authReady = false; // wait until the auth state is known for the first time
 
@@ -637,7 +614,7 @@ async function renderRoute(user){
   }
 
   currentUser = user;
-  // Only fetch from Firestore if user data hasn't already loaded (or the user changed)
+  // Only fetch from Firestore if user data hasn't loaded yet (or the user changed)
   if(!currentUserData || currentUserData._uid !== user.uid){
     const doc = await db.collection('users').doc(user.uid).get();
     currentUserData = doc.exists ? doc.data() : { name:user.displayName, username:'', verified:false };
@@ -669,12 +646,12 @@ async function renderRoute(user){
 
 auth.onAuthStateChanged(async (user)=>{
   authReady = true;
-  currentUserData = null; // fresh login/logout happened, clear the old cached data
+  currentUserData = null; // fresh login/logout hua, purana cached data hata do
   await renderRoute(user);
 });
 
 window.addEventListener('hashchange', async ()=>{
-  if(!authReady) return; // auth state isn't known yet, don't do anything before that
+  if(!authReady) return; // auth state isn't known yet, don't do anything before this
   await renderRoute(auth.currentUser);
 });
 
@@ -702,10 +679,10 @@ function humanError(err){
     'auth/weak-password': 'Password must be at least 6 characters.',
     'auth/user-not-found': 'This email is not registered — please register first.',
     'auth/wrong-password': 'Incorrect password.',
-    'auth/invalid-credential': 'Email or password is incorrect, or this account is not registered.',
-    'auth/too-many-requests': 'Too many attempts. Please try again later.'
+    'auth/invalid-credential': 'Incorrect email or password, or this account is not registered.',
+    'auth/too-many-requests': 'Too many attempts — please try again later.'
   };
-  return map[code] || (err.message || 'Something went wrong. Please try again.');
+  return map[code] || (err.message || 'Something went wrong, please try again.');
 }
 
 // ===========================================================
@@ -756,7 +733,7 @@ loginForm.addEventListener('submit', async (e)=>{
     const doc = await db.collection('users').doc(cred.user.uid).get();
     if(doc.exists && doc.data().status === 'blocked'){
       await auth.signOut();
-      setMsg(msg, 'This account has been blocked by admin.', false);
+      setMsg(msg, 'This account has been blocked by the admin.', false);
       btn.disabled = false; return;
     }
     setMsg(msg, 'Logged in! Redirecting...', true);
@@ -770,12 +747,12 @@ loginForm.addEventListener('submit', async (e)=>{
 function socialErrorMessage(err){
   const code = err.code || '';
   const map = {
-    'auth/popup-closed-by-user': 'Popup was closed. Please try again.',
+    'auth/popup-closed-by-user': 'The popup was closed — please try again.',
     'auth/cancelled-popup-request': 'Please try again.',
-    'auth/account-exists-with-different-credential': 'This email is already registered using a different method (email/password or another provider). Please log in with that method.',
-    'auth/popup-blocked': 'Your browser blocked the popup. Please allow popups and try again.'
+    'auth/account-exists-with-different-credential': 'This email is already registered with a different method (email/password or another provider). Please log in with that instead.',
+    'auth/popup-blocked': 'Your browser blocked the popup — allow popups and try again.'
   };
-  return map[code] || (err.message || 'Something went wrong. Please try again.');
+  return map[code] || (err.message || 'Something went wrong, please try again.');
 }
 
 async function uniqueUsernameFrom(base){
@@ -799,7 +776,7 @@ async function handleSocialSignIn(provider, btn, msgEl){
 
     if(doc.exists && doc.data().status === 'blocked'){
       await auth.signOut();
-      setMsg(msgEl, 'This account has been blocked by admin.', false);
+      setMsg(msgEl, 'This account has been blocked by the admin.', false);
       btn.disabled = false; return;
     }
 
@@ -873,13 +850,16 @@ document.getElementById('postImage').addEventListener('change',(e)=>{
 
 document.getElementById('postBtn').addEventListener('click', async ()=>{
   const caption = document.getElementById('postCaption').value.trim();
-  if(!caption && !selectedFile){ alert('Write something or add a photo first.'); return; }
+  if(!caption && !selectedFile){ alert("Write something or add a photo first."); return; }
   const btn = document.getElementById('postBtn');
   btn.disabled = true; btn.textContent = 'Posting...';
   try{
     let imageURL = null;
     if(selectedFile){
-      imageURL = await uploadToCloudinary(selectedFile, 'image');
+      const path = `posts/${currentUser.uid}/${Date.now()}_${selectedFile.name}`;
+      const ref = storage.ref(path);
+      await ref.put(selectedFile);
+      imageURL = await ref.getDownloadURL();
     }
     await db.collection('posts').add({
       uid: currentUser.uid, name: currentUserData.name || currentUser.displayName || 'User',
@@ -891,7 +871,7 @@ document.getElementById('postBtn').addEventListener('click', async ()=>{
     document.getElementById('postImage').value = '';
     document.getElementById('previewBox').classList.add('hidden');
     selectedFile = null;
-  }catch(err){ alert('Post failed: ' + err.message); }
+  }catch(err){ alert("Couldn't post: " + err.message); }
   finally{ btn.disabled = false; btn.textContent = 'Post'; }
 });
 
@@ -996,7 +976,7 @@ async function sharePost(id, p){
     });
     alert('Shared! This will also show on your profile.');
   }catch(err){
-    alert('Share failed: ' + err.message);
+    alert("Couldn't share: " + err.message);
   }
 }
 
@@ -1049,7 +1029,7 @@ async function loadProfile(){
   document.getElementById('pAvatar').textContent = initial;
   document.getElementById('pName').innerHTML = escapeHTML(data.name || currentUser.displayName || 'User') + verifiedBadge(data.verified);
   document.getElementById('pUsername').textContent = data.username || '';
-  document.getElementById('pBio').textContent = data.bio || 'Bio is empty right now.';
+  document.getElementById('pBio').textContent = data.bio || 'Bio is empty.';
   document.getElementById('bioInput').value = data.bio || '';
   document.getElementById('pFollowers').textContent = (data.followers || []).length;
   document.getElementById('pFollowing').textContent = (data.following || []).length;
@@ -1060,9 +1040,9 @@ document.getElementById('saveBioBtn').onclick = async ()=>{
   const msg = document.getElementById('bioMsg');
   try{
     await db.collection('users').doc(currentUser.uid).update({ bio });
-    document.getElementById('pBio').textContent = bio || 'Bio is empty right now.';
-    msg.textContent = 'Bio saved!'; msg.className = 'auth-msg ok';
-  }catch(err){ msg.textContent = 'Save failed: ' + err.message; msg.className = 'auth-msg error'; }
+    document.getElementById('pBio').textContent = bio || 'Bio is empty.';
+    msg.textContent = 'Bio save ho gaya!'; msg.className = 'auth-msg ok';
+  }catch(err){ msg.textContent = "Couldn't save: " + err.message; msg.className = 'auth-msg error'; }
 };
 
 async function loadMyPosts(){
@@ -1170,7 +1150,7 @@ async function loadUserProfile(uid){
   document.getElementById('uAvatar').textContent = initial;
   document.getElementById('uName').innerHTML = escapeHTML(u.name) + verifiedBadge(u.verified);
   document.getElementById('uUsername').textContent = u.username || '';
-  document.getElementById('uBio').textContent = u.bio || 'Bio is empty right now.';
+  document.getElementById('uBio').textContent = u.bio || 'Bio is empty.';
   document.getElementById('uFollowers').textContent = (u.followers||[]).length;
   document.getElementById('uFollowing').textContent = (u.following||[]).length;
 
@@ -1230,15 +1210,21 @@ document.getElementById('reelAudio').addEventListener('change',(e)=>{
 
 document.getElementById('reelPostBtn').addEventListener('click', async ()=>{
   const caption = document.getElementById('reelCaption').value.trim();
-  if(!selectedReelVideo){ alert('A video is required for the reel.'); return; }
+  if(!selectedReelVideo){ alert('A video is required for a reel.'); return; }
   const btn = document.getElementById('reelPostBtn');
   btn.disabled = true; btn.textContent = 'Posting reel...';
   try{
-    const videoURL = await uploadToCloudinary(selectedReelVideo, 'video');
+    const vPath = `reels/${currentUser.uid}/${Date.now()}_${selectedReelVideo.name}`;
+    const vRef = storage.ref(vPath);
+    await vRef.put(selectedReelVideo);
+    const videoURL = await vRef.getDownloadURL();
 
     let audioURL = null;
     if(selectedReelAudio){
-      audioURL = await uploadToCloudinary(selectedReelAudio, 'video');
+      const aPath = `songs/${currentUser.uid}/${Date.now()}_${selectedReelAudio.name}`;
+      const aRef = storage.ref(aPath);
+      await aRef.put(selectedReelAudio);
+      audioURL = await aRef.getDownloadURL();
     }
 
     await db.collection('posts').add({
@@ -1253,7 +1239,7 @@ document.getElementById('reelPostBtn').addEventListener('click', async ()=>{
     document.getElementById('reelAudio').value = '';
     document.getElementById('reelPreviewBox').classList.add('hidden');
     selectedReelVideo = null; selectedReelAudio = null;
-  }catch(err){ alert('Reel post failed: ' + err.message); }
+  }catch(err){ alert("Couldn't post reel: " + err.message); }
   finally{ btn.disabled = false; btn.textContent = 'Post reel'; }
 });
 
@@ -1377,7 +1363,7 @@ async function openChatRoom(otherUid){
       });
       box.scrollTop = box.scrollHeight;
     }, err=>{
-      alert('Failed to load messages: ' + err.message);
+      alert("Couldn't load messages: " + err.message);
     });
 
   document.getElementById('sendChatMessageBtn').onclick = ()=> sendChatMessage(otherUid, otherData.name);
@@ -1402,7 +1388,7 @@ async function sendChatMessage(otherUid, otherName){
       senderId: currentUser.uid, text: text, createdAt: firebase.firestore.FieldValue.serverTimestamp()
     });
   }catch(err){
-    alert('Failed to send message: ' + err.message);
+    alert("Couldn't send message: " + err.message);
     input.value = text;
   }
 }
@@ -1423,10 +1409,10 @@ async function loadSettings(){
     verifyBtn.disabled = true; verifyBtn.textContent = 'Verified ✓';
     verifyMsg.textContent = 'You already have the blue tick.'; verifyMsg.className = 'auth-msg ok';
   }else if(u.verificationStatus === 'pending'){
-    verifyBtn.disabled = true; verifyBtn.textContent = 'Request already sent';
-    verifyMsg.textContent = 'Your request is under review by admin.'; verifyMsg.className = 'auth-msg ok';
+    verifyBtn.disabled = true; verifyBtn.textContent = 'Request submitted';
+    verifyMsg.textContent = 'Your request is under review by the admin.'; verifyMsg.className = 'auth-msg ok';
   }else{
-    verifyBtn.disabled = false; verifyBtn.textContent = 'I have paid ₹50';
+    verifyBtn.disabled = false; verifyBtn.textContent = "I've paid ₹50";
     verifyMsg.textContent = ''; verifyMsg.className = 'auth-msg';
   }
 }
@@ -1443,8 +1429,8 @@ document.getElementById('saveProfileBtn').onclick = async ()=>{
     }
     await db.collection('users').doc(currentUser.uid).update({ name, username, bio });
     await currentUser.updateProfile({ displayName: name });
-    msg.textContent = 'Profile saved!'; msg.className = 'auth-msg ok';
-  }catch(err){ msg.textContent = 'Save failed: ' + err.message; msg.className = 'auth-msg error'; }
+    msg.textContent = 'Profile save ho gaya!'; msg.className = 'auth-msg ok';
+  }catch(err){ msg.textContent = "Couldn't save: " + err.message; msg.className = 'auth-msg error'; }
 };
 
 document.getElementById('changePasswordBtn').onclick = async ()=>{
@@ -1456,7 +1442,7 @@ document.getElementById('changePasswordBtn').onclick = async ()=>{
     const cred = firebase.auth.EmailAuthProvider.credential(currentUser.email, oldPassword);
     await currentUser.reauthenticateWithCredential(cred);
     await currentUser.updatePassword(newPassword);
-    msg.textContent = 'Password changed!'; msg.className = 'auth-msg ok';
+    msg.textContent = 'Password change ho gaya!'; msg.className = 'auth-msg ok';
     document.getElementById('oldPassword').value = ''; document.getElementById('newPassword').value = '';
   }catch(err){ msg.textContent = humanError(err); msg.className = 'auth-msg error'; }
 };
@@ -1468,7 +1454,7 @@ document.getElementById('requestVerifyBtn').onclick = async ()=>{
       verificationRequestedAt: firebase.firestore.FieldValue.serverTimestamp()
     });
     loadSettings();
-  }catch(err){ alert('Request bhejne me error: ' + err.message); }
+  }catch(err){ alert('Error sending request: ' + err.message); }
 };
 
 document.getElementById('settingsLogoutBtn').onclick = ()=> auth.signOut().then(()=>{window.location.hash=''; location.reload();});
@@ -1490,7 +1476,7 @@ async function startSnapCamera(){
     snapStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
     video.srcObject = snapStream;
   }catch(err){
-    msgEl.textContent = 'Camera permission denied. Please allow camera access in your browser settings and try again.';
+    msgEl.textContent = 'Camera permission was not granted. Allow camera access in your browser settings and try again.';
   }
 }
 
@@ -1525,14 +1511,17 @@ document.getElementById('sendSnapBtn').addEventListener('click', async ()=>{
   const btn = document.getElementById('sendSnapBtn');
   btn.disabled = true; btn.textContent = 'Sending...';
   try{
-    const mediaURL = await uploadToCloudinary(capturedBlob, 'image');
+    const path = `snaps/${currentUser.uid}/${Date.now()}.jpg`;
+    const ref = storage.ref(path);
+    await ref.put(capturedBlob);
+    const mediaURL = await ref.getDownloadURL();
     await db.collection('snaps').add({
       uid: currentUser.uid, name: currentUserData.name || 'User',
       mediaURL: mediaURL, createdAt: firebase.firestore.FieldValue.serverTimestamp()
     });
     alert('Snap sent!');
     goto('');
-  }catch(err){ alert('Error sending snap: ' + err.message); btn.disabled = false; btn.textContent = 'Send snap'; }
+  }catch(err){ alert('Error sending snap: ' + err.message); btn.disabled = false; btn.textContent = 'Send Snap'; }
 });
 
 document.getElementById('backFromSnap').addEventListener('click', ()=>{
@@ -1578,7 +1567,7 @@ async function loadVerifyRequests(){
     const requested = u.verificationRequestedAt ? u.verificationRequestedAt.toDate().toLocaleString('en-IN') : '—';
     const row = document.createElement('tr');
     row.innerHTML = `<td>${escapeHTML(u.name)}</td><td>@${escapeHTML(u.username)}</td><td>${escapeHTML(u.email)}</td><td>${requested}</td>
-      <td><button class="mini-btn" data-id="${doc.id}">Verify (Grant Blue Tick)</button></td>`;
+      <td><button class="mini-btn" data-id="${doc.id}">Verify (Blue Tick do)</button></td>`;
     row.querySelector('button').onclick = async ()=>{
       await db.collection('users').doc(doc.id).update({ verified: true, verificationStatus: 'verified' });
       loadVerifyRequests(); loadUsers();
