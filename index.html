@@ -90,6 +90,17 @@ img{max-width:100%;display:block;}
 .composer-row input[type=file]{display:none;}
 .composer .preview{margin-top:10px;border-radius:var(--radius-sm);overflow:hidden;max-height:260px;}
 .composer .preview img{width:100%;object-fit:cover;}
+.create-tab-btn{border:none;background:var(--line);color:var(--muted);font-weight:700;font-size:0.85rem;padding:8px 16px;border-radius:999px;cursor:pointer;}
+.create-tab-btn.active{background:var(--grad-brand);color:#fff;}
+.reel-badge{position:absolute;top:6px;right:6px;color:#fff;z-index:1;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.6));}
+.share-app-btn{width:48px;height:48px;border-radius:50%;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;}
+.suggested-row{display:flex;gap:12px;overflow-x:auto;padding:4px 16px 16px;}
+.suggested-row:empty{padding:0;}
+.suggested-card{flex-shrink:0;width:128px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 10px;text-align:center;}
+.suggested-card .avatar{width:52px;height:52px;margin:0 auto 8px;font-size:1.1rem;}
+.suggested-card .name{display:flex;align-items:center;justify-content:center;gap:3px;font-weight:700;font-size:0.82rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;}
+.suggested-card .username{font-size:0.72rem;color:var(--muted);margin:2px 0 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.suggested-card .mini-btn{width:100%;padding:7px 0;font-size:0.78rem;}
 .post-btn{padding:8px 18px;border:none;border-radius:999px;background:var(--grad-brand);color:#fff;font-weight:700;font-size:0.82rem;cursor:pointer;}
 .post-btn:disabled{opacity:0.5;}
 
@@ -149,6 +160,75 @@ table.users-table tr:last-child td{border-bottom:none;}
 .badge.blocked{background:#FDEBEC;color:var(--like);}
 .mini-btn{border:1px solid var(--line);background:var(--paper);border-radius:8px;padding:5px 10px;font-size:0.75rem;font-weight:600;cursor:pointer;color:var(--ink);}
 .mini-btn:hover{border-color:var(--blue);color:var(--blue-deep);}
+.notif-badge{position:absolute;top:2px;right:2px;min-width:16px;height:16px;padding:0 4px;border-radius:999px;background:var(--like);color:#fff;font-size:0.65rem;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1;}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);}
+.toggle-row:last-of-type{border-bottom:none;}
+.toggle-row span{font-size:0.9rem;}
+.toggle-row input[type="checkbox"]{width:18px;height:18px;accent-color:var(--blue);cursor:pointer;}
+.notif-item{display:flex;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line);cursor:pointer;align-items:flex-start;}
+.notif-item:hover{background:var(--paper);}
+.notif-item.unread{background:rgba(47,124,246,0.06);}
+.notif-item .notif-text{font-size:0.88rem;color:var(--ink);}
+.notif-item .notif-time{font-size:0.75rem;color:var(--muted);margin-top:2px;}
+.cat-tab-row{display:flex;gap:18px;overflow-x:auto;padding:6px 18px;}
+.cat-tab-row::-webkit-scrollbar{display:none;}
+.cat-tab{flex-shrink:0;background:none;border:none;padding:4px 2px 8px;font-size:0.78rem;font-weight:700;letter-spacing:0.01em;color:rgba(255,255,255,0.55);cursor:pointer;white-space:nowrap;position:relative;text-shadow:0 1px 3px rgba(0,0,0,0.5);}
+.cat-tab.active{color:#fff;}
+.cat-tab.active::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2.5px;border-radius:2px;background:linear-gradient(90deg,var(--blue),var(--violet));}
+.lens-row{display:flex;gap:16px;overflow-x:auto;padding:10px 18px 14px;scroll-snap-type:x proximity;}
+.lens-row::-webkit-scrollbar{display:none;}
+.lens-item{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;scroll-snap-align:center;width:64px;}
+.lens-thumb{width:58px;height:58px;border-radius:50%;padding:2.5px;background:rgba(255,255,255,0.18);transition:transform .15s ease, background .15s ease;box-shadow:0 2px 10px rgba(0,0,0,0.35);}
+.lens-item.active .lens-thumb{background:linear-gradient(135deg,var(--blue),var(--violet));transform:scale(1.14);box-shadow:0 4px 16px rgba(139,92,246,0.5);}
+.lens-thumb-img{width:100%;height:100%;border-radius:50%;background-size:cover;background-position:center;background-color:#3a3a4a;border:2px solid rgba(0,0,0,0.5);}
+.lens-item span{font-size:0.62rem;font-weight:600;color:rgba(255,255,255,0.75);text-align:center;max-width:64px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-shadow:0 1px 3px rgba(0,0,0,0.6);}
+.lens-item.active span{color:#fff;font-weight:800;}
+.shutter-btn{width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,0.14);border:4px solid #fff;cursor:pointer;flex-shrink:0;box-shadow:0 4px 18px rgba(0,0,0,0.4);transition:transform .1s ease;}
+.shutter-btn:active{transform:scale(0.92);}
+.snap-action-btn{display:flex;flex-direction:column;align-items:center;gap:4px;background:none;border:none;color:#fff;font-size:0.68rem;font-weight:600;cursor:pointer;padding:4px;}
+.snap-action-circle{width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.14);border:1.5px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);flex-shrink:0;}
+.snap-action-circle svg{width:20px;height:20px;}
+.snap-topbar{position:absolute;top:0;left:0;right:0;z-index:3;display:flex;align-items:center;gap:8px;padding:12px 12px 0;}
+.snap-avatar{width:38px;height:38px;border-radius:50%;overflow:hidden;flex-shrink:0;background:linear-gradient(135deg,var(--blue),var(--violet));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:0.92rem;border:2px solid rgba(255,255,255,0.55);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.35);}
+.snap-avatar img{width:100%;height:100%;object-fit:cover;}
+.snap-pill-camera{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;gap:6px;background:rgba(255,255,255,0.14);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.28);border-radius:999px;padding:9px 14px;color:#fff;font-weight:700;font-size:0.8rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:0 2px 10px rgba(0,0,0,0.3);}
+.dot-mini-snap{width:6px;height:6px;border-radius:50%;background:var(--grad-brand);display:inline-block;flex-shrink:0;}
+.snap-badge{position:absolute;left:12px;top:64px;z-index:3;background:rgba(0,0,0,0.35);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:0.68rem;font-weight:700;padding:6px 11px;border-radius:999px;display:flex;align-items:center;gap:4px;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
+.snap-side-rail{position:absolute;right:10px;top:64px;z-index:3;display:flex;flex-direction:column;gap:13px;align-items:center;}
+.snap-side-btn{width:40px;height:40px;border-radius:50%;background:rgba(0,0,0,0.32);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.22);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.3);transition:background .15s ease, transform .1s ease;}
+.snap-side-btn:active{transform:scale(0.9);}
+.snap-side-btn svg{width:18px;height:18px;}
+.snap-side-btn.active{background:linear-gradient(135deg,var(--blue),var(--violet));border-color:transparent;}
+.snap-side-btn.active svg{fill:#fff;}
+.snap-toast{position:absolute;left:50%;bottom:200px;transform:translateX(-50%);background:rgba(20,18,35,0.88);color:#fff;font-size:0.78rem;font-weight:600;padding:9px 18px;border-radius:999px;z-index:6;pointer-events:none;opacity:0;transition:opacity .25s ease, transform .25s ease;white-space:nowrap;box-shadow:0 4px 14px rgba(0,0,0,0.35);}
+.snap-toast.show{opacity:1;transform:translateX(-50%) translateY(-4px);}
+.cat-tab-close{flex-shrink:0;width:27px;height:27px;border-radius:50%;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;margin-right:2px;}
+.cat-tab-close svg{width:13px;height:13px;}
+#snapFiltersPanel{transition:max-height .25s ease, opacity .2s ease, margin .2s ease;max-height:220px;opacity:1;overflow:hidden;}
+#snapFiltersPanel.collapsed{max-height:0;opacity:0;}
+.cell{position:relative;cursor:pointer;}
+.cell-actions{position:absolute;top:6px;right:6px;display:flex;gap:5px;z-index:2;}
+.cell-actions button{width:26px;height:26px;border-radius:50%;border:none;background:rgba(0,0,0,0.55);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.cell-actions button:hover{background:rgba(0,0,0,0.8);}
+.avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.private-lock{text-align:center;padding:40px 20px;color:var(--muted);}
+.private-lock svg{margin-bottom:10px;}
+.reels-viewport{height:100%;min-height:400px;overflow-y:scroll;scroll-snap-type:y mandatory;background:#000;}
+#view-reels{position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:600px;margin:0;padding-bottom:0;background:#000;z-index:5;}
+#view-reels .topbar{position:absolute;top:0;left:0;right:0;z-index:2;background:linear-gradient(rgba(0,0,0,0.6),transparent);border:none;backdrop-filter:none;}
+#view-reels .topbar .brand{color:#fff;}
+#view-reels .icon-btn{color:#fff;}
+.reel-card{position:relative;height:100%;width:100%;scroll-snap-align:start;scroll-snap-stop:always;background:#000;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.reel-card video{width:100%;height:100%;object-fit:cover;}
+.reel-card-overlay-bottom{position:absolute;left:0;right:64px;bottom:0;padding:16px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,0.65));}
+.reel-card-overlay-bottom .name{font-weight:700;display:flex;align-items:center;gap:5px;margin-bottom:4px;}
+.reel-actions-vertical{position:absolute;right:10px;bottom:70px;display:flex;flex-direction:column;gap:16px;align-items:center;}
+.reel-actions-vertical button{background:rgba(0,0,0,0.4);border:none;color:#fff;width:42px;height:42px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;cursor:pointer;font-size:0.62rem;font-weight:700;}
+.reel-actions-vertical button.liked{color:var(--like);}
+.reel-view-badge{position:absolute;top:14px;right:14px;background:rgba(0,0,0,0.5);color:#fff;font-size:0.72rem;font-weight:600;padding:4px 9px;border-radius:999px;display:flex;align-items:center;gap:4px;}
+.pichat-watermark{position:absolute;top:14px;right:14px;display:flex;align-items:center;gap:5px;background:rgba(0,0,0,0.4);color:#fff;padding:5px 10px;border-radius:999px;font-size:0.72rem;font-weight:800;letter-spacing:0.3px;z-index:3;pointer-events:none;backdrop-filter:blur(2px);}
+.pichat-watermark .dot-mini{width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;}
+#postViewerOverlay.shorts-mode #postViewerVideo{width:100%;height:100%;object-fit:cover;}
 .search-row{margin-bottom:16px;}
 .search-row input{width:100%;max-width:320px;padding:10px 14px;border-radius:999px;border:1.5px solid var(--line);outline:none;font-size:0.88rem;}
 .loading-row{padding:40px;text-align:center;color:var(--muted);}
@@ -180,24 +260,31 @@ table.users-table tr:last-child td{border-bottom:none;}
         <svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20.4H24v7.2h11.3c-1.6 4.6-6 7.9-11.3 7.9-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 5.1 29.6 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21 21-9.4 21-21c0-1.4-.1-2.8-.4-4.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.9 18.9 13 24 13c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 5.1 29.6 3 24 3c-7.7 0-14.3 4.4-17.7 10.7z"/><path fill="#4CAF50" d="M24 45c5.5 0 10.4-1.9 14.3-5l-6.6-5.6c-2 1.5-4.6 2.4-7.7 2.4-5.2 0-9.7-3.5-11.3-8.2l-6.6 5.1C9.6 40.5 16.2 45 24 45z"/><path fill="#1976D2" d="M43.6 20.5H42V20.4H24v7.2h11.3c-.8 2.3-2.2 4.3-4 5.7l6.6 5.6C41.3 36 45 30.5 45 24c0-1.4-.1-2.8-.4-4.5z"/></svg>
         Continue with Google
       </button>
-      <button type="button" class="btn-social btn-facebook" id="facebookAuthBtn">
-        <svg viewBox="0 0 24 24" fill="#fff"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.13 8.44 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.5-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99C18.34 21.13 22 16.99 22 12z"/></svg>
-        Continue with Facebook
-      </button>
       <div class="auth-divider"><span>or with email</span></div>
     </div>
 
     <form id="loginForm">
       <div class="field"><label>Email</label><input type="email" id="loginEmail" placeholder="you@example.com" required></div>
-      <div class="field"><label>Password</label><input type="password" id="loginPassword" placeholder="••••••••" required></div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" id="loginPassword" placeholder="••••••••" required>
+        <div style="text-align:right;margin-top:6px;"><a href="#" id="forgotPasswordLink" style="font-size:0.8rem;color:var(--blue-deep);font-weight:600;">Forgot password?</a></div>
+      </div>
       <button type="submit" class="btn-primary" id="loginBtn">Login</button>
       <div class="auth-msg" id="loginMsg"></div>
       <div class="auth-foot">Don't have an account? <a href="#" id="goRegister" style="color:var(--blue-deep);font-weight:600;">Register</a></div>
     </form>
 
+    <div class="hidden" id="forgotPasswordBox" style="margin-top:4px;">
+      <div class="field"><label>Enter your account email</label><input type="email" id="resetEmail" placeholder="you@example.com"></div>
+      <button type="button" class="btn-primary" id="sendResetBtn">Send reset link</button>
+      <div class="auth-msg" id="resetMsg"></div>
+      <div class="auth-foot"><a href="#" id="backToLoginFromReset" style="color:var(--blue-deep);font-weight:600;">Back to login</a></div>
+    </div>
+
     <form id="registerForm" class="hidden">
-      <div class="field"><label>Full name</label><input type="text" id="regName" placeholder="Aman Sharma" required></div>
-      <div class="field"><label>Username</label><input type="text" id="regUsername" placeholder="aman.codes" required pattern="[a-zA-Z0-9._]{3,20}"></div>
+      <div class="field"><label>Full name</label><input type="text" id="regName" placeholder="John Smith" required></div>
+      <div class="field"><label>Username</label><input type="text" id="regUsername" placeholder="john.codes" required pattern="[a-zA-Z0-9._]{3,20}"></div>
       <div class="field"><label>Email</label><input type="email" id="regEmail" placeholder="you@example.com" required></div>
       <div class="field"><label>Password</label><input type="password" id="regPassword" placeholder="At least 6 characters" required minlength="6"></div>
       <button type="submit" class="btn-primary" id="registerBtn">Register</button>
@@ -212,29 +299,22 @@ table.users-table tr:last-child td{border-bottom:none;}
   <div class="topbar">
     <span class="brand" style="font-size:1.2rem;">Pichat<span class="dot"></span></span>
     <div class="actions">
+      <button class="icon-btn" id="createBtnHome" title="Create">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
       <button class="icon-btn" id="searchBtnHome" title="Search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </button>
-      <button class="icon-btn" id="logoutBtnHome" title="Logout">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      <button class="icon-btn" id="notifBtn" title="Notifications" style="position:relative;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        <span class="notif-badge hidden" id="notifBadge">0</span>
       </button>
     </div>
   </div>
 
   <div class="stories" id="storiesRow"></div>
 
-  <div class="composer">
-    <textarea id="postCaption" placeholder="What's on your mind?"></textarea>
-    <div id="previewBox" class="preview hidden"><img id="previewImg"></div>
-    <div class="composer-row">
-      <label>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-        Photo
-        <input type="file" id="postImage" accept="image/*">
-      </label>
-      <button class="post-btn" id="postBtn">Post</button>
-    </div>
-  </div>
+  <div class="suggested-row" id="suggestedRow"></div>
 
   <div id="feed"></div>
   <div id="feedEmpty" class="empty hidden">
@@ -264,6 +344,9 @@ table.users-table tr:last-child td{border-bottom:none;}
   <div class="topbar">
     <span class="brand" style="font-size:1.2rem;">Pichat<span class="dot"></span></span>
     <div class="actions">
+      <button class="icon-btn" id="createBtnProfile" title="Create">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
       <button class="icon-btn" id="settingsBtn" title="Settings">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V21a2 2 0 1 1-4 0v-.1A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H3a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.6V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.6 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.6 1z"/></svg>
       </button>
@@ -274,18 +357,20 @@ table.users-table tr:last-child td{border-bottom:none;}
   </div>
 
   <div class="profile-head">
-    <div class="avatar" id="pAvatar">U</div>
+    <div class="avatar" id="pAvatar" style="position:relative;cursor:pointer;">U</div>
+    <input type="file" id="dpInput" accept="image/*" class="hidden">
+    <div><button class="mini-btn" id="changeDpBtn" style="margin:8px auto 0;">Change photo</button></div>
     <h2 id="pName">—</h2>
     <div style="color:var(--muted);font-size:0.85rem;">@<span id="pUsername">—</span></div>
-    <p class="bio" id="pBio">Bio is empty.</p>
+    <p class="bio" id="pBio">Bio is empty right now.</p>
     <div class="stat-row">
       <div><b id="pPostCount">0</b><span>Posts</span></div>
-      <div><b id="pFollowers">0</b><span>Followers</span></div>
-      <div><b id="pFollowing">0</b><span>Following</span></div>
+      <div style="cursor:pointer;" id="pFollowersStat"><b id="pFollowers">0</b><span>Followers</span></div>
+      <div style="cursor:pointer;" id="pFollowingStat"><b id="pFollowing">0</b><span>Following</span></div>
     </div>
     <div class="field" style="max-width:320px;margin:0 auto 8px;text-align:left;">
       <label>Edit bio</label>
-      <textarea id="bioInput" rows="2" placeholder="Write something about yourself..."></textarea>
+      <textarea id="bioInput" rows="2" placeholder="Write about yourself..."></textarea>
     </div>
     <button class="btn-primary" style="max-width:320px;" id="saveBioBtn">Save bio</button>
     <div class="auth-msg" id="bioMsg"></div>
@@ -310,13 +395,18 @@ table.users-table tr:last-child td{border-bottom:none;}
     <p class="bio" id="uBio">—</p>
     <div class="stat-row">
       <div><b id="uPostCount">0</b><span>Posts</span></div>
-      <div><b id="uFollowers">0</b><span>Followers</span></div>
-      <div><b id="uFollowing">0</b><span>Following</span></div>
+      <div style="cursor:pointer;" id="uFollowersStat"><b id="uFollowers">0</b><span>Followers</span></div>
+      <div style="cursor:pointer;" id="uFollowingStat"><b id="uFollowing">0</b><span>Following</span></div>
     </div>
-    <div style="display:flex;gap:10px;max-width:320px;margin:0 auto;">
+    <div style="display:flex;gap:10px;max-width:320px;margin:0 auto;flex-wrap:wrap;">
       <button class="btn-primary" id="followBtn">Follow</button>
       <button class="btn-primary" id="messageBtn" style="background:var(--card);color:var(--blue-deep);border:1.5px solid var(--line);">Message</button>
+      <button class="mini-btn" id="blockUserBtn" style="width:100%;">Block</button>
     </div>
+  </div>
+  <div id="privateLockMsg" class="private-lock hidden">
+    <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    <div>This account is private. Follow to see their posts.</div>
   </div>
   <div class="grid-posts" id="userPosts"></div>
 </div>
@@ -325,29 +415,14 @@ table.users-table tr:last-child td{border-bottom:none;}
 <div class="app-shell hidden" id="view-reels">
   <div class="topbar">
     <span class="brand" style="font-size:1.2rem;">Reels<span class="dot"></span></span>
-    <div style="width:34px;"></div>
+    <button class="icon-btn" id="createBtnReels" title="Create">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    </button>
   </div>
-  <div class="composer">
-    <textarea id="reelCaption" placeholder="Write a caption for your reel..."></textarea>
-    <div id="reelPreviewBox" class="preview hidden"><video id="reelPreviewVideo" controls style="width:100%;max-height:260px;"></video></div>
-    <div class="composer-row" style="flex-wrap:wrap;gap:10px;">
-      <label>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-        Video
-        <input type="file" id="reelVideo" accept="video/*">
-      </label>
-      <label>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-        Song
-        <input type="file" id="reelAudio" accept="audio/*">
-      </label>
-      <button class="post-btn" id="reelPostBtn">Post reel</button>
-    </div>
-  </div>
-  <div id="reelsFeed"></div>
-  <div id="reelsEmpty" class="empty hidden">
+  <div id="reelsFeed" class="reels-viewport"></div>
+  <div id="reelsEmpty" class="empty hidden" style="color:#fff;">
     <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
-    No reels yet. Be the first to post one!
+    No reels yet. Post the first reel!
   </div>
 </div>
 
@@ -369,8 +444,15 @@ table.users-table tr:last-child td{border-bottom:none;}
     <button class="icon-btn" id="backFromChat" title="Back">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
     </button>
-    <span class="brand" id="chatRoomName" style="font-size:1.1rem;display:flex;align-items:center;gap:6px;">—</span>
-    <div style="width:34px;"></div>
+    <span class="brand" id="chatRoomName" style="font-size:1.1rem;display:flex;align-items:center;gap:6px;cursor:pointer;">—</span>
+    <div style="display:flex;gap:4px;">
+      <button class="icon-btn" id="audioCallBtn" title="Voice call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </button>
+      <button class="icon-btn" id="videoCallBtn" title="Video call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+      </button>
+    </div>
   </div>
   <div id="chatMessages" style="flex:1;overflow-y:auto;padding:16px 18px;"></div>
   <div class="comment-input-row" style="padding:12px 18px;border-top:1px solid var(--line);background:var(--card);">
@@ -380,6 +462,22 @@ table.users-table tr:last-child td{border-bottom:none;}
 </div>
 
 <!-- ============ VIEW: SETTINGS ============ -->
+<!-- ============ VIEW: NOTIFICATIONS ============ -->
+<div class="app-shell hidden" id="view-notifications">
+  <div class="topbar">
+    <button class="icon-btn" id="backFromNotifs" title="Back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <span class="brand" style="font-size:1.2rem;">Notifications<span class="dot"></span></span>
+    <div style="width:34px;"></div>
+  </div>
+  <div id="notifList"></div>
+  <div id="notifEmpty" class="empty hidden">
+    <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+    No notifications yet.
+  </div>
+</div>
+
 <div class="app-shell hidden" id="view-settings">
   <div class="topbar">
     <button class="icon-btn" id="backFromSettings" title="Back">
@@ -390,32 +488,57 @@ table.users-table tr:last-child td{border-bottom:none;}
   </div>
 
   <div class="composer" style="margin-top:16px;">
-    <h3 style="margin:0 0 12px;font-size:1rem;">Edit Profile</h3>
+    <h3 style="margin:0 0 12px;font-size:1rem;">Edit profile</h3>
     <div class="field"><label>Name</label><input type="text" id="setName"></div>
     <div class="field"><label>Username</label><input type="text" id="setUsername"></div>
     <div class="field"><label>Bio</label><textarea id="setBio" rows="2"></textarea></div>
-    <button class="btn-primary" id="saveProfileBtn">Save Profile</button>
+    <button class="btn-primary" id="saveProfileBtn">Save profile</button>
     <div class="auth-msg" id="setProfileMsg"></div>
   </div>
 
   <div class="composer">
-    <h3 style="margin:0 0 12px;font-size:1rem;">Change Password</h3>
-    <div class="field"><label>Current password</label><input type="password" id="oldPassword"></div>
+    <h3 style="margin:0 0 12px;font-size:1rem;">Change password</h3>
+    <div class="field"><label>Old password</label><input type="password" id="oldPassword"></div>
     <div class="field"><label>New password</label><input type="password" id="newPassword" minlength="6"></div>
-    <button class="btn-primary" id="changePasswordBtn">Change Password</button>
+    <button class="btn-primary" id="changePasswordBtn">Change password</button>
     <div class="auth-msg" id="setPasswordMsg"></div>
   </div>
 
   <div class="composer" id="verifyBox">
     <h3 style="margin:0 0 6px;font-size:1rem;display:flex;align-items:center;gap:6px;">Blue Tick Verification</h3>
-    <p style="font-size:0.85rem;color:var(--muted);margin:0 0 12px;">Pay ₹50 to this UPI ID to get the blue tick on your profile, then tap the button below. Once payment is confirmed, the admin will manually verify you.</p>
+    <p style="font-size:0.85rem;color:var(--muted);margin:0 0 12px;">To get a blue tick on your profile, pay ₹50 to this UPI ID, then tap the button below. Once the payment is confirmed, admin will verify it manually.</p>
     <div style="background:var(--paper);border:1.5px dashed var(--line);border-radius:var(--radius-sm);padding:14px;text-align:center;margin-bottom:12px;">
       <div style="font-size:0.75rem;color:var(--muted);margin-bottom:4px;">UPI ID</div>
       <div style="font-weight:700;font-size:1rem;color:var(--blue-deep);">9829836058-1@naviaxis</div>
       <div style="font-size:0.75rem;color:var(--muted);margin-top:6px;">Amount: ₹50</div>
     </div>
-    <button class="btn-primary" id="requestVerifyBtn">I've paid ₹50</button>
+    <button class="btn-primary" id="requestVerifyBtn">I have paid ₹50</button>
     <div class="auth-msg" id="verifyMsg"></div>
+  </div>
+
+  <div class="composer">
+    <h3 style="margin:0 0 4px;font-size:1rem;">Notifications</h3>
+    <p style="font-size:0.8rem;color:var(--muted);margin:0 0 8px;">Choose which notifications you want to receive.</p>
+    <div class="toggle-row"><span>Enable notifications</span><input type="checkbox" id="notifEnabled" checked></div>
+    <div class="toggle-row"><span>Messages</span><input type="checkbox" id="notifMessages" checked></div>
+    <div class="toggle-row"><span>New reels</span><input type="checkbox" id="notifReels" checked></div>
+    <button class="btn-primary" id="saveNotifSettingsBtn" style="margin-top:12px;">Save notification settings</button>
+    <div class="auth-msg" id="notifSettingsMsg"></div>
+    <button class="mini-btn" id="enableBrowserNotifBtn" style="margin-top:10px;width:100%;padding:10px;">Enable browser alerts</button>
+  </div>
+
+  <div class="composer">
+    <h3 style="margin:0 0 4px;font-size:1rem;">Privacy</h3>
+    <p style="font-size:0.8rem;color:var(--muted);margin:0 0 8px;">When your account is private, only your followers can see your posts and reels.</p>
+    <div class="toggle-row"><span>Private account</span><input type="checkbox" id="privateAccountToggle"></div>
+    <div class="auth-msg" id="privacyMsg"></div>
+  </div>
+
+  <div class="composer">
+    <h3 style="margin:0 0 4px;font-size:1rem;">Blocked users</h3>
+    <p style="font-size:0.8rem;color:var(--muted);margin:0 0 8px;">People you've blocked can't message you or see your posts.</p>
+    <div id="blockedUsersList"></div>
+    <div class="empty hidden" id="blockedUsersEmpty" style="padding:14px 0;">No blocked users.</div>
   </div>
 
   <div style="padding:18px;">
@@ -425,23 +548,237 @@ table.users-table tr:last-child td{border-bottom:none;}
 
 <!-- ============ VIEW: SNAP CAMERA ============ -->
 <div class="hidden" id="view-snap" style="position:fixed;inset:0;background:#000;z-index:100;display:flex;flex-direction:column;">
-  <div class="topbar" style="background:rgba(0,0,0,0.4);border:none;">
-    <button class="icon-btn" id="backFromSnap" title="Close" style="color:#fff;">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
-    <span class="brand" style="font-size:1.1rem;color:#fff;">Snap<span class="dot"></span></span>
-    <div style="width:34px;"></div>
-  </div>
-  <div style="flex:1;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
+  <div style="flex:1;position:relative;overflow:hidden;">
     <video id="snapVideo" autoplay playsinline style="width:100%;height:100%;object-fit:cover;"></video>
+    <img id="snapGalleryPreview" class="hidden" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
     <img id="snapCaptured" class="hidden" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
     <canvas id="snapCanvas" class="hidden"></canvas>
-    <div id="snapCameraMsg" style="color:#fff;padding:20px;text-align:center;"></div>
+    <canvas id="snapLiveCanvas" class="hidden" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;"></canvas>
+    <canvas id="thumbSourceCanvas" class="hidden"></canvas>
+    <div id="snapCameraMsg" style="color:#fff;padding:20px;text-align:center;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;"></div>
+    <div id="snapTextOverlay" class="hidden" style="position:absolute;left:0;right:0;bottom:22%;text-align:center;color:#fff;font-size:1.6rem;font-weight:800;text-shadow:0 2px 6px rgba(0,0,0,0.6);padding:0 16px;word-wrap:break-word;pointer-events:none;"></div>
+
+    <!-- top bar: avatar / search / brand pill / add friends / flip camera -->
+    <div class="snap-topbar">
+      <div class="snap-avatar" id="snapAvatarBtn" title="Profile">
+        <img id="snapAvatarImg" class="hidden" alt="">
+        <span id="snapAvatarInitial">U</span>
+      </div>
+      <button class="snap-action-circle" id="snapSearchBtn" title="Search" style="width:38px;height:38px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <span class="snap-pill-camera"><span class="dot-mini-snap"></span><span id="snapPillLabel">Pichat Camera</span></span>
+      <button class="snap-action-circle" id="snapAddFriendBtn" title="Find friends" style="width:38px;height:38px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+      </button>
+      <button class="snap-action-circle" id="flipCameraBtn" title="Flip camera" style="width:38px;height:38px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+      </button>
+    </div>
+
+    <!-- filter-count badge, top-left over the preview -->
+    <div class="snap-badge" id="snapFilterBadge">✨ <span id="snapFilterCountLabel"></span></div>
+
+    <!-- right-side floating icon rail: favorite / share / flash / music / collapse -->
+    <div class="snap-side-rail">
+      <button class="snap-side-btn" id="favFilterBtn" title="Favorite this look">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      </button>
+      <button class="snap-side-btn" id="shareFilterBtn" title="Share this look">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>
+      </button>
+      <button class="snap-side-btn hidden" id="flashToggleBtn" title="Flash">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      </button>
+      <button class="snap-side-btn" id="musicBtn" title="Music">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+      </button>
+      <button class="snap-side-btn" id="collapsePanelBtn" title="Hide filters">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+    </div>
+
+    <div class="snap-toast" id="snapToast"></div>
   </div>
-  <div style="padding:22px;display:flex;justify-content:center;gap:20px;background:rgba(0,0,0,0.4);">
-    <button class="btn-primary" id="captureSnapBtn" style="max-width:180px;">Capture</button>
-    <button class="btn-primary hidden" id="sendSnapBtn" style="max-width:180px;">Send Snap</button>
-    <button class="mini-btn hidden" id="retakeSnapBtn" style="max-width:140px;">Retake</button>
+
+  <div style="background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 30%, rgba(0,0,0,0.8) 100%);padding-top:6px;">
+    <div id="snapFiltersPanel">
+      <div id="filterCategoryRow" class="cat-tab-row">
+        <button class="cat-tab-close" id="backFromSnap" title="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div id="catTabsInner" style="display:flex;gap:18px;overflow-x:auto;"></div>
+      </div>
+      <div id="filterStrip" class="lens-row"></div>
+    </div>
+    <div id="snapTextInputRow" class="hidden" style="padding:0 16px 10px;">
+      <input type="text" id="snapTextInput" placeholder="Add text..." maxlength="80" style="width:100%;padding:11px 14px;border-radius:10px;border:none;font-size:0.95rem;background:rgba(255,255,255,0.92);outline:none;">
+    </div>
+    <input type="file" id="snapGalleryInput" accept="image/*" class="hidden">
+    <div style="padding:8px 20px 26px;display:flex;justify-content:center;align-items:center;gap:24px;flex-wrap:wrap;">
+      <button class="snap-action-btn" id="galleryPickBtn">
+        <span class="snap-action-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span>
+        <span>Gallery</span>
+      </button>
+      <button class="shutter-btn" id="captureSnapBtn" title="Capture"></button>
+      <button class="btn-primary hidden" id="useGalleryPhotoBtn" style="max-width:170px;">Use photo</button>
+      <button class="snap-action-btn hidden" id="addTextBtn">
+        <span class="snap-action-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></span>
+        <span>Text</span>
+      </button>
+      <button class="snap-action-btn hidden" id="downloadSnapBtn">
+        <span class="snap-action-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+        <span>Save</span>
+      </button>
+      <button class="btn-primary hidden" id="sendSnapBtn" style="max-width:170px;">Send snap</button>
+      <button class="snap-action-btn hidden" id="retakeSnapBtn">
+        <span class="snap-action-circle"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg></span>
+        <span>Retake</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOLLOW LIST (followers / following) ============ -->
+<div class="hidden" id="followListOverlay" style="position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:150;display:flex;align-items:flex-end;justify-content:center;">
+  <div style="background:var(--paper);width:100%;max-width:480px;border-radius:20px 20px 0 0;max-height:72vh;display:flex;flex-direction:column;">
+    <div style="padding:14px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;">
+      <strong id="followListTitle">Followers</strong>
+      <button class="icon-btn" id="closeFollowList">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div id="followListBody" style="overflow-y:auto;flex:1;padding:10px 0 16px;"></div>
+  </div>
+</div>
+
+<!-- ============ POST/REEL VIEWER (opens grid items in full, shorts-style for reels) ============ -->
+<div class="hidden" id="postViewerOverlay" style="position:fixed;inset:0;background:#000;z-index:160;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+  <button class="icon-btn" id="closePostViewer" style="position:absolute;top:16px;left:16px;color:#fff;z-index:2;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <div class="pichat-watermark" id="postViewerWatermark"><span class="dot-mini"></span>Pichat</div>
+  <button class="icon-btn" id="downloadMediaBtn" title="Download" style="position:absolute;bottom:70px;right:14px;color:#fff;background:rgba(0,0,0,0.4);z-index:2;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+  </button>
+  <video id="postViewerVideo" class="hidden" controls autoplay loop playsinline style="max-width:100%;max-height:100%;"></video>
+  <img id="postViewerImg" class="hidden" style="max-width:100%;max-height:100%;">
+  <div id="postViewerCaption" style="color:#fff;padding:14px 20px;text-align:center;font-size:0.9rem;"></div>
+</div>
+
+<!-- ============ CREATE (unified Post/Reel creator, opened via the + icon) ============ -->
+<div class="hidden" id="createOverlay" style="position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:150;display:flex;align-items:flex-end;justify-content:center;">
+  <div style="background:var(--paper);width:100%;max-width:480px;border-radius:20px 20px 0 0;max-height:88vh;overflow-y:auto;">
+    <div style="padding:14px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;">
+      <strong>Create</strong>
+      <button class="icon-btn" id="closeCreate">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="create-tabs" style="display:flex;gap:8px;padding:12px 18px 0;">
+      <button class="create-tab-btn active" id="createTabPost" type="button">Post</button>
+      <button class="create-tab-btn" id="createTabReel" type="button">Reel</button>
+    </div>
+
+    <div class="composer" id="createPostPane" style="box-shadow:none;border:none;">
+      <textarea id="postCaption" placeholder="What's on your mind?"></textarea>
+      <div id="previewBox" class="preview hidden"><img id="previewImg"></div>
+      <div class="composer-row">
+        <label>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          Photo
+          <input type="file" id="postImage" accept="image/*">
+        </label>
+        <button class="post-btn" id="postBtn">Post</button>
+      </div>
+    </div>
+
+    <div class="composer hidden" id="createReelPane" style="box-shadow:none;border:none;">
+      <textarea id="reelCaption" placeholder="Write a reel caption..."></textarea>
+      <div id="reelPreviewBox" class="preview hidden"><video id="reelPreviewVideo" controls style="width:100%;max-height:260px;"></video></div>
+      <div class="composer-row" style="flex-wrap:wrap;gap:10px;">
+        <label>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+          Video
+          <input type="file" id="reelVideo" accept="video/*">
+        </label>
+        <label>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          Song
+          <input type="file" id="reelAudio" accept="audio/*">
+        </label>
+        <button class="post-btn" id="reelPostBtn">Post reel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ EDIT POST MODAL ============ -->
+<div class="hidden" id="editPostOverlay" style="position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:150;display:flex;align-items:center;justify-content:center;padding:20px;">
+  <div style="background:var(--paper);width:100%;max-width:420px;border-radius:16px;padding:18px;">
+    <h3 style="margin:0 0 12px;">Edit caption</h3>
+    <div class="field"><textarea id="editPostCaption" rows="3"></textarea></div>
+    <div style="display:flex;gap:10px;">
+      <button class="btn-primary" id="saveEditPostBtn">Save</button>
+      <button class="mini-btn" id="cancelEditPostBtn">Cancel</button>
+    </div>
+    <div class="auth-msg" id="editPostMsg"></div>
+  </div>
+</div>
+
+<!-- ============ SEND TO (share a post/reel via chat) ============ -->
+<div class="hidden" id="sendToOverlay" style="position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:150;display:flex;align-items:flex-end;justify-content:center;">
+  <div style="background:var(--paper);width:100%;max-width:480px;border-radius:20px 20px 0 0;max-height:72vh;display:flex;flex-direction:column;">
+    <div style="padding:14px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;">
+      <strong>Send to...</strong>
+      <button class="icon-btn" id="closeSendTo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div style="padding:10px 18px;"><input type="text" id="sendToSearch" placeholder="Search username..." style="width:100%;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);outline:none;"></div>
+    <div id="sendToList" style="overflow-y:auto;flex:1;padding-bottom:16px;"></div>
+  </div>
+</div>
+
+<!-- ============ SHARE SHEET (send / add to story / share via other apps) ============ -->
+<div class="hidden" id="shareOverlay" style="position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:150;display:flex;align-items:flex-end;justify-content:center;">
+  <div style="background:var(--paper);width:100%;max-width:480px;border-radius:20px 20px 0 0;max-height:80vh;overflow-y:auto;">
+    <div style="padding:14px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;">
+      <strong>Share</strong>
+      <button class="icon-btn" id="closeShareSheet">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div style="padding:14px 18px;display:flex;flex-direction:column;gap:8px;">
+      <button class="mini-btn" id="shareToFriendBtn" style="width:100%;padding:12px;text-align:left;display:flex;align-items:center;gap:10px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Send to a Pichat friend
+      </button>
+      <button class="mini-btn" id="shareToStoryBtn" style="width:100%;padding:12px;text-align:left;display:flex;align-items:center;gap:10px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        Add to your story
+      </button>
+    </div>
+
+    <div style="padding:4px 18px 6px;color:var(--muted);font-size:0.8rem;">Share via</div>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;padding:6px 18px 22px;">
+      <button class="share-app-btn" id="shareWhatsapp" style="background:#25D366;">
+        <svg viewBox="0 0 24 24" fill="#fff" width="22" height="22"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.44 1.32 4.94L2 22l5.29-1.38a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.14.82.84-3.06-.19-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.42 5.82c0 4.55-3.7 8.23-8.25 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.4-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.66-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.44.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.36-.77-1.86-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01a.92.92 0 0 0-.67.31c-.23.25-.87.85-.87 2.08 0 1.22.89 2.41 1.01 2.57.12.17 1.76 2.69 4.27 3.77.6.26 1.06.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.14-1.19-.06-.11-.23-.17-.48-.29z"/></svg>
+      </button>
+      <button class="share-app-btn" id="shareTelegram" style="background:#26A5E4;">
+        <svg viewBox="0 0 24 24" fill="#fff" width="22" height="22"><path d="M21.9 4.6L2.9 11.9c-1.2.5-1.2 1.2-.2 1.5l4.9 1.5 1.9 5.8c.2.6.4.8 1 .8.4 0 .6-.2.9-.5l2.1-2 4.4 3.2c.8.5 1.4.2 1.6-.7l2.9-13.4c.3-1.2-.5-1.7-1.5-1.4zm-3.6 3.5l-8.9 8.1-.4 3.7-1.7-5.3 10.5-6.9c.5-.3.9 0 .5.4z"/></svg>
+      </button>
+      <button class="share-app-btn" id="shareFacebook" style="background:#1877F2;">
+        <svg viewBox="0 0 24 24" fill="#fff" width="22" height="22"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.13 8.44 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.5-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99C18.34 21.13 22 16.99 22 12z"/></svg>
+      </button>
+      <button class="share-app-btn" id="shareSms" style="background:#34C759;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" width="22" height="22"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </button>
+      <button class="share-app-btn" id="shareMore" style="background:var(--muted);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" width="22" height="22"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>
+      </button>
+    </div>
   </div>
 </div>
 
@@ -451,7 +788,44 @@ table.users-table tr:last-child td{border-bottom:none;}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
   </button>
   <div id="snapViewerName" style="color:#fff;position:absolute;top:18px;left:18px;font-weight:700;"></div>
-  <img id="snapViewerImg" style="max-width:100%;max-height:100%;">
+  <img id="snapViewerImg" class="hidden" style="max-width:100%;max-height:100%;">
+  <video id="snapViewerVideo" class="hidden" autoplay playsinline controls style="max-width:100%;max-height:100%;"></video>
+</div>
+
+<!-- ============ CALL OVERLAY (in-progress voice/video call) ============ -->
+<div class="hidden" id="callOverlay" style="position:fixed;inset:0;background:#111;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;overflow:hidden;">
+  <video id="remoteVideoEl" autoplay playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000;"></video>
+  <div style="position:relative;z-index:1;text-align:center;background:rgba(0,0,0,0.35);padding:14px 22px;border-radius:14px;">
+    <div id="callStatusText" style="font-size:0.9rem;opacity:0.85;">Calling...</div>
+    <div id="callPeerName" style="font-size:1.3rem;font-weight:800;">—</div>
+  </div>
+  <video id="localVideoEl" autoplay playsinline muted style="position:absolute;bottom:130px;right:16px;width:100px;height:140px;object-fit:cover;border-radius:12px;border:2px solid rgba(255,255,255,0.6);z-index:2;"></video>
+  <div style="position:absolute;bottom:36px;left:0;right:0;display:flex;justify-content:center;gap:22px;z-index:2;">
+    <button id="toggleMicBtn" title="Mute" style="width:54px;height:54px;border-radius:50%;border:none;background:rgba(255,255,255,0.2);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+    </button>
+    <button id="toggleCamBtn" title="Camera" style="width:54px;height:54px;border-radius:50%;border:none;background:rgba(255,255,255,0.2);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+    </button>
+    <button id="endCallBtn" title="End call" style="width:60px;height:60px;border-radius:50%;border:none;background:#E0245E;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" stroke="none" style="transform:rotate(135deg);"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ============ INCOMING CALL OVERLAY ============ -->
+<div class="hidden" id="incomingCallOverlay" style="position:fixed;inset:0;background:rgba(10,10,15,0.94);z-index:210;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;">
+  <div class="avatar" style="width:84px;height:84px;font-size:2rem;margin-bottom:14px;" id="incomingCallAvatar">U</div>
+  <div id="incomingCallType" style="font-size:0.9rem;opacity:0.8;margin-bottom:4px;">Incoming voice call</div>
+  <div id="incomingCallerName" style="font-size:1.4rem;font-weight:800;margin-bottom:36px;">—</div>
+  <div style="display:flex;gap:46px;">
+    <button id="declineCallBtn" title="Decline" style="width:58px;height:58px;border-radius:50%;border:none;background:#E0245E;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" stroke="none" style="transform:rotate(135deg);"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </button>
+    <button id="acceptCallBtn" title="Accept" style="width:58px;height:58px;border-radius:50%;border:none;background:#2ECC71;color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" stroke="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </button>
+  </div>
 </div>
 
 <!-- ============ SHARED BOTTOM NAV ============ -->
@@ -504,7 +878,7 @@ table.users-table tr:last-child td{border-bottom:none;}
     <div class="admin-card"><b id="statUsers">0</b><span>Total registered users</span></div>
     <div class="admin-card"><b id="statPosts">0</b><span>Total posts</span></div>
     <div class="admin-card"><b id="statBlocked">0</b><span>Blocked users</span></div>
-    <div class="admin-card"><b id="statToday">0</b><span>Naye users (aaj)</span></div>
+    <div class="admin-card"><b id="statToday">0</b><span>New users (today)</span></div>
     <div class="admin-card"><b id="statPendingVerify">0</b><span>Pending blue-tick requests</span></div>
   </div>
 
@@ -529,7 +903,7 @@ table.users-table tr:last-child td{border-bottom:none;}
 <script>
 // ===========================================================
 // PICHAT — Firebase configuration
-// Add your Firebase project config here (see README)
+// Put your Firebase project config here (see README)
 // ===========================================================
 const firebaseConfig = {
   apiKey: "AIzaSyBv5yHdwgOIrkiLC6yT6p4XgOKuxxdmM_s",
@@ -542,9 +916,32 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.firestore();
-const storage = firebase.storage();
+// NOTE: Firebase Storage is no longer used (requires Blaze billing plan).
+// All images/videos/audio now upload to Cloudinary instead — see uploadToCloudinary() below.
 
-// Admin login credentials (jo maanga gaya tha)
+// ===========================================================
+// CLOUDINARY (file uploads: images, reel videos, snap photos, songs)
+// ===========================================================
+const CLOUDINARY_CLOUD_NAME = "kvuqhjk5";
+const CLOUDINARY_UPLOAD_PRESET = "pichat";
+
+// resourceType: 'image' for photos, 'video' for videos AND audio files (Cloudinary treats audio under the "video" resource type)
+async function uploadToCloudinary(file, resourceType){
+  const url = `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/${resourceType}/upload`;
+  const formData = new FormData();
+  formData.append('file', file);
+  formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+  const res = await fetch(url, { method: 'POST', body: formData });
+  if(!res.ok){
+    let errMsg = 'Upload failed';
+    try{ const errData = await res.json(); errMsg = errData.error?.message || errMsg; }catch(e){}
+    throw new Error(errMsg);
+  }
+  const data = await res.json();
+  return data.secure_url;
+}
+
+// Admin login credentials (as requested)
 const ADMIN_EMAIL = "amanchhimpa@iitjodhpur.ac.in";
 const ADMIN_PASSWORD_HINT = "aman@chhimpa"; // Register/create the admin account in Firebase Auth with this password
 
@@ -560,6 +957,7 @@ const views = {
   reels: document.getElementById('view-reels'),
   chats: document.getElementById('view-chats'),
   chatroom: document.getElementById('view-chatroom'),
+  notifications: document.getElementById('view-notifications'),
   settings: document.getElementById('view-settings'),
   snap: document.getElementById('view-snap'),
   adminLogin: document.getElementById('view-admin-login'),
@@ -589,8 +987,8 @@ function isAdminRoute(){
 
 // ===========================================================
 // AUTH STATE + ROUTING
-// (Changing the hash now only re-renders the view, it does NOT reload the
-//  whole page, so switching tabs won't show the login page again)
+// (changing the hash now only re-renders, it does NOT reload the whole page,
+//  so the login page won't show again when switching tabs/screens)
 // ===========================================================
 let authReady = false; // wait until the auth state is known for the first time
 
@@ -614,7 +1012,7 @@ async function renderRoute(user){
   }
 
   currentUser = user;
-  // Only fetch from Firestore if user data hasn't loaded yet (or the user changed)
+  // Only fetch from Firestore if user data hasn't already loaded (or the user changed)
   if(!currentUserData || currentUserData._uid !== user.uid){
     const doc = await db.collection('users').doc(user.uid).get();
     currentUserData = doc.exists ? doc.data() : { name:user.displayName, username:'', verified:false };
@@ -629,6 +1027,8 @@ async function renderRoute(user){
     showView('settings'); loadSettings();
   }else if(hash === 'reels'){
     showView('reels'); listenReels();
+  }else if(hash.startsWith('reel-')){
+    showView('reels'); listenReels(); pendingReelScrollId = hash.slice(5);
   }else if(hash === 'chats'){
     showView('chats'); loadChatList();
   }else if(hash === 'search'){
@@ -639,19 +1039,24 @@ async function renderRoute(user){
     showView('user'); loadUserProfile(hash.slice(5));
   }else if(hash === 'snap'){
     showView('snap'); startSnapCamera();
+  }else if(hash === 'notifications'){
+    showView('notifications'); loadNotificationsView();
   }else{
-    showView('home'); loadStories(); listenFeed();
+    showView('home'); loadStories(); listenFeed(); loadSuggestedUsers();
   }
+
+  startNotificationsListener();
+  startCallsListener();
 }
 
 auth.onAuthStateChanged(async (user)=>{
   authReady = true;
-  currentUserData = null; // fresh login/logout hua, purana cached data hata do
+  currentUserData = null; // fresh login/logout happened, clear the old cached data
   await renderRoute(user);
 });
 
 window.addEventListener('hashchange', async ()=>{
-  if(!authReady) return; // auth state isn't known yet, don't do anything before this
+  if(!authReady) return; // auth state isn't known yet, don't do anything before that
   await renderRoute(auth.currentUser);
 });
 
@@ -662,12 +1067,41 @@ const tabLogin = document.getElementById('tabLogin');
 const tabRegister = document.getElementById('tabRegister');
 const loginForm = document.getElementById('loginForm');
 const registerForm = document.getElementById('registerForm');
-function showLogin(){ tabLogin.classList.add('active'); tabRegister.classList.remove('active'); loginForm.classList.remove('hidden'); registerForm.classList.add('hidden'); }
-function showRegister(){ tabRegister.classList.add('active'); tabLogin.classList.remove('active'); registerForm.classList.remove('hidden'); loginForm.classList.add('hidden'); }
+function showLogin(){ tabLogin.classList.add('active'); tabRegister.classList.remove('active'); loginForm.classList.remove('hidden'); registerForm.classList.add('hidden'); document.getElementById('forgotPasswordBox').classList.add('hidden'); }
+function showRegister(){ tabRegister.classList.add('active'); tabLogin.classList.remove('active'); registerForm.classList.remove('hidden'); loginForm.classList.add('hidden'); document.getElementById('forgotPasswordBox').classList.add('hidden'); }
 tabLogin.onclick = showLogin;
 tabRegister.onclick = showRegister;
 document.getElementById('goRegister').onclick = (e)=>{e.preventDefault(); showRegister();};
 document.getElementById('goLogin').onclick = (e)=>{e.preventDefault(); showLogin();};
+
+document.getElementById('forgotPasswordLink').onclick = (e)=>{
+  e.preventDefault();
+  document.getElementById('resetEmail').value = document.getElementById('loginEmail').value;
+  document.getElementById('resetMsg').textContent = '';
+  loginForm.classList.add('hidden');
+  document.getElementById('forgotPasswordBox').classList.remove('hidden');
+};
+document.getElementById('backToLoginFromReset').onclick = (e)=>{
+  e.preventDefault();
+  document.getElementById('forgotPasswordBox').classList.add('hidden');
+  loginForm.classList.remove('hidden');
+};
+document.getElementById('sendResetBtn').onclick = async ()=>{
+  const email = document.getElementById('resetEmail').value.trim();
+  const msg = document.getElementById('resetMsg');
+  if(!email){ msg.textContent = 'Please enter your email.'; msg.className = 'auth-msg error'; return; }
+  const btn = document.getElementById('sendResetBtn');
+  btn.disabled = true; btn.textContent = 'Sending...';
+  try{
+    await auth.sendPasswordResetEmail(email);
+    msg.textContent = 'Reset link sent! Check your email inbox (and spam folder).';
+    msg.className = 'auth-msg ok';
+  }catch(err){
+    msg.textContent = humanError(err);
+    msg.className = 'auth-msg error';
+  }
+  btn.disabled = false; btn.textContent = 'Send reset link';
+};
 
 function setMsg(el, text, ok){ el.textContent = text; el.className = 'auth-msg ' + (ok ? 'ok' : 'error'); }
 
@@ -679,10 +1113,10 @@ function humanError(err){
     'auth/weak-password': 'Password must be at least 6 characters.',
     'auth/user-not-found': 'This email is not registered — please register first.',
     'auth/wrong-password': 'Incorrect password.',
-    'auth/invalid-credential': 'Incorrect email or password, or this account is not registered.',
-    'auth/too-many-requests': 'Too many attempts — please try again later.'
+    'auth/invalid-credential': 'Email or password is incorrect, or this account is not registered.',
+    'auth/too-many-requests': 'Too many attempts. Please try again later.'
   };
-  return map[code] || (err.message || 'Something went wrong, please try again.');
+  return map[code] || (err.message || 'Something went wrong. Please try again.');
 }
 
 // ===========================================================
@@ -733,7 +1167,7 @@ loginForm.addEventListener('submit', async (e)=>{
     const doc = await db.collection('users').doc(cred.user.uid).get();
     if(doc.exists && doc.data().status === 'blocked'){
       await auth.signOut();
-      setMsg(msg, 'This account has been blocked by the admin.', false);
+      setMsg(msg, 'This account has been blocked by admin.', false);
       btn.disabled = false; return;
     }
     setMsg(msg, 'Logged in! Redirecting...', true);
@@ -742,17 +1176,17 @@ loginForm.addEventListener('submit', async (e)=>{
 });
 
 // ===========================================================
-// SOCIAL LOGIN: Google & Facebook
+// SOCIAL LOGIN: Google
 // ===========================================================
 function socialErrorMessage(err){
   const code = err.code || '';
   const map = {
-    'auth/popup-closed-by-user': 'The popup was closed — please try again.',
+    'auth/popup-closed-by-user': 'Popup was closed. Please try again.',
     'auth/cancelled-popup-request': 'Please try again.',
-    'auth/account-exists-with-different-credential': 'This email is already registered with a different method (email/password or another provider). Please log in with that instead.',
-    'auth/popup-blocked': 'Your browser blocked the popup — allow popups and try again.'
+    'auth/account-exists-with-different-credential': 'This email is already registered using a different method (email/password or another provider). Please log in with that method.',
+    'auth/popup-blocked': 'Your browser blocked the popup. Please allow popups and try again.'
   };
-  return map[code] || (err.message || 'Something went wrong, please try again.');
+  return map[code] || (err.message || 'Something went wrong. Please try again.');
 }
 
 async function uniqueUsernameFrom(base){
@@ -776,7 +1210,7 @@ async function handleSocialSignIn(provider, btn, msgEl){
 
     if(doc.exists && doc.data().status === 'blocked'){
       await auth.signOut();
-      setMsg(msgEl, 'This account has been blocked by the admin.', false);
+      setMsg(msgEl, 'This account has been blocked by admin.', false);
       btn.disabled = false; return;
     }
 
@@ -802,12 +1236,6 @@ document.getElementById('googleAuthBtn').onclick = ()=>{
   handleSocialSignIn(provider, document.getElementById('googleAuthBtn'), msgEl);
 };
 
-document.getElementById('facebookAuthBtn').onclick = ()=>{
-  const provider = new firebase.auth.FacebookAuthProvider();
-  const msgEl = tabLogin.classList.contains('active') ? document.getElementById('loginMsg') : document.getElementById('registerMsg');
-  handleSocialSignIn(provider, document.getElementById('facebookAuthBtn'), msgEl);
-};
-
 function goto(hash){
   if(window.location.hash.slice(1) === hash){
     renderRoute(auth.currentUser);
@@ -816,7 +1244,6 @@ function goto(hash){
   }
 }
 
-document.getElementById('logoutBtnHome').onclick = ()=> auth.signOut().then(()=>{window.location.hash=''; location.reload();});
 document.getElementById('logoutBtnProfile').onclick = ()=> auth.signOut().then(()=>{window.location.hash=''; location.reload();});
 document.getElementById('settingsBtn').onclick = ()=> goto('settings');
 
@@ -828,8 +1255,34 @@ document.getElementById('navProfile').onclick = ()=> goto('profile');
 document.getElementById('searchBtnHome').onclick = ()=> goto('search');
 document.getElementById('backFromSearch').onclick = ()=> goto('');
 
+// ===========================================================
+// UNIFIED CREATE MODAL (Post / Reel) — opened via the + icon
+// ===========================================================
+function showCreateTab(tab){
+  const isReel = tab === 'reel';
+  document.getElementById('createPostPane').classList.toggle('hidden', isReel);
+  document.getElementById('createReelPane').classList.toggle('hidden', !isReel);
+  document.getElementById('createTabPost').classList.toggle('active', !isReel);
+  document.getElementById('createTabReel').classList.toggle('active', isReel);
+}
+function openCreate(defaultTab){
+  showCreateTab(defaultTab || 'post');
+  document.getElementById('createOverlay').classList.remove('hidden');
+}
+function closeCreate(){
+  document.getElementById('createOverlay').classList.add('hidden');
+}
+document.getElementById('createBtnHome').onclick = ()=> openCreate('post');
+document.getElementById('createBtnProfile').onclick = ()=> openCreate('post');
+document.getElementById('createBtnReels').onclick = ()=> openCreate('reel');
+document.getElementById('closeCreate').onclick = closeCreate;
+document.getElementById('createTabPost').onclick = ()=> showCreateTab('post');
+document.getElementById('createTabReel').onclick = ()=> showCreateTab('reel');
+
 document.getElementById('backFromUser').onclick = ()=> goto('');
 document.getElementById('backFromChat').onclick = ()=> goto('chats');
+document.getElementById('notifBtn').onclick = ()=> goto('notifications');
+document.getElementById('backFromNotifs').onclick = ()=> goto('');
 document.getElementById('backFromSettings').onclick = ()=> goto('profile');
 document.getElementById('backFromSnap').onclick = ()=> goto('');
 
@@ -850,20 +1303,18 @@ document.getElementById('postImage').addEventListener('change',(e)=>{
 
 document.getElementById('postBtn').addEventListener('click', async ()=>{
   const caption = document.getElementById('postCaption').value.trim();
-  if(!caption && !selectedFile){ alert("Write something or add a photo first."); return; }
+  if(!caption && !selectedFile){ alert('Write something or add a photo first.'); return; }
   const btn = document.getElementById('postBtn');
   btn.disabled = true; btn.textContent = 'Posting...';
   try{
     let imageURL = null;
     if(selectedFile){
-      const path = `posts/${currentUser.uid}/${Date.now()}_${selectedFile.name}`;
-      const ref = storage.ref(path);
-      await ref.put(selectedFile);
-      imageURL = await ref.getDownloadURL();
+      imageURL = await uploadToCloudinary(selectedFile, 'image');
     }
     await db.collection('posts').add({
       uid: currentUser.uid, name: currentUserData.name || currentUser.displayName || 'User',
       username: currentUserData.username || '', verified: !!currentUserData.verified,
+      photoURL: currentUserData.photoURL || null,
       type: 'post', caption: caption, imageURL: imageURL,
       likes: [], createdAt: firebase.firestore.FieldValue.serverTimestamp()
     });
@@ -871,7 +1322,8 @@ document.getElementById('postBtn').addEventListener('click', async ()=>{
     document.getElementById('postImage').value = '';
     document.getElementById('previewBox').classList.add('hidden');
     selectedFile = null;
-  }catch(err){ alert("Couldn't post: " + err.message); }
+    closeCreate();
+  }catch(err){ alert('Post failed: ' + err.message); }
   finally{ btn.disabled = false; btn.textContent = 'Post'; }
 });
 
@@ -893,20 +1345,229 @@ function storyHTML(name, isMe){
   return `<div class="story"><div class="ring"><div class="inner">${initial}</div></div><span>${isMe ? 'Your story' : escapeHTML(name)}</span></div>`;
 }
 
+// Shows a compact row of other Pichat users (short profile card + Follow button)
+// on the home screen, similar to Instagram's "Suggested for you".
+async function loadSuggestedUsers(){
+  const row = document.getElementById('suggestedRow');
+  row.innerHTML = '';
+  try{
+    const followingIds = new Set((currentUserData && currentUserData.following) || []);
+    const snap = await db.collection('users').limit(25).get();
+    const candidates = snap.docs.filter(d=> d.id !== currentUser.uid && !followingIds.has(d.id)).slice(0, 12);
+    candidates.forEach(doc=>{
+      const u = doc.data();
+      const uid = doc.id;
+      const card = document.createElement('div');
+      card.className = 'suggested-card';
+      card.innerHTML = `
+        <div class="avatar">${avatarInner(u)}</div>
+        <div class="name">${escapeHTML(u.name || 'User')}${verifiedBadge(u.verified)}</div>
+        <div class="username">@${escapeHTML(u.username || '')}</div>
+        <button class="mini-btn">Follow</button>
+      `;
+      card.querySelector('.avatar').onclick = ()=> goto('user-' + uid);
+      card.querySelector('.name').onclick = ()=> goto('user-' + uid);
+      const followBtn = card.querySelector('.mini-btn');
+      followBtn.onclick = async ()=>{
+        followBtn.disabled = true;
+        try{
+          await db.collection('users').doc(currentUser.uid).update({ following: firebase.firestore.FieldValue.arrayUnion(uid) });
+          await db.collection('users').doc(uid).update({ followers: firebase.firestore.FieldValue.arrayUnion(currentUser.uid) });
+          currentUserData.following = currentUserData.following || [];
+          currentUserData.following.push(uid);
+          createNotification(uid, 'follow', (currentUserData.name || 'Someone') + ' started following you', {});
+          card.remove();
+        }catch(err){ alert('Failed to follow: ' + err.message); followBtn.disabled = false; }
+      };
+      row.appendChild(card);
+    });
+  }catch(err){ console.error('Failed to load suggested users:', err.message); }
+}
+
+// Cache of user ids whose accounts are private, used to hide their posts from
+// non-followers in the feed/reels. Refreshed each time the feed starts listening.
+let privateUserIds = new Set();
+async function refreshPrivateUserIds(){
+  try{
+    const snap = await db.collection('users').where('isPrivate','==',true).get();
+    privateUserIds = new Set(snap.docs.map(d=> d.id));
+  }catch(err){ console.error('Failed to load private accounts list:', err.message); }
+}
+
+function isPostVisibleToMe(uid){
+  const blockedIds = (currentUserData && currentUserData.blocked) || [];
+  if(blockedIds.includes(uid)) return false;
+  if(uid === currentUser.uid) return true;
+  if(privateUserIds.has(uid)){
+    const following = (currentUserData && currentUserData.following) || [];
+    return following.includes(uid);
+  }
+  return true;
+}
+
+let feedUnsubscribe = null;
 function listenFeed(){
-  db.collection('posts').orderBy('createdAt','desc').onSnapshot((snap)=>{
-    const feed = document.getElementById('feed');
-    const empty = document.getElementById('feedEmpty');
-    if(snap.empty){ feed.innerHTML=''; empty.classList.remove('hidden'); return; }
-    empty.classList.add('hidden');
-    feed.innerHTML = '';
-    snap.forEach(doc=> feed.appendChild(renderPost(doc.id, doc.data())));
-  });
+  refreshPrivateUserIds().then(renderFeedNow);
+  function renderFeedNow(){
+    if(feedUnsubscribe) feedUnsubscribe();
+    feedUnsubscribe = db.collection('posts').orderBy('createdAt','desc').onSnapshot((snap)=>{
+      const feed = document.getElementById('feed');
+      const empty = document.getElementById('feedEmpty');
+      const visibleDocs = snap.docs.filter(doc => isPostVisibleToMe(doc.data().uid));
+      if(visibleDocs.length === 0){ feed.innerHTML=''; empty.classList.remove('hidden'); return; }
+      empty.classList.add('hidden');
+      feed.innerHTML = '';
+      visibleDocs.forEach(doc=> feed.appendChild(renderPost(doc.id, doc.data())));
+    });
+  }
+}
+
+// Blocking is stored on the blocker's own user doc (blocked: [uids]).
+// Blocked authors' posts are hidden from this user's feed (see listenFeed above).
+async function toggleBlockUser(otherUid, isBlocked){
+  const myRef = db.collection('users').doc(currentUser.uid);
+  if(isBlocked){
+    await myRef.update({ blocked: firebase.firestore.FieldValue.arrayRemove(otherUid) });
+  }else{
+    await myRef.update({ blocked: firebase.firestore.FieldValue.arrayUnion(otherUid) });
+  }
+  const fresh = await myRef.get();
+  currentUserData.blocked = (fresh.exists && fresh.data().blocked) || [];
 }
 
 function verifiedBadge(isVerified){
   if(!isVerified) return '';
   return `<svg class="verified-badge" viewBox="0 0 24 24" width="14" height="14" fill="#2F7CF6" style="flex-shrink:0;"><path d="M12 2l2.4 1.3 2.7-.4 1.3 2.4 2.4 1.3-.4 2.7 1.3 2.4-1.3 2.4.4 2.7-2.4 1.3-1.3 2.4-2.7-.4L12 22l-2.4-1.3-2.7.4-1.3-2.4-2.4-1.3.4-2.7L2.3 12l1.3-2.4-.4-2.7 2.4-1.3 1.3-2.4 2.7.4z"/><path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+}
+
+// Returns either a profile photo <img> or a plain initial-letter fallback, for use inside a .avatar container.
+function avatarInner(u){
+  if(u && u.photoURL) return `<img src="${u.photoURL}">`;
+  return escapeHTML(((u && u.name) ? u.name.trim().charAt(0) : 'U').toUpperCase());
+}
+
+// Opens a fullscreen viewer so a grid photo/reel can actually be watched/played, not
+// just seen as a small muted thumbnail. Reels open edge-to-edge, "Shorts"-style.
+let currentViewedMedia = null;
+function openPostViewer(p){
+  currentViewedMedia = p;
+  const video = document.getElementById('postViewerVideo');
+  const img = document.getElementById('postViewerImg');
+  const overlay = document.getElementById('postViewerOverlay');
+  video.pause(); video.src = '';
+  if(p.videoURL){
+    video.src = p.videoURL;
+    video.muted = false;
+    video.classList.remove('hidden');
+    img.classList.add('hidden');
+    overlay.classList.add('shorts-mode');
+  }else{
+    img.src = p.imageURL;
+    img.classList.remove('hidden');
+    video.classList.add('hidden');
+    overlay.classList.remove('shorts-mode');
+  }
+  document.getElementById('postViewerCaption').textContent = p.caption || '';
+  overlay.classList.remove('hidden');
+}
+document.getElementById('closePostViewer').onclick = ()=>{
+  const video = document.getElementById('postViewerVideo');
+  video.pause(); video.src = '';
+  document.getElementById('postViewerOverlay').classList.add('hidden');
+};
+
+document.getElementById('downloadMediaBtn').onclick = ()=>{
+  if(currentViewedMedia) downloadPost(currentViewedMedia);
+};
+
+// ===========================================================
+// DOWNLOAD (with a "Pichat" watermark burned into downloaded photos;
+// videos are downloaded as-is since burning a watermark into video frames
+// isn't practical to do fully in-browser — the app still shows the
+// Pichat watermark badge on screen while a reel plays/is downloaded).
+// ===========================================================
+async function downloadPost(p){
+  try{
+    if(p.imageURL){
+      await downloadImageWithWatermark(p.imageURL, 'pichat_' + Date.now() + '.jpg');
+    }else if(p.videoURL){
+      await downloadFileDirect(p.videoURL, 'pichat_' + Date.now() + '.mp4');
+    }
+  }catch(err){
+    alert('Download failed: ' + err.message);
+  }
+}
+
+function downloadImageWithWatermark(url, filename){
+  return new Promise((resolve, reject)=>{
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = ()=>{
+      try{
+        const canvas = document.createElement('canvas');
+        canvas.width = img.naturalWidth; canvas.height = img.naturalHeight;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+
+        // "Pichat" watermark badge, right side, vertically centered
+        const padding = Math.round(canvas.width * 0.025);
+        const fontSize = Math.max(16, Math.round(canvas.width * 0.035));
+        ctx.font = `800 ${fontSize}px sans-serif`;
+        const label = 'Pichat';
+        const textWidth = ctx.measureText(label).width;
+        const badgeW = textWidth + fontSize * 2.3;
+        const badgeH = fontSize * 1.9;
+        const badgeX = canvas.width - badgeW - padding;
+        const badgeY = canvas.height / 2 - badgeH / 2;
+
+        ctx.fillStyle = 'rgba(0,0,0,0.45)';
+        roundRectPath(ctx, badgeX, badgeY, badgeW, badgeH, badgeH / 2);
+        ctx.fill();
+
+        ctx.fillStyle = '#2F7CF6';
+        ctx.beginPath();
+        ctx.arc(badgeX + fontSize * 0.9, badgeY + badgeH / 2, fontSize * 0.16, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = '#fff';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(label, badgeX + fontSize * 1.35, badgeY + badgeH / 2);
+
+        canvas.toBlob(blob=>{
+          triggerDownload(URL.createObjectURL(blob), filename);
+          resolve();
+        }, 'image/jpeg', 0.92);
+      }catch(err){ reject(err); }
+    };
+    img.onerror = ()=> reject(new Error('Could not load the image for download.'));
+    img.src = url;
+  });
+}
+
+function roundRectPath(ctx, x, y, w, h, r){
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+
+async function downloadFileDirect(url, filename){
+  const res = await fetch(url);
+  if(!res.ok) throw new Error('Could not fetch the file.');
+  const blob = await res.blob();
+  triggerDownload(URL.createObjectURL(blob), filename);
+}
+
+function triggerDownload(blobUrl, filename){
+  const link = document.createElement('a');
+  link.href = blobUrl;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
 }
 
 function renderPost(id, p){
@@ -916,15 +1577,23 @@ function renderPost(id, p){
   const initial = (p.name || 'U').trim().charAt(0).toUpperCase();
   const time = p.createdAt ? timeAgo(p.createdAt.toDate()) : 'now';
   const isMine = p.uid === currentUser.uid;
+  const isReel = !!p.videoURL;
+  const viewCount = (p.views || []).length;
   div.innerHTML = `
     <div class="post-head">
-      <div class="avatar profile-link" data-uid="${p.uid}" style="cursor:pointer;">${initial}</div>
+      <div class="avatar profile-link" data-uid="${p.uid}" style="cursor:pointer;">${avatarInner(p)}</div>
       <div class="who">
         <span class="name profile-link" data-uid="${p.uid}" style="cursor:pointer;display:flex;align-items:center;gap:5px;">${escapeHTML(p.name)}${verifiedBadge(p.verified)}</span>
         <span class="time">${time}${p.sharedFrom ? ' • Reshared' : ''}</span>
       </div>
     </div>
-    ${p.videoURL ? `<div class="post-img"><video src="${p.videoURL}" controls style="width:100%;max-height:520px;"></video></div>` : ''}
+    ${p.videoURL ? `<div class="post-img" style="position:relative;">
+        <video class="auto-video" src="${p.videoURL}" controls muted loop playsinline data-post-id="${id}" style="width:100%;max-height:520px;"></video>
+        <span style="position:absolute;top:10px;right:10px;background:rgba(0,0,0,0.55);color:#fff;font-size:0.75rem;font-weight:600;padding:4px 9px;border-radius:999px;display:flex;align-items:center;gap:4px;pointer-events:none;">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#fff" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          <span class="view-count-${id}">${viewCount}</span>
+        </span>
+      </div>` : ''}
     ${p.imageURL ? `<div class="post-img"><img src="${p.imageURL}"></div>` : ''}
     ${p.audioURL ? `<audio controls src="${p.audioURL}" style="width:100%;margin-bottom:10px;"></audio>` : ''}
     ${p.caption ? `<div class="post-caption">${escapeHTML(p.caption)}</div>` : ''}
@@ -941,6 +1610,11 @@ function renderPost(id, p){
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
         <span>Share</span>
       </button>
+      <button class="send-to-btn" data-id="${id}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span>Send</span>
+      </button>
+      ${isReel ? `<span style="margin-left:auto;color:var(--muted);font-size:0.8rem;font-weight:600;">${viewCount} views</span>` : ''}
     </div>
     <div class="comments-box hidden" id="comments-${id}">
       <div class="comment-list" id="commentList-${id}"></div>
@@ -949,12 +1623,56 @@ function renderPost(id, p){
   div.querySelector('.like-btn').onclick = ()=> toggleLike(id, liked);
   div.querySelector('.comment-toggle').onclick = ()=> toggleComments(id);
   div.querySelector('.share-btn').onclick = ()=> sharePost(id, p);
+  div.querySelector('.send-to-btn').onclick = ()=> openShareSheet(id, p);
   div.querySelector('.send-comment').onclick = ()=> sendComment(id);
   div.querySelectorAll('.profile-link').forEach(el=>{
     el.onclick = ()=>{ isMine ? goto('profile') : goto('user-'+p.uid); };
   });
   div.querySelector(`#commentInput-${id}`).addEventListener('keydown',(e)=>{ if(e.key === 'Enter') sendComment(id); });
+  const videoEl = div.querySelector('.auto-video');
+  if(videoEl) autoplayObserver.observe(videoEl);
   return div;
+}
+
+// Auto-plays a reel/video when it scrolls into view, pauses it when it scrolls out
+// (mirrors Instagram/Reels-style autoplay behaviour). Also records a view the
+// first time each reel becomes visible in this session.
+const viewedThisSession = new Set();
+// Browsers block unmuted autoplay until the user has interacted with the
+// page at least once. Reels should play with sound automatically after that
+// first tap/click, without the person needing to manually unmute each one.
+let reelsAudioUnlocked = false;
+function unlockReelsAudio(){
+  if(reelsAudioUnlocked) return;
+  reelsAudioUnlocked = true;
+  document.querySelectorAll('#reelsFeed .auto-video').forEach(v=>{
+    if(!v.paused) v.muted = false;
+  });
+}
+document.addEventListener('click', unlockReelsAudio);
+document.addEventListener('touchstart', unlockReelsAudio, { passive: true });
+
+const autoplayObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    const video = entry.target;
+    if(entry.isIntersecting){
+      if(reelsAudioUnlocked && video.closest('.reels-viewport')) video.muted = false;
+      video.play().catch(()=>{ video.muted = true; video.play().catch(()=>{}); });
+      const postId = video.dataset.postId;
+      if(postId) recordView(postId);
+    }
+    else{ video.pause(); }
+  });
+}, { threshold: 0.6 });
+
+async function recordView(postId){
+  if(!postId || viewedThisSession.has(postId)) return;
+  viewedThisSession.add(postId);
+  try{
+    await db.collection('posts').doc(postId).update({
+      views: firebase.firestore.FieldValue.arrayUnion(currentUser.uid)
+    });
+  }catch(err){ console.error('View record failed:', err.message); }
 }
 
 async function sharePost(id, p){
@@ -964,6 +1682,7 @@ async function sharePost(id, p){
       name: currentUserData.name || currentUser.displayName || 'User',
       username: currentUserData.username || '',
       verified: !!currentUserData.verified,
+      photoURL: currentUserData.photoURL || null,
       type: p.type || 'post',
       caption: p.caption || '',
       imageURL: p.imageURL || null,
@@ -976,7 +1695,178 @@ async function sharePost(id, p){
     });
     alert('Shared! This will also show on your profile.');
   }catch(err){
-    alert("Couldn't share: " + err.message);
+    alert('Share failed: ' + err.message);
+  }
+}
+
+// ===========================================================
+// SEND TO (share a post/reel directly into a chat)
+// ===========================================================
+let sendToPost = null; // { id, p }
+
+async function openSendTo(id, p){
+  sendToPost = { id, p };
+  document.getElementById('sendToSearch').value = '';
+  document.getElementById('sendToOverlay').classList.remove('hidden');
+  await renderSendToSuggestions();
+}
+
+document.getElementById('closeSendTo').onclick = ()=>{
+  document.getElementById('sendToOverlay').classList.add('hidden');
+};
+
+// ===========================================================
+// SHARE SHEET (opened from a reel's Send button): choose to send to
+// a Pichat friend, add the reel to your own story, or share it via
+// WhatsApp/Telegram/Facebook/SMS/other apps outside Pichat.
+// ===========================================================
+let shareTarget = null; // { id, p }
+
+function openShareSheet(id, p){
+  shareTarget = { id, p };
+  document.getElementById('shareOverlay').classList.remove('hidden');
+}
+document.getElementById('closeShareSheet').onclick = ()=>{
+  document.getElementById('shareOverlay').classList.add('hidden');
+};
+
+document.getElementById('shareToFriendBtn').onclick = ()=>{
+  if(!shareTarget) return;
+  document.getElementById('shareOverlay').classList.add('hidden');
+  openSendTo(shareTarget.id, shareTarget.p);
+};
+
+document.getElementById('shareToStoryBtn').addEventListener('click', async ()=>{
+  if(!shareTarget) return;
+  const btn = document.getElementById('shareToStoryBtn');
+  btn.disabled = true;
+  try{
+    const { p } = shareTarget;
+    await db.collection('snaps').add({
+      uid: currentUser.uid,
+      name: currentUserData.name || 'User',
+      mediaURL: p.videoURL || p.imageURL,
+      mediaType: p.videoURL ? 'video' : 'image',
+      createdAt: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    document.getElementById('shareOverlay').classList.add('hidden');
+    alert('Added to your story!');
+  }catch(err){ alert('Failed to add to story: ' + err.message); }
+  finally{ btn.disabled = false; }
+});
+
+function reelShareLink(id){
+  return window.location.origin + window.location.pathname + '#reel-' + id;
+}
+
+document.getElementById('shareWhatsapp').onclick = ()=>{
+  if(!shareTarget) return;
+  const { id, p } = shareTarget;
+  const text = encodeURIComponent((p.caption ? p.caption + ' — ' : '') + 'Check out this reel on Pichat: ' + reelShareLink(id));
+  window.open('https://api.whatsapp.com/send?text=' + text, '_blank');
+};
+document.getElementById('shareTelegram').onclick = ()=>{
+  if(!shareTarget) return;
+  const { id, p } = shareTarget;
+  const url = encodeURIComponent(reelShareLink(id));
+  const text = encodeURIComponent(p.caption || 'Check out this reel on Pichat');
+  window.open('https://t.me/share/url?url=' + url + '&text=' + text, '_blank');
+};
+document.getElementById('shareFacebook').onclick = ()=>{
+  if(!shareTarget) return;
+  const url = encodeURIComponent(reelShareLink(shareTarget.id));
+  window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, '_blank');
+};
+document.getElementById('shareSms').onclick = ()=>{
+  if(!shareTarget) return;
+  const { id, p } = shareTarget;
+  const text = encodeURIComponent((p.caption ? p.caption + ' — ' : '') + reelShareLink(id));
+  window.location.href = 'sms:?body=' + text;
+};
+document.getElementById('shareMore').onclick = async ()=>{
+  if(!shareTarget) return;
+  const { id, p } = shareTarget;
+  const link = reelShareLink(id);
+  if(navigator.share){
+    try{ await navigator.share({ title: 'Pichat reel', text: p.caption || 'Check out this reel on Pichat', url: link }); }
+    catch(err){ /* user cancelled the native share sheet */ }
+  }else{
+    try{ await navigator.clipboard.writeText(link); alert('Link copied!'); }
+    catch(err){ prompt('Copy this link:', link); }
+  }
+};
+
+function sendToRow(uid, name){
+  const row = document.createElement('div');
+  row.className = 'post';
+  row.style.cursor = 'pointer';
+  row.style.margin = '0 18px 8px';
+  row.innerHTML = `<div class="post-head"><div class="avatar">${(name||'U').charAt(0).toUpperCase()}</div><div class="who"><span class="name">${escapeHTML(name)}</span></div></div>`;
+  row.onclick = ()=> sendPostToUser(uid, name);
+  return row;
+}
+
+// Shows people the user already has a conversation with, as quick suggestions.
+async function renderSendToSuggestions(){
+  const list = document.getElementById('sendToList');
+  list.innerHTML = '<div style="padding:10px 18px;color:var(--muted);font-size:0.8rem;">Recent chats</div>';
+  const snap = await db.collection('chats').where('participants','array-contains', currentUser.uid).get();
+  if(snap.empty){
+    list.innerHTML += '<div style="padding:0 18px;color:var(--muted);font-size:0.85rem;">No recent chats. Search a username above.</div>';
+    return;
+  }
+  snap.docs.forEach(doc=>{
+    const c = doc.data();
+    const otherUid = c.participants.find(u => u !== currentUser.uid);
+    const otherName = (c.participantNames && c.participantNames[otherUid]) || 'User';
+    list.appendChild(sendToRow(otherUid, otherName));
+  });
+}
+
+document.getElementById('sendToSearch').addEventListener('input', async (e)=>{
+  const q = e.target.value.trim().toLowerCase();
+  const list = document.getElementById('sendToList');
+  if(!q){ await renderSendToSuggestions(); return; }
+  try{
+    const snap = await db.collection('users').orderBy('username').startAt(q).endAt(q + '\uf8ff').limit(20).get();
+    list.innerHTML = '';
+    const matches = snap.docs.filter(doc => doc.id !== currentUser.uid);
+    if(matches.length === 0){ list.innerHTML = '<div style="padding:0 18px;color:var(--muted);font-size:0.85rem;">No users found.</div>'; return; }
+    matches.forEach(doc=> list.appendChild(sendToRow(doc.id, doc.data().name)));
+  }catch(err){
+    list.innerHTML = '<div style="padding:0 18px;color:var(--like);font-size:0.85rem;">Search failed: ' + escapeHTML(err.message) + '</div>';
+  }
+});
+
+async function sendPostToUser(otherUid, otherName){
+  if(!sendToPost) return;
+  const { id, p } = sendToPost;
+  try{
+    const chatId = chatIdFor(currentUser.uid, otherUid);
+    const chatRef = db.collection('chats').doc(chatId);
+    const previewText = p.type === 'reel' ? 'sent a reel' : 'sent a post';
+    await chatRef.set({
+      participants: [currentUser.uid, otherUid],
+      participantNames: { [currentUser.uid]: currentUserData.name || 'User', [otherUid]: otherName },
+      lastMessage: previewText,
+      lastMessageAt: firebase.firestore.FieldValue.serverTimestamp()
+    }, { merge: true });
+    await chatRef.collection('messages').add({
+      senderId: currentUser.uid,
+      type: 'shared_post',
+      postId: id,
+      postType: p.type || 'post',
+      caption: p.caption || '',
+      imageURL: p.imageURL || null,
+      videoURL: p.videoURL || null,
+      text: previewText,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    createNotification(otherUid, 'message', (currentUserData.name || 'Someone') + ' ' + previewText, { chatId });
+    document.getElementById('sendToOverlay').classList.add('hidden');
+    goto('chat-' + otherUid);
+  }catch(err){
+    alert('Failed to send: ' + err.message);
   }
 }
 
@@ -1025,11 +1915,10 @@ async function sendComment(postId){
 async function loadProfile(){
   const doc = await db.collection('users').doc(currentUser.uid).get();
   const data = doc.exists ? doc.data() : {};
-  const initial = (data.name || currentUser.displayName || 'U').trim().charAt(0).toUpperCase();
-  document.getElementById('pAvatar').textContent = initial;
+  document.getElementById('pAvatar').innerHTML = avatarInner(data);
   document.getElementById('pName').innerHTML = escapeHTML(data.name || currentUser.displayName || 'User') + verifiedBadge(data.verified);
   document.getElementById('pUsername').textContent = data.username || '';
-  document.getElementById('pBio').textContent = data.bio || 'Bio is empty.';
+  document.getElementById('pBio').textContent = data.bio || 'Bio is empty right now.';
   document.getElementById('bioInput').value = data.bio || '';
   document.getElementById('pFollowers').textContent = (data.followers || []).length;
   document.getElementById('pFollowing').textContent = (data.following || []).length;
@@ -1040,10 +1929,27 @@ document.getElementById('saveBioBtn').onclick = async ()=>{
   const msg = document.getElementById('bioMsg');
   try{
     await db.collection('users').doc(currentUser.uid).update({ bio });
-    document.getElementById('pBio').textContent = bio || 'Bio is empty.';
-    msg.textContent = 'Bio save ho gaya!'; msg.className = 'auth-msg ok';
-  }catch(err){ msg.textContent = "Couldn't save: " + err.message; msg.className = 'auth-msg error'; }
+    document.getElementById('pBio').textContent = bio || 'Bio is empty right now.';
+    msg.textContent = 'Bio saved!'; msg.className = 'auth-msg ok';
+  }catch(err){ msg.textContent = 'Save failed: ' + err.message; msg.className = 'auth-msg error'; }
 };
+
+document.getElementById('changeDpBtn').onclick = ()=> document.getElementById('dpInput').click();
+document.getElementById('pAvatar').onclick = ()=> document.getElementById('dpInput').click();
+document.getElementById('dpInput').addEventListener('change', async (e)=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  const btn = document.getElementById('changeDpBtn');
+  btn.disabled = true; btn.textContent = 'Uploading...';
+  try{
+    const photoURL = await uploadToCloudinary(file, 'image');
+    await db.collection('users').doc(currentUser.uid).update({ photoURL });
+    currentUserData.photoURL = photoURL;
+    document.getElementById('pAvatar').innerHTML = avatarInner(currentUserData);
+  }catch(err){ alert('Photo upload failed: ' + err.message); }
+  btn.disabled = false; btn.textContent = 'Change photo';
+  document.getElementById('dpInput').value = '';
+});
 
 async function loadMyPosts(){
   const snap = await db.collection('posts').where('uid','==', currentUser.uid).get();
@@ -1057,12 +1963,88 @@ async function loadMyPosts(){
   });
   docs.forEach(doc=>{
     const p = doc.data();
-    if(!p.imageURL) return;
+    const thumb = p.imageURL || p.videoURL;
+    if(!thumb) return;
     const cell = document.createElement('div');
     cell.className = 'cell';
-    cell.innerHTML = `<img src="${p.imageURL}">`;
+    cell.innerHTML = `
+      ${p.imageURL ? `<img src="${p.imageURL}">` : `<video src="${p.videoURL}" muted playsinline></video>`}
+      ${p.videoURL ? `<svg class="reel-badge" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/></svg>` : ''}
+      <div class="cell-actions">
+        <button class="cell-edit-btn" title="Edit"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#fff" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></button>
+        <button class="cell-delete-btn" title="Delete"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#fff" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+      </div>`;
+    cell.querySelector('.cell-edit-btn').onclick = (e)=>{ e.stopPropagation(); openEditPost(doc.id, p); };
+    cell.querySelector('.cell-delete-btn').onclick = (e)=>{ e.stopPropagation(); deletePostConfirm(doc.id); };
+    cell.onclick = ()=> p.videoURL ? openReelInShorts(doc.id) : openPostViewer(p);
     grid.appendChild(cell);
   });
+}
+
+// ===========================================================
+// EDIT / DELETE POST
+// ===========================================================
+let editingPostId = null;
+function openEditPost(id, p){
+  editingPostId = id;
+  document.getElementById('editPostCaption').value = p.caption || '';
+  document.getElementById('editPostMsg').textContent = '';
+  document.getElementById('editPostOverlay').classList.remove('hidden');
+}
+document.getElementById('cancelEditPostBtn').onclick = ()=> document.getElementById('editPostOverlay').classList.add('hidden');
+document.getElementById('saveEditPostBtn').onclick = async ()=>{
+  if(!editingPostId) return;
+  const caption = document.getElementById('editPostCaption').value.trim();
+  const msg = document.getElementById('editPostMsg');
+  try{
+    await db.collection('posts').doc(editingPostId).update({ caption });
+    document.getElementById('editPostOverlay').classList.add('hidden');
+    loadMyPosts();
+  }catch(err){ msg.textContent = 'Save failed: ' + err.message; msg.className = 'auth-msg error'; }
+};
+async function deletePostConfirm(id){
+  if(!confirm('Delete this post? This cannot be undone.')) return;
+  try{
+    await db.collection('posts').doc(id).delete();
+    loadMyPosts();
+  }catch(err){ alert('Delete failed: ' + err.message); }
+}
+
+// ===========================================================
+// FOLLOW LIST (see who follows you / who you follow)
+// ===========================================================
+document.getElementById('pFollowersStat').onclick = ()=> openFollowList(currentUser.uid, 'followers');
+document.getElementById('pFollowingStat').onclick = ()=> openFollowList(currentUser.uid, 'following');
+document.getElementById('uFollowersStat').onclick = ()=> openFollowList(viewedUserUid, 'followers');
+document.getElementById('uFollowingStat').onclick = ()=> openFollowList(viewedUserUid, 'following');
+document.getElementById('closeFollowList').onclick = ()=> document.getElementById('followListOverlay').classList.add('hidden');
+
+async function openFollowList(uid, kind){
+  if(!uid) return;
+  document.getElementById('followListTitle').textContent = kind === 'followers' ? 'Followers' : 'Following';
+  const body = document.getElementById('followListBody');
+  body.innerHTML = '<div style="padding:14px 18px;color:var(--muted);">Loading...</div>';
+  document.getElementById('followListOverlay').classList.remove('hidden');
+  const doc = await db.collection('users').doc(uid).get();
+  const ids = (doc.exists && doc.data()[kind]) || [];
+  if(ids.length === 0){ body.innerHTML = '<div style="padding:14px 18px;color:var(--muted);">Nobody here yet.</div>'; return; }
+  body.innerHTML = '';
+  const chunks = [];
+  for(let i=0;i<ids.length;i+=10) chunks.push(ids.slice(i,i+10));
+  for(const chunk of chunks){
+    const snap = await db.collection('users').where(firebase.firestore.FieldPath.documentId(),'in',chunk).get();
+    snap.forEach(d=>{
+      const u = d.data();
+      const row = document.createElement('div');
+      row.className = 'post'; row.style.cursor = 'pointer'; row.style.margin = '0 18px 8px';
+      row.innerHTML = `<div class="post-head"><div class="avatar">${avatarInner(u)}</div><div class="who"><span class="name">${escapeHTML(u.name)}${verifiedBadge(u.verified)}</span><span class="time">@${escapeHTML(u.username||'')}</span></div></div>`;
+      row.onclick = ()=>{
+        document.getElementById('followListOverlay').classList.add('hidden');
+        d.id === currentUser.uid ? goto('profile') : goto('user-' + d.id);
+      };
+      body.appendChild(row);
+    });
+  }
 }
 
 // ===========================================================
@@ -1107,13 +2089,24 @@ function renderUsers(list){
     row.innerHTML = `
       <td style="display:flex;align-items:center;gap:5px;">${escapeHTML(u.name)}${verifiedBadge(u.verified)}</td><td>@${escapeHTML(u.username)}</td><td>${escapeHTML(u.email)}</td>
       <td>${joined}</td><td><span class="badge ${blocked ? 'blocked' : 'active'}">${blocked ? 'Blocked' : 'Active'}</span></td>
-      <td><button class="mini-btn" data-id="${u.id}">${blocked ? 'Unblock' : 'Block'}</button></td>`;
-    row.querySelector('button').onclick = ()=> toggleBlock(u.id, blocked);
+      <td style="display:flex;gap:6px;flex-wrap:wrap;">
+        <button class="mini-btn" data-action="block">${blocked ? 'Unblock' : 'Block'}</button>
+        <button class="mini-btn" data-action="verify">${u.verified ? 'Remove Blue Tick' : 'Grant Blue Tick'}</button>
+      </td>`;
+    row.querySelector('[data-action="block"]').onclick = ()=> toggleBlock(u.id, blocked);
+    row.querySelector('[data-action="verify"]').onclick = ()=> toggleVerify(u.id, !!u.verified);
     body.appendChild(row);
   });
 }
 async function toggleBlock(uid, isBlocked){
   await db.collection('users').doc(uid).update({ status: isBlocked ? 'active' : 'blocked' });
+  loadUsers();
+}
+async function toggleVerify(uid, isVerified){
+  await db.collection('users').doc(uid).update({
+    verified: !isVerified,
+    verificationStatus: !isVerified ? 'verified' : 'none'
+  });
   loadUsers();
 }
 document.getElementById('searchUser').addEventListener('input',(e)=>{
@@ -1146,11 +2139,10 @@ async function loadUserProfile(uid){
   const doc = await db.collection('users').doc(uid).get();
   if(!doc.exists){ document.getElementById('uName').textContent = 'User not found'; return; }
   const u = doc.data();
-  const initial = (u.name || 'U').trim().charAt(0).toUpperCase();
-  document.getElementById('uAvatar').textContent = initial;
+  document.getElementById('uAvatar').innerHTML = avatarInner(u);
   document.getElementById('uName').innerHTML = escapeHTML(u.name) + verifiedBadge(u.verified);
   document.getElementById('uUsername').textContent = u.username || '';
-  document.getElementById('uBio').textContent = u.bio || 'Bio is empty.';
+  document.getElementById('uBio').textContent = u.bio || 'Bio is empty right now.';
   document.getElementById('uFollowers').textContent = (u.followers||[]).length;
   document.getElementById('uFollowing').textContent = (u.following||[]).length;
 
@@ -1161,9 +2153,27 @@ async function loadUserProfile(uid){
 
   document.getElementById('messageBtn').onclick = ()=> goto('chat-' + uid);
 
-  const postsSnap = await db.collection('posts').where('uid','==',uid).get();
+  const isBlocked = (currentUserData.blocked || []).includes(uid);
+  const blockBtn = document.getElementById('blockUserBtn');
+  blockBtn.textContent = isBlocked ? 'Unblock' : 'Block';
+  blockBtn.onclick = async ()=>{
+    if(!isBlocked && !confirm('Block this user? They will no longer be able to message you or see your posts.')) return;
+    await toggleBlockUser(uid, isBlocked);
+    loadUserProfile(uid);
+  };
+
+  const canSeePosts = !u.isPrivate || isFollowing;
+  document.getElementById('privateLockMsg').classList.toggle('hidden', canSeePosts);
+  document.getElementById('userPosts').classList.toggle('hidden', !canSeePosts);
+
   const grid = document.getElementById('userPosts');
   grid.innerHTML = '';
+  if(!canSeePosts){
+    document.getElementById('uPostCount').textContent = '—';
+    return;
+  }
+
+  const postsSnap = await db.collection('posts').where('uid','==',uid).get();
   document.getElementById('uPostCount').textContent = postsSnap.size;
   const sortedDocs = postsSnap.docs.slice().sort((a,b)=>{
     const ta = a.data().createdAt ? a.data().createdAt.toMillis() : 0;
@@ -1176,7 +2186,11 @@ async function loadUserProfile(uid){
     if(!thumb) return;
     const cell = document.createElement('div');
     cell.className = 'cell';
-    cell.innerHTML = p.imageURL ? `<img src="${p.imageURL}">` : `<video src="${p.videoURL}" muted></video>`;
+    cell.innerHTML = `
+      ${p.imageURL ? `<img src="${p.imageURL}">` : `<video src="${p.videoURL}" muted playsinline></video>`}
+      ${p.videoURL ? `<svg class="reel-badge" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/></svg>` : ''}
+    `;
+    cell.onclick = ()=> p.videoURL ? openReelInShorts(d.id) : openPostViewer(p);
     grid.appendChild(cell);
   });
 }
@@ -1210,49 +2224,123 @@ document.getElementById('reelAudio').addEventListener('change',(e)=>{
 
 document.getElementById('reelPostBtn').addEventListener('click', async ()=>{
   const caption = document.getElementById('reelCaption').value.trim();
-  if(!selectedReelVideo){ alert('A video is required for a reel.'); return; }
+  if(!selectedReelVideo){ alert('A video is required for the reel.'); return; }
   const btn = document.getElementById('reelPostBtn');
   btn.disabled = true; btn.textContent = 'Posting reel...';
   try{
-    const vPath = `reels/${currentUser.uid}/${Date.now()}_${selectedReelVideo.name}`;
-    const vRef = storage.ref(vPath);
-    await vRef.put(selectedReelVideo);
-    const videoURL = await vRef.getDownloadURL();
+    const videoURL = await uploadToCloudinary(selectedReelVideo, 'video');
 
     let audioURL = null;
     if(selectedReelAudio){
-      const aPath = `songs/${currentUser.uid}/${Date.now()}_${selectedReelAudio.name}`;
-      const aRef = storage.ref(aPath);
-      await aRef.put(selectedReelAudio);
-      audioURL = await aRef.getDownloadURL();
+      audioURL = await uploadToCloudinary(selectedReelAudio, 'video');
     }
 
     await db.collection('posts').add({
       uid: currentUser.uid, name: currentUserData.name || currentUser.displayName || 'User',
       username: currentUserData.username || '', verified: !!currentUserData.verified,
+      photoURL: currentUserData.photoURL || null,
       type: 'reel', caption: caption, videoURL: videoURL, audioURL: audioURL,
       likes: [], createdAt: firebase.firestore.FieldValue.serverTimestamp()
     });
+
+    // notify followers about the new reel (fetch fresh, since cached data can be stale)
+    const myFreshDoc = await db.collection('users').doc(currentUser.uid).get();
+    const followers = (myFreshDoc.exists && myFreshDoc.data().followers) || [];
+    const reelText = (currentUserData.name || 'Someone') + ' posted a new reel';
+    followers.forEach(followerUid=> createNotification(followerUid, 'reel', reelText, {}));
 
     document.getElementById('reelCaption').value = '';
     document.getElementById('reelVideo').value = '';
     document.getElementById('reelAudio').value = '';
     document.getElementById('reelPreviewBox').classList.add('hidden');
     selectedReelVideo = null; selectedReelAudio = null;
-  }catch(err){ alert("Couldn't post reel: " + err.message); }
+    closeCreate();
+  }catch(err){ alert('Reel post failed: ' + err.message); }
   finally{ btn.disabled = false; btn.textContent = 'Post reel'; }
 });
 
+// Renders a single reel as a fullscreen, edge-to-edge "Shorts"-style card
+// for the dedicated Reels tab (distinct from the normal feed card layout).
+function renderReelCard(id, p){
+  const div = document.createElement('div');
+  div.className = 'reel-card';
+  const liked = (p.likes || []).includes(currentUser.uid);
+  const viewCount = (p.views || []).length;
+  const isMine = p.uid === currentUser.uid;
+  div.innerHTML = `
+    <video class="auto-video" src="${p.videoURL}" muted loop playsinline data-post-id="${id}"></video>
+    <div class="pichat-watermark"><span class="dot-mini"></span>Pichat</div>
+    <div class="reel-view-badge">
+      <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#fff" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      <span>${viewCount}</span>
+    </div>
+    <div class="reel-card-overlay-bottom">
+      <div class="name profile-link">${escapeHTML(p.name)}${verifiedBadge(p.verified)}</div>
+      ${p.caption ? `<div>${escapeHTML(p.caption)}</div>` : ''}
+    </div>
+    <div class="reel-actions-vertical">
+      <button class="like-btn ${liked ? 'liked' : ''}">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="${liked ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+        <span>${(p.likes||[]).length}</span>
+      </button>
+      <button class="comment-toggle">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span>Cmt</span>
+      </button>
+      <button class="send-to-btn">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span>Send</span>
+      </button>
+      <button class="download-btn">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span>Save</span>
+      </button>
+    </div>
+    <div class="comments-box hidden" id="comments-${id}" style="position:absolute;left:0;right:0;bottom:0;max-height:55%;background:var(--paper);border-radius:16px 16px 0 0;z-index:4;">
+      <div class="comment-list" id="commentList-${id}" style="max-height:calc(100% - 50px);overflow-y:auto;"></div>
+      <div class="comment-input-row"><input type="text" placeholder="Write a comment..." id="commentInput-${id}"><button data-id="${id}" class="send-comment">Send</button></div>
+    </div>`;
+  div.querySelector('.like-btn').onclick = ()=> toggleLike(id, liked);
+  div.querySelector('.comment-toggle').onclick = ()=> toggleComments(id);
+  div.querySelector('.send-to-btn').onclick = ()=> openShareSheet(id, p);
+  div.querySelector('.download-btn').onclick = ()=> downloadPost(p);
+  div.querySelector('.send-comment').onclick = ()=> sendComment(id);
+  div.querySelector(`#commentInput-${id}`).addEventListener('keydown',(e)=>{ if(e.key === 'Enter') sendComment(id); });
+  div.querySelector('.profile-link').onclick = ()=>{ isMine ? goto('profile') : goto('user-' + p.uid); };
+  const videoEl = div.querySelector('.auto-video');
+  autoplayObserver.observe(videoEl);
+  videoEl.onclick = ()=>{ videoEl.muted = !videoEl.muted; }; // tap the reel to toggle sound, like Shorts/Reels apps
+  return div;
+}
+
+// Lets a reel opened elsewhere (profile grid, a reel shared in chat) jump straight
+// into the fullscreen Shorts-style Reels tab, scrolled to that specific reel.
+let pendingReelScrollId = null;
+function openReelInShorts(postId){
+  pendingReelScrollId = postId;
+  goto('reels');
+}
+
+let reelsUnsubscribe = null;
 function listenReels(){
-  db.collection('posts').orderBy('createdAt','desc').onSnapshot((snap)=>{
-    const feed = document.getElementById('reelsFeed');
-    const empty = document.getElementById('reelsEmpty');
-    const reelDocs = snap.docs.filter(d => d.data().type === 'reel');
-    if(reelDocs.length === 0){ feed.innerHTML=''; empty.classList.remove('hidden'); return; }
-    empty.classList.add('hidden');
-    feed.innerHTML = '';
-    reelDocs.forEach(doc=> feed.appendChild(renderPost(doc.id, doc.data())));
-  });
+  refreshPrivateUserIds().then(renderReelsNow);
+  function renderReelsNow(){
+    if(reelsUnsubscribe) reelsUnsubscribe();
+    reelsUnsubscribe = db.collection('posts').orderBy('createdAt','desc').onSnapshot((snap)=>{
+      const feed = document.getElementById('reelsFeed');
+      const empty = document.getElementById('reelsEmpty');
+      const reelDocs = snap.docs.filter(d => d.data().type === 'reel' && isPostVisibleToMe(d.data().uid));
+      if(reelDocs.length === 0){ feed.innerHTML=''; empty.classList.remove('hidden'); return; }
+      empty.classList.add('hidden');
+      feed.innerHTML = '';
+      reelDocs.forEach(doc=> feed.appendChild(renderReelCard(doc.id, doc.data())));
+      if(pendingReelScrollId){
+        const targetVideo = feed.querySelector(`[data-post-id="${pendingReelScrollId}"]`);
+        if(targetVideo) targetVideo.closest('.reel-card').scrollIntoView({ block: 'start' });
+        pendingReelScrollId = null;
+      }
+    });
+  }
 }
 
 // ===========================================================
@@ -1309,7 +2397,7 @@ document.getElementById('globalSearchInput').addEventListener('input', async (e)
   }catch(err){
     results.innerHTML = '';
     empty.classList.remove('hidden');
-    empty.textContent = 'Search me error aayi: ' + err.message;
+    empty.textContent = 'Search failed: ' + err.message;
   }
 });
 
@@ -1345,6 +2433,7 @@ async function openChatRoom(otherUid){
   const otherDoc = await db.collection('users').doc(otherUid).get();
   const otherData = otherDoc.exists ? otherDoc.data() : { name:'User' };
   document.getElementById('chatRoomName').innerHTML = escapeHTML(otherData.name) + verifiedBadge(otherData.verified);
+  document.getElementById('chatRoomName').onclick = ()=> goto('user-' + otherUid);
 
   if(activeChatListener) activeChatListener();
   activeChatListener = db.collection('chats').doc(activeChatId).collection('messages').orderBy('createdAt','asc')
@@ -1354,20 +2443,40 @@ async function openChatRoom(otherUid){
       snap.forEach(d=>{
         const m = d.data();
         const mine = m.senderId === currentUser.uid;
+        let bubbleInner;
+        if(m.type === 'shared_post'){
+          bubbleInner = `
+            <div style="font-size:0.78rem;font-weight:600;margin-bottom:6px;opacity:0.85;">${m.postType === 'reel' ? '🎬 Reel' : '📷 Post'}</div>
+            ${m.videoURL ? `<video src="${m.videoURL}" muted loop playsinline controls style="width:220px;max-width:60vw;border-radius:10px;display:block;"></video>` : ''}
+            ${m.imageURL ? `<img src="${m.imageURL}" style="width:220px;max-width:60vw;border-radius:10px;display:block;">` : ''}
+            ${m.caption ? `<div style="margin-top:6px;">${escapeHTML(m.caption)}</div>` : ''}
+            <div style="margin-top:6px;"><a href="#" class="view-shared-post" data-pid="${m.postId}" data-ptype="${m.postType}" style="color:inherit;text-decoration:underline;font-size:0.78rem;">View ${m.postType === 'reel' ? 'reel' : 'in feed'}</a></div>`;
+        }else{
+          bubbleInner = escapeHTML(m.text);
+        }
         box.innerHTML += `<div style="display:flex;justify-content:${mine?'flex-end':'flex-start'};margin-bottom:8px;">
           <div style="max-width:70%;padding:9px 13px;border-radius:16px;font-size:0.88rem;
             background:${mine?'var(--grad-brand)':'var(--card)'};color:${mine?'#fff':'var(--ink)'};border:${mine?'none':'1px solid var(--line)'};">
-            ${escapeHTML(m.text)}
+            ${bubbleInner}
           </div>
         </div>`;
       });
       box.scrollTop = box.scrollHeight;
+      box.querySelectorAll('.view-shared-post').forEach(a=>{
+        a.onclick = (e)=>{
+          e.preventDefault();
+          if(a.dataset.ptype === 'reel') openReelInShorts(a.dataset.pid);
+          else goto('');
+        };
+      });
     }, err=>{
-      alert("Couldn't load messages: " + err.message);
+      alert('Failed to load messages: ' + err.message);
     });
 
   document.getElementById('sendChatMessageBtn').onclick = ()=> sendChatMessage(otherUid, otherData.name);
   document.getElementById('chatMessageInput').onkeydown = (e)=>{ if(e.key==='Enter') sendChatMessage(otherUid, otherData.name); };
+  document.getElementById('audioCallBtn').onclick = ()=> startCall(otherUid, otherData.name, 'audio');
+  document.getElementById('videoCallBtn').onclick = ()=> startCall(otherUid, otherData.name, 'video');
 }
 
 async function sendChatMessage(otherUid, otherName){
@@ -1387,11 +2496,315 @@ async function sendChatMessage(otherUid, otherName){
     await chatRef.collection('messages').add({
       senderId: currentUser.uid, text: text, createdAt: firebase.firestore.FieldValue.serverTimestamp()
     });
+    createNotification(otherUid, 'message', (currentUserData.name || 'Someone') + ' sent you a message: "' + text.slice(0,40) + (text.length>40?'...':'') + '"', { chatId });
   }catch(err){
-    alert("Couldn't send message: " + err.message);
+    alert('Failed to send message: ' + err.message);
     input.value = text;
   }
 }
+
+// ===========================================================
+// NOTIFICATIONS
+// ===========================================================
+let notifListenerStarted = false;
+let notifUnsubscribe = null;
+let knownNotifIds = new Set();
+let notifFirstSnapshot = true;
+
+// Writes a notification document for `toUid`. The recipient's own settings
+// (checked client-side, see applyNotifPrefs) decide whether it's actually shown to them.
+async function createNotification(toUid, type, text, extra){
+  if(toUid === currentUser.uid) return; // don't notify yourself
+  try{
+    await db.collection('notifications').add({
+      toUid, fromUid: currentUser.uid, fromName: currentUserData.name || 'User',
+      type, text, read: false,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      ...(extra || {})
+    });
+  }catch(err){ console.error('Notification create failed:', err.message); }
+}
+
+// Filters a list of notification docs based on the current user's saved preferences.
+function applyNotifPrefs(list){
+  const prefs = (currentUserData && currentUserData.notifSettings) || {};
+  if(prefs.enabled === false) return [];
+  return list.filter(n=>{
+    if(n.type === 'message' && prefs.messages === false) return false;
+    if(n.type === 'reel' && prefs.reels === false) return false;
+    return true;
+  });
+}
+
+function startNotificationsListener(){
+  if(notifListenerStarted || !currentUser) return;
+  notifListenerStarted = true;
+  notifFirstSnapshot = true;
+  // NOTE: intentionally no .orderBy() here — combining it with the .where() below
+  // would require a manual Firestore composite index that this app doesn't have,
+  // which made the whole listener silently fail. We sort client-side instead.
+  notifUnsubscribe = db.collection('notifications').where('toUid','==',currentUser.uid)
+    .limit(50)
+    .onSnapshot((snap)=>{
+      const all = snap.docs.map(d=> ({ id:d.id, ...d.data() }))
+        .sort((a,b)=> (b.createdAt ? b.createdAt.toMillis() : 0) - (a.createdAt ? a.createdAt.toMillis() : 0));
+      const visible = applyNotifPrefs(all);
+      const unread = visible.filter(n=> !n.read);
+
+      const badge = document.getElementById('notifBadge');
+      if(unread.length > 0){ badge.textContent = unread.length > 9 ? '9+' : unread.length; badge.classList.remove('hidden'); }
+      else{ badge.classList.add('hidden'); }
+
+      // Show a native browser notification for anything new (not on the very first load)
+      if(!notifFirstSnapshot){
+        snap.docChanges().forEach(change=>{
+          if(change.type === 'added'){
+            const n = { id: change.doc.id, ...change.doc.data() };
+            if(applyNotifPrefs([n]).length && !knownNotifIds.has(n.id)){
+              showBrowserNotification(n);
+            }
+          }
+        });
+      }
+      all.forEach(n=> knownNotifIds.add(n.id));
+      notifFirstSnapshot = false;
+
+      window._latestNotifs = all; // used by loadNotificationsView()
+      if(!views.notifications.classList.contains('hidden')) renderNotifList(all);
+    }, err=> console.error('Notifications listener error:', err.message));
+}
+
+function showBrowserNotification(n){
+  if(!('Notification' in window) || Notification.permission !== 'granted') return;
+  try{ new Notification('Pichat', { body: n.text }); }catch(e){}
+}
+
+async function loadNotificationsView(){
+  const list = window._latestNotifs || [];
+  renderNotifList(list);
+  // mark visible unread notifications as read
+  const unread = applyNotifPrefs(list).filter(n=> !n.read);
+  unread.forEach(n=> db.collection('notifications').doc(n.id).update({ read:true }).catch(()=>{}));
+}
+
+function renderNotifList(list){
+  const box = document.getElementById('notifList');
+  const empty = document.getElementById('notifEmpty');
+  const visible = applyNotifPrefs(list);
+  if(visible.length === 0){ box.innerHTML=''; empty.classList.remove('hidden'); return; }
+  empty.classList.add('hidden');
+  box.innerHTML = '';
+  visible.forEach(n=>{
+    const time = n.createdAt ? timeAgo(n.createdAt.toDate()) : 'now';
+    const div = document.createElement('div');
+    div.className = 'notif-item' + (n.read ? '' : ' unread');
+    div.innerHTML = `<div class="avatar" style="width:38px;height:38px;font-size:0.9rem;">${(n.fromName||'U').charAt(0).toUpperCase()}</div>
+      <div><div class="notif-text">${escapeHTML(n.text)}</div><div class="notif-time">${time}</div></div>`;
+    div.onclick = ()=>{
+      if(n.type === 'message' && n.chatId){ goto('chat-' + n.fromUid); }
+      else if(n.type === 'reel'){ goto('reels'); }
+    };
+    box.appendChild(div);
+  });
+}
+
+// ===========================================================
+// CALLS (1:1 audio/video calling via WebRTC, signaled through Firestore)
+// ===========================================================
+const RTC_CONFIG = { iceServers: [
+  { urls: ['stun:stun.l.google.com:19302', 'stun:stun1.l.google.com:19302'] }
+] };
+
+let peerConnection = null;
+let localCallStream = null;
+let currentCallId = null;
+let currentCallRole = null; // 'caller' | 'callee'
+let currentCallType = 'audio';
+let currentCallOtherUid = null;
+let callDocUnsub = null;
+let remoteCandidatesUnsub = null;
+let callsListenerUnsub = null;
+let micOn = true, camOn = true;
+
+function startCallsListener(){
+  if(callsListenerUnsub || !currentUser) return;
+  // Single equality filter only (no orderBy/second filter) so this doesn't need a
+  // manual Firestore composite index — same fix as the notifications listener.
+  callsListenerUnsub = db.collection('calls').where('calleeId','==', currentUser.uid)
+    .onSnapshot(snap=>{
+      snap.docChanges().forEach(change=>{
+        const call = { id: change.doc.id, ...change.doc.data() };
+        if(change.type === 'added' && call.status === 'ringing'){
+          showIncomingCall(call);
+        }
+        if(change.type === 'modified' && (call.status === 'ended' || call.status === 'declined' || call.status === 'cancelled')){
+          if(call.id === currentCallId) endCall(false);
+          document.getElementById('incomingCallOverlay').classList.add('hidden');
+        }
+      });
+    }, err=> console.error('Calls listener error:', err.message));
+}
+
+function buildPeerConnection(otherUid){
+  const pc = new RTCPeerConnection(RTC_CONFIG);
+  pc.ontrack = (e)=>{
+    document.getElementById('remoteVideoEl').srcObject = e.streams[0];
+  };
+  pc.onconnectionstatechange = ()=>{
+    if(pc.connectionState === 'connected'){
+      document.getElementById('callStatusText').textContent = 'Connected';
+    }
+  };
+  return pc;
+}
+
+async function startCall(otherUid, otherName, type){
+  if(currentCallId){ alert('You are already in a call.'); return; }
+  try{
+    currentCallType = type;
+    currentCallRole = 'caller';
+    currentCallOtherUid = otherUid;
+    localCallStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: type === 'video' });
+    openCallUI(otherName, type, 'Calling...');
+
+    peerConnection = buildPeerConnection(otherUid);
+    localCallStream.getTracks().forEach(t=> peerConnection.addTrack(t, localCallStream));
+
+    const callRef = db.collection('calls').doc();
+    currentCallId = callRef.id;
+
+    peerConnection.onicecandidate = (e)=>{
+      if(e.candidate) callRef.collection('callerCandidates').add(e.candidate.toJSON());
+    };
+
+    const offer = await peerConnection.createOffer();
+    await peerConnection.setLocalDescription(offer);
+
+    await callRef.set({
+      callerId: currentUser.uid, callerName: currentUserData.name || 'User',
+      calleeId: otherUid, calleeName: otherName, type,
+      status: 'ringing',
+      offer: { type: offer.type, sdp: offer.sdp },
+      createdAt: firebase.firestore.FieldValue.serverTimestamp()
+    });
+
+    callDocUnsub = callRef.onSnapshot(async (doc)=>{
+      const data = doc.data();
+      if(!data) return;
+      if(data.answer && peerConnection && !peerConnection.currentRemoteDescription){
+        await peerConnection.setRemoteDescription(new RTCSessionDescription(data.answer));
+      }
+      if(data.status === 'declined'){ alert((otherName||'User') + ' declined the call.'); endCall(false); }
+      if(data.status === 'ended'){ endCall(false); }
+    });
+
+    remoteCandidatesUnsub = callRef.collection('calleeCandidates').onSnapshot(snap=>{
+      snap.docChanges().forEach(change=>{
+        if(change.type === 'added' && peerConnection){
+          peerConnection.addIceCandidate(new RTCIceCandidate(change.doc.data())).catch(()=>{});
+        }
+      });
+    });
+  }catch(err){
+    alert('Could not start call: ' + err.message);
+    endCall(false);
+  }
+}
+
+function showIncomingCall(call){
+  currentCallId = call.id;
+  currentCallRole = 'callee';
+  currentCallType = call.type;
+  currentCallOtherUid = call.callerId;
+  document.getElementById('incomingCallAvatar').textContent = (call.callerName || 'U').charAt(0).toUpperCase();
+  document.getElementById('incomingCallerName').textContent = call.callerName || 'Someone';
+  document.getElementById('incomingCallType').textContent = 'Incoming ' + (call.type === 'video' ? 'video' : 'voice') + ' call';
+  document.getElementById('incomingCallOverlay').classList.remove('hidden');
+
+  document.getElementById('acceptCallBtn').onclick = ()=> acceptCall(call);
+  document.getElementById('declineCallBtn').onclick = ()=>{
+    db.collection('calls').doc(call.id).update({ status: 'declined' }).catch(()=>{});
+    document.getElementById('incomingCallOverlay').classList.add('hidden');
+    currentCallId = null; currentCallRole = null;
+  };
+}
+
+async function acceptCall(call){
+  document.getElementById('incomingCallOverlay').classList.add('hidden');
+  try{
+    localCallStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: call.type === 'video' });
+    openCallUI(call.callerName, call.type, 'Connecting...');
+
+    peerConnection = buildPeerConnection(call.callerId);
+    localCallStream.getTracks().forEach(t=> peerConnection.addTrack(t, localCallStream));
+
+    const callRef = db.collection('calls').doc(call.id);
+    peerConnection.onicecandidate = (e)=>{
+      if(e.candidate) callRef.collection('calleeCandidates').add(e.candidate.toJSON());
+    };
+
+    await peerConnection.setRemoteDescription(new RTCSessionDescription(call.offer));
+    const answer = await peerConnection.createAnswer();
+    await peerConnection.setLocalDescription(answer);
+    await callRef.update({ status: 'accepted', answer: { type: answer.type, sdp: answer.sdp } });
+
+    callRef.collection('callerCandidates').onSnapshot(snap=>{
+      snap.docChanges().forEach(change=>{
+        if(change.type === 'added' && peerConnection){
+          peerConnection.addIceCandidate(new RTCIceCandidate(change.doc.data())).catch(()=>{});
+        }
+      });
+    });
+
+    callDocUnsub = callRef.onSnapshot(doc=>{
+      const data = doc.data();
+      if(data && data.status === 'ended') endCall(false);
+    });
+  }catch(err){
+    alert('Could not join call: ' + err.message);
+    endCall(true);
+  }
+}
+
+function openCallUI(peerName, type, statusText){
+  document.getElementById('callPeerName').textContent = peerName || 'User';
+  document.getElementById('callStatusText').textContent = statusText;
+  document.getElementById('toggleCamBtn').style.display = type === 'video' ? 'flex' : 'none';
+  document.getElementById('localVideoEl').style.display = type === 'video' ? 'block' : 'none';
+  document.getElementById('localVideoEl').srcObject = localCallStream;
+  document.getElementById('callOverlay').classList.remove('hidden');
+  micOn = true; camOn = true;
+}
+
+function endCall(updateFirestore){
+  if(currentCallId && updateFirestore){
+    db.collection('calls').doc(currentCallId).update({ status: 'ended' }).catch(()=>{});
+  }
+  if(callDocUnsub){ callDocUnsub(); callDocUnsub = null; }
+  if(remoteCandidatesUnsub){ remoteCandidatesUnsub(); remoteCandidatesUnsub = null; }
+  if(peerConnection){ peerConnection.close(); peerConnection = null; }
+  if(localCallStream){ localCallStream.getTracks().forEach(t=> t.stop()); localCallStream = null; }
+  document.getElementById('remoteVideoEl').srcObject = null;
+  document.getElementById('localVideoEl').srcObject = null;
+  document.getElementById('callOverlay').classList.add('hidden');
+  document.getElementById('incomingCallOverlay').classList.add('hidden');
+  currentCallId = null; currentCallRole = null; currentCallOtherUid = null;
+}
+
+document.getElementById('endCallBtn').onclick = ()=> endCall(true);
+
+document.getElementById('toggleMicBtn').onclick = ()=>{
+  if(!localCallStream) return;
+  micOn = !micOn;
+  localCallStream.getAudioTracks().forEach(t=> t.enabled = micOn);
+  document.getElementById('toggleMicBtn').style.background = micOn ? 'rgba(255,255,255,0.2)' : '#E0245E';
+};
+document.getElementById('toggleCamBtn').onclick = ()=>{
+  if(!localCallStream) return;
+  camOn = !camOn;
+  localCallStream.getVideoTracks().forEach(t=> t.enabled = camOn);
+  document.getElementById('toggleCamBtn').style.background = camOn ? 'rgba(255,255,255,0.2)' : '#E0245E';
+};
 
 // ===========================================================
 // SETTINGS: edit profile, change password, blue tick request
@@ -1403,17 +2816,65 @@ async function loadSettings(){
   document.getElementById('setUsername').value = u.username || '';
   document.getElementById('setBio').value = u.bio || '';
 
+  const prefs = u.notifSettings || {};
+  document.getElementById('notifEnabled').checked = prefs.enabled !== false;
+  document.getElementById('notifMessages').checked = prefs.messages !== false;
+  document.getElementById('notifReels').checked = prefs.reels !== false;
+
+  document.getElementById('privateAccountToggle').checked = !!u.isPrivate;
+  currentUserData.blocked = u.blocked || [];
+  loadBlockedUsersList();
+
   const verifyBtn = document.getElementById('requestVerifyBtn');
   const verifyMsg = document.getElementById('verifyMsg');
   if(u.verified){
     verifyBtn.disabled = true; verifyBtn.textContent = 'Verified ✓';
     verifyMsg.textContent = 'You already have the blue tick.'; verifyMsg.className = 'auth-msg ok';
   }else if(u.verificationStatus === 'pending'){
-    verifyBtn.disabled = true; verifyBtn.textContent = 'Request submitted';
-    verifyMsg.textContent = 'Your request is under review by the admin.'; verifyMsg.className = 'auth-msg ok';
+    verifyBtn.disabled = true; verifyBtn.textContent = 'Request already sent';
+    verifyMsg.textContent = 'Your request is under review by admin.'; verifyMsg.className = 'auth-msg ok';
   }else{
-    verifyBtn.disabled = false; verifyBtn.textContent = "I've paid ₹50";
+    verifyBtn.disabled = false; verifyBtn.textContent = 'I have paid ₹50';
     verifyMsg.textContent = ''; verifyMsg.className = 'auth-msg';
+  }
+}
+
+document.getElementById('privateAccountToggle').addEventListener('change', async (e)=>{
+  const msg = document.getElementById('privacyMsg');
+  const val = e.target.checked;
+  try{
+    await db.collection('users').doc(currentUser.uid).update({ isPrivate: val });
+    currentUserData.isPrivate = val;
+    msg.textContent = val ? 'Your account is now private.' : 'Your account is now public.';
+    msg.className = 'auth-msg ok';
+  }catch(err){
+    e.target.checked = !val;
+    msg.textContent = 'Save failed: ' + err.message; msg.className = 'auth-msg error';
+  }
+});
+
+async function loadBlockedUsersList(){
+  const list = document.getElementById('blockedUsersList');
+  const empty = document.getElementById('blockedUsersEmpty');
+  const blockedIds = currentUserData.blocked || [];
+  list.innerHTML = '';
+  if(blockedIds.length === 0){ empty.classList.remove('hidden'); return; }
+  empty.classList.add('hidden');
+  const chunks = [];
+  for(let i=0;i<blockedIds.length;i+=10) chunks.push(blockedIds.slice(i,i+10));
+  for(const chunk of chunks){
+    const snap = await db.collection('users').where(firebase.firestore.FieldPath.documentId(),'in',chunk).get();
+    snap.forEach(d=>{
+      const u2 = d.data();
+      const row = document.createElement('div');
+      row.className = 'toggle-row';
+      row.innerHTML = `<span>${escapeHTML(u2.name || 'User')}</span>`;
+      const btn = document.createElement('button');
+      btn.className = 'mini-btn'; btn.textContent = 'Unblock';
+      btn.onclick = async ()=>{ await toggleBlockUser(d.id, true); loadBlockedUsersList(); };
+      row.appendChild(btn);
+      list.appendChild(row);
+    });
   }
 }
 
@@ -1429,8 +2890,8 @@ document.getElementById('saveProfileBtn').onclick = async ()=>{
     }
     await db.collection('users').doc(currentUser.uid).update({ name, username, bio });
     await currentUser.updateProfile({ displayName: name });
-    msg.textContent = 'Profile save ho gaya!'; msg.className = 'auth-msg ok';
-  }catch(err){ msg.textContent = "Couldn't save: " + err.message; msg.className = 'auth-msg error'; }
+    msg.textContent = 'Profile saved!'; msg.className = 'auth-msg ok';
+  }catch(err){ msg.textContent = 'Save failed: ' + err.message; msg.className = 'auth-msg error'; }
 };
 
 document.getElementById('changePasswordBtn').onclick = async ()=>{
@@ -1442,7 +2903,7 @@ document.getElementById('changePasswordBtn').onclick = async ()=>{
     const cred = firebase.auth.EmailAuthProvider.credential(currentUser.email, oldPassword);
     await currentUser.reauthenticateWithCredential(cred);
     await currentUser.updatePassword(newPassword);
-    msg.textContent = 'Password change ho gaya!'; msg.className = 'auth-msg ok';
+    msg.textContent = 'Password changed!'; msg.className = 'auth-msg ok';
     document.getElementById('oldPassword').value = ''; document.getElementById('newPassword').value = '';
   }catch(err){ msg.textContent = humanError(err); msg.className = 'auth-msg error'; }
 };
@@ -1457,53 +2918,967 @@ document.getElementById('requestVerifyBtn').onclick = async ()=>{
   }catch(err){ alert('Error sending request: ' + err.message); }
 };
 
+document.getElementById('saveNotifSettingsBtn').onclick = async ()=>{
+  const msg = document.getElementById('notifSettingsMsg');
+  const notifSettings = {
+    enabled: document.getElementById('notifEnabled').checked,
+    messages: document.getElementById('notifMessages').checked,
+    reels: document.getElementById('notifReels').checked
+  };
+  try{
+    await db.collection('users').doc(currentUser.uid).update({ notifSettings });
+    currentUserData.notifSettings = notifSettings;
+    msg.textContent = 'Notification settings saved!'; msg.className = 'auth-msg ok';
+  }catch(err){ msg.textContent = 'Save failed: ' + err.message; msg.className = 'auth-msg error'; }
+};
+
+document.getElementById('enableBrowserNotifBtn').onclick = async ()=>{
+  const btn = document.getElementById('enableBrowserNotifBtn');
+  if(!('Notification' in window)){ alert('Your browser does not support notifications.'); return; }
+  const perm = await Notification.requestPermission();
+  if(perm === 'granted'){ btn.textContent = 'Browser alerts enabled ✓'; }
+  else{ alert('Browser notifications were not allowed. You can still see notifications inside the app.'); }
+};
+
 document.getElementById('settingsLogoutBtn').onclick = ()=> auth.signOut().then(()=>{window.location.hash=''; location.reload();});
 
 // ===========================================================
-// SNAP (camera capture + 24h stories)
+// SNAP (camera capture + filters + text + 24h stories)
 // ===========================================================
 let snapStream = null, capturedBlob = null;
+let currentFacingMode = 'user'; // 'user' = front camera, 'environment' = back camera
+let snapText = '';
+let currentFilterId = 'original';
+let currentCategory = 'Basic';
+let galleryImageEl = null; // holds the loaded Image() when a gallery photo is picked
+let previewRAF = null;
+let particleCache = {};
+let favoriteFilterIds = new Set(JSON.parse(localStorage.getItem('pichatFavFilters') || '[]'));
+let thumbRefreshTimer = null;
+let torchOn = false;
+let panelCollapsed = false;
+let snapToastTimeout = null;
+
+function saveFavoriteFilters(){ localStorage.setItem('pichatFavFilters', JSON.stringify([...favoriteFilterIds])); }
+function showSnapToast(msg){
+  const t = document.getElementById('snapToast');
+  if(!t) return;
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(snapToastTimeout);
+  snapToastTimeout = setTimeout(()=> t.classList.remove('show'), 1600);
+}
+
+// ---- low-level pixel helpers (used by the "heavy" filters below) ----
+function boxBlur1D(src, w, h, radius){
+  const tmp = new Float32Array(w*h), out = new Float32Array(w*h);
+  const size = radius*2+1;
+  for(let y=0;y<h;y++){
+    let sum=0;
+    for(let x=-radius;x<=radius;x++) sum += src[y*w + Math.min(w-1,Math.max(0,x))];
+    for(let x=0;x<w;x++){
+      tmp[y*w+x] = sum/size;
+      sum += src[y*w + Math.min(w-1,x+radius+1)] - src[y*w + Math.max(0,x-radius)];
+    }
+  }
+  for(let x=0;x<w;x++){
+    let sum=0;
+    for(let y=-radius;y<=radius;y++) sum += tmp[Math.min(h-1,Math.max(0,y))*w+x];
+    for(let y=0;y<h;y++){
+      out[y*w+x] = sum/size;
+      sum += tmp[Math.min(h-1,y+radius+1)*w+x] - tmp[Math.max(0,y-radius)*w+x];
+    }
+  }
+  return out;
+}
+function withProxy(ctx, canvas, maxW, effectFn){
+  const scale = Math.min(1, maxW / canvas.width);
+  const pw = Math.max(1, Math.round(canvas.width*scale));
+  const ph = Math.max(1, Math.round(canvas.height*scale));
+  const proxy = document.createElement('canvas');
+  proxy.width = pw; proxy.height = ph;
+  const pctx = proxy.getContext('2d');
+  pctx.drawImage(canvas,0,0,pw,ph);
+  effectFn(pctx, proxy);
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.imageSmoothingEnabled = true;
+  ctx.drawImage(proxy,0,0,canvas.width,canvas.height);
+}
+function runHeavy(ctx,canvas,meta,fn){
+  const maxW = (meta && meta.capture) ? 900 : 320;
+  withProxy(ctx,canvas,maxW,(pctx,pcanvas)=> fn(pctx,pcanvas));
+}
+
+// ---- pixel-level effects ----
+function fxSolarize(ctx,canvas){
+  const id = ctx.getImageData(0,0,canvas.width,canvas.height);
+  const d = id.data;
+  for(let i=0;i<d.length;i+=4){
+    d[i]   = d[i]   > 128 ? 255-d[i]   : d[i];
+    d[i+1] = d[i+1] > 128 ? 255-d[i+1] : d[i+1];
+    d[i+2] = d[i+2] > 128 ? 255-d[i+2] : d[i+2];
+  }
+  ctx.putImageData(id,0,0);
+}
+function fxPosterize(ctx,canvas,levels){
+  levels = levels || 4;
+  const step = 255/(levels-1);
+  const id = ctx.getImageData(0,0,canvas.width,canvas.height);
+  const d = id.data;
+  for(let i=0;i<d.length;i+=4){
+    d[i]   = Math.round(Math.round(d[i]/step)*step);
+    d[i+1] = Math.round(Math.round(d[i+1]/step)*step);
+    d[i+2] = Math.round(Math.round(d[i+2]/step)*step);
+  }
+  ctx.putImageData(id,0,0);
+}
+function fxPixelate(ctx,canvas,blockSize){
+  const w=canvas.width,h=canvas.height;
+  blockSize = blockSize || Math.max(4, Math.round(w/60));
+  const small = document.createElement('canvas');
+  small.width = Math.max(1,Math.floor(w/blockSize));
+  small.height = Math.max(1,Math.floor(h/blockSize));
+  small.getContext('2d').drawImage(canvas,0,0,small.width,small.height);
+  ctx.imageSmoothingEnabled = false;
+  ctx.clearRect(0,0,w,h);
+  ctx.drawImage(small,0,0,small.width,small.height,0,0,w,h);
+  ctx.imageSmoothingEnabled = true;
+}
+function fxSketchCore(ctx,canvas){
+  const w=canvas.width,h=canvas.height;
+  const id = ctx.getImageData(0,0,w,h);
+  const d = id.data;
+  const gray = new Uint8ClampedArray(w*h);
+  for(let i=0,p=0;i<d.length;i+=4,p++) gray[p]=0.3*d[i]+0.59*d[i+1]+0.11*d[i+2];
+  const inv = new Float32Array(w*h);
+  for(let p=0;p<gray.length;p++) inv[p]=255-gray[p];
+  const blurred = boxBlur1D(inv,w,h,6);
+  for(let i=0,p=0;i<d.length;i+=4,p++){
+    const v = Math.min(255, gray[p] / (255 - blurred[p] + 1) * 255);
+    d[i]=v; d[i+1]=v; d[i+2]=v;
+  }
+  ctx.putImageData(id,0,0);
+}
+function fxCartoonCore(ctx,canvas,levels){
+  fxPosterize(ctx,canvas,levels||6);
+  const w=canvas.width,h=canvas.height;
+  const id = ctx.getImageData(0,0,w,h);
+  const d = id.data;
+  const gray = new Uint8ClampedArray(w*h);
+  for(let i=0,p=0;i<d.length;i+=4,p++) gray[p]=0.3*d[i]+0.59*d[i+1]+0.11*d[i+2];
+  for(let y=1;y<h-1;y++){
+    for(let x=1;x<w-1;x++){
+      const p=y*w+x;
+      const gx = gray[p+1]-gray[p-1], gy = gray[p+w]-gray[p-w];
+      if(Math.sqrt(gx*gx+gy*gy) > 18){
+        const idx=p*4;
+        d[idx]*=0.25; d[idx+1]*=0.25; d[idx+2]*=0.25;
+      }
+    }
+  }
+  ctx.putImageData(id,0,0);
+}
+function fxNeonCore(ctx,canvas){
+  const w=canvas.width,h=canvas.height;
+  const id = ctx.getImageData(0,0,w,h);
+  const d = id.data;
+  const gray = new Uint8ClampedArray(w*h);
+  for(let i=0,p=0;i<d.length;i+=4,p++) gray[p]=0.3*d[i]+0.59*d[i+1]+0.11*d[i+2];
+  const edge = new Uint8ClampedArray(w*h);
+  for(let y=1;y<h-1;y++) for(let x=1;x<w-1;x++){
+    const p=y*w+x;
+    const gx=gray[p+1]-gray[p-1], gy=gray[p+w]-gray[p-w];
+    edge[p]=Math.min(255, Math.sqrt(gx*gx+gy*gy)*2);
+  }
+  for(let i=0,p=0;i<d.length;i+=4,p++){
+    const e = edge[p];
+    d[i]   = Math.min(255, d[i]*0.5   + e*0.9);
+    d[i+1] = Math.min(255, d[i+1]*0.5 + e*0.3);
+    d[i+2] = Math.min(255, d[i+2]*0.5 + e*1.1);
+  }
+  ctx.putImageData(id,0,0);
+}
+function blurChannels(ctx,canvas,radius){
+  const w=canvas.width,h=canvas.height;
+  const id = ctx.getImageData(0,0,w,h);
+  const d = id.data;
+  const r=new Float32Array(w*h), g=new Float32Array(w*h), b=new Float32Array(w*h);
+  for(let i=0,p=0;i<d.length;i+=4,p++){ r[p]=d[i]; g[p]=d[i+1]; b[p]=d[i+2]; }
+  const rb=boxBlur1D(r,w,h,radius), gb=boxBlur1D(g,w,h,radius), bb=boxBlur1D(b,w,h,radius);
+  for(let i=0,p=0;i<d.length;i+=4,p++){ d[i]=rb[p]; d[i+1]=gb[p]; d[i+2]=bb[p]; }
+  ctx.putImageData(id,0,0);
+}
+function fxOilCore(ctx,canvas){ blurChannels(ctx,canvas,3); fxPosterize(ctx,canvas,6); }
+function fxWatercolorCore(ctx,canvas){ blurChannels(ctx,canvas,2); fxPosterize(ctx,canvas,9); }
+function fxSharpenCore(ctx,canvas,amount){
+  amount = amount || 0.6;
+  const w=canvas.width,h=canvas.height;
+  const id = ctx.getImageData(0,0,w,h);
+  const src = id.data;
+  const out = new Uint8ClampedArray(src.length);
+  const kernel = [0,-1,0,-1,5,-1,0,-1,0];
+  for(let y=0;y<h;y++){
+    for(let x=0;x<w;x++){
+      for(let c=0;c<3;c++){
+        let sum=0, k=0;
+        for(let ky=-1;ky<=1;ky++){
+          for(let kx=-1;kx<=1;kx++){
+            const yy=Math.min(h-1,Math.max(0,y+ky));
+            const xx=Math.min(w-1,Math.max(0,x+kx));
+            sum += src[(yy*w+xx)*4+c]*kernel[k]; k++;
+          }
+        }
+        const idx=(y*w+x)*4+c;
+        out[idx] = Math.min(255,Math.max(0, src[idx] + (sum-src[idx])*amount));
+      }
+      out[(y*w+x)*4+3]=255;
+    }
+  }
+  ctx.putImageData(new ImageData(out,w,h),0,0);
+}
+
+// ---- full-canvas overlay effects (cheap, run at final resolution) ----
+function fxVignette(ctx,canvas,strength){
+  strength = strength==null ? 0.55 : strength;
+  const w=canvas.width,h=canvas.height;
+  const grad = ctx.createRadialGradient(w/2,h/2, h*0.35, w/2,h/2, h*0.75);
+  grad.addColorStop(0,'rgba(0,0,0,0)');
+  grad.addColorStop(1,`rgba(0,0,0,${strength})`);
+  ctx.fillStyle=grad; ctx.fillRect(0,0,w,h);
+}
+function fxGrain(ctx,canvas,amount){
+  amount = amount || 18;
+  const w=canvas.width,h=canvas.height;
+  const id = ctx.getImageData(0,0,w,h);
+  const d = id.data;
+  for(let i=0;i<d.length;i+=4){
+    const n=(Math.random()-0.5)*amount;
+    d[i]+=n; d[i+1]+=n; d[i+2]+=n;
+  }
+  ctx.putImageData(id,0,0);
+}
+function fxScanlines(ctx,canvas){
+  const w=canvas.width,h=canvas.height;
+  ctx.fillStyle='rgba(0,0,0,0.12)';
+  for(let y=0;y<h;y+=3) ctx.fillRect(0,y,w,1);
+}
+function fxPolaroidFrame(ctx, canvas){
+  const w = canvas.width, h = canvas.height;
+  const border = Math.round(w*0.06);
+  const bottom = Math.round(h*0.18);
+  const snap = document.createElement('canvas');
+  snap.width = w; snap.height = h;
+  snap.getContext('2d').drawImage(canvas,0,0);
+  canvas.width = w + border*2;
+  canvas.height = h + border + bottom;
+  ctx.fillStyle = '#fdfdf6';
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.drawImage(snap, border, border);
+}
+function fxTiltShift(ctx,canvas){
+  const w=canvas.width,h=canvas.height;
+  const snap = document.createElement('canvas');
+  snap.width=w; snap.height=h;
+  snap.getContext('2d').drawImage(canvas,0,0);
+  const blurredCanvas = document.createElement('canvas');
+  const scale = 0.25;
+  blurredCanvas.width = Math.max(1,Math.round(w*scale));
+  blurredCanvas.height = Math.max(1,Math.round(h*scale));
+  const bctx = blurredCanvas.getContext('2d');
+  bctx.filter = 'blur(4px)';
+  bctx.drawImage(snap,0,0,blurredCanvas.width,blurredCanvas.height);
+  const bandH = h*0.28;
+  ctx.save();
+  ctx.beginPath();
+  ctx.rect(0,0,w,bandH);
+  ctx.rect(0,h-bandH,w,bandH);
+  ctx.clip();
+  ctx.drawImage(blurredCanvas,0,0,blurredCanvas.width,blurredCanvas.height,0,0,w,h);
+  ctx.restore();
+}
+function fxRingLight(ctx,canvas){
+  const w=canvas.width,h=canvas.height;
+  const g = ctx.createRadialGradient(w/2,h*0.42,h*0.05,w/2,h*0.42,h*0.55);
+  g.addColorStop(0,'rgba(255,255,255,0.35)');
+  g.addColorStop(0.6,'rgba(255,255,255,0.08)');
+  g.addColorStop(1,'rgba(0,0,0,0.25)');
+  ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
+}
+function fxSpotlight(ctx,canvas){
+  const w=canvas.width,h=canvas.height;
+  const g = ctx.createRadialGradient(w/2,h*0.38,10,w/2,h*0.38,h*0.65);
+  g.addColorStop(0,'rgba(255,255,255,0)');
+  g.addColorStop(0.55,'rgba(0,0,0,0)');
+  g.addColorStop(1,'rgba(0,0,0,0.55)');
+  ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
+}
+function fxGlow(ctx,canvas,strength){
+  strength = strength==null ? 0.35 : strength;
+  const w=canvas.width,h=canvas.height;
+  const snap=document.createElement('canvas'); snap.width=w; snap.height=h;
+  const sctx=snap.getContext('2d');
+  sctx.filter='blur(12px) brightness(1.3)';
+  sctx.drawImage(canvas,0,0);
+  ctx.globalAlpha=strength;
+  ctx.drawImage(snap,0,0);
+  ctx.globalAlpha=1;
+}
+function fxBloom(ctx,canvas){ fxGlow(ctx,canvas,0.5); }
+function fxRainbowLight(ctx,canvas){
+  const w=canvas.width,h=canvas.height;
+  const g = ctx.createLinearGradient(0,0,w,h);
+  ['#ff5252','#ffb74d','#fff176','#81c784','#64b5f6','#ba68c8'].forEach((c,i,arr)=> g.addColorStop(i/(arr.length-1), c));
+  ctx.globalAlpha=0.16; ctx.fillStyle=g; ctx.fillRect(0,0,w,h); ctx.globalAlpha=1;
+}
+function fxNightVision(ctx,canvas){ fxVignette(ctx,canvas,0.5); fxGrain(ctx,canvas,10); }
+
+// ---- sticker overlays (fixed placement - no live face tracking) ----
+function drawSticker(ctx,canvas,emoji,opts){
+  opts = opts || {};
+  const yRatio = opts.yRatio==null ? 0.12 : opts.yRatio;
+  const size = opts.size==null ? 0.22 : opts.size;
+  const alpha = opts.alpha==null ? 1 : opts.alpha;
+  const w=canvas.width,h=canvas.height;
+  const fontSize = Math.round(w*size);
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  ctx.font = `${fontSize}px sans-serif`;
+  ctx.textAlign='center';
+  ctx.textBaseline='middle';
+  ctx.shadowColor='rgba(0,0,0,0.35)';
+  ctx.shadowBlur = fontSize*0.08;
+  ctx.fillText(emoji, w/2, h*yRatio);
+  ctx.restore();
+}
+
+// ---- particle / overlay-fx effects ----
+function getParticleSeeds(key,count){
+  const k = key+'_'+count;
+  if(!particleCache[k]){
+    const arr = [];
+    for(let i=0;i<count;i++){
+      arr.push({ x: Math.random(), y: Math.random(), phase: Math.random()*Math.PI*2, sizeT: Math.random(), speedT: 0.6+Math.random()*0.8 });
+    }
+    particleCache[k]=arr;
+  }
+  return particleCache[k];
+}
+function drawParticles(ctx,canvas,meta,opts){
+  const w=canvas.width,h=canvas.height;
+  const key = opts.key || (opts.symbol||(opts.emojiSet||[]).join(''));
+  const seeds = getParticleSeeds(key, opts.count);
+  const t = ((meta && meta.time) ? meta.time : Date.now())/1000;
+  seeds.forEach((s,i)=>{
+    const fallSpeed = opts.speed||0;
+    let y = ((s.y*h) + t*fallSpeed*s.speedT) % (h+40);
+    if(y < -20) y += h+40;
+    const x = s.x*w + (opts.twinkle ? Math.sin(t*2+s.phase)*6 : 0);
+    const size = opts.sizeRange[0] + s.sizeT*(opts.sizeRange[1]-opts.sizeRange[0]);
+    ctx.save();
+    if(opts.twinkle) ctx.globalAlpha = 0.4 + 0.6*Math.abs(Math.sin(t*3+s.phase));
+    if(opts.emojiSet){
+      ctx.font = `${Math.round(size)}px sans-serif`;
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText(opts.emojiSet[i % opts.emojiSet.length], x, y);
+    }else if(opts.symbol){
+      ctx.font = `${Math.round(size)}px sans-serif`;
+      ctx.fillStyle = opts.color || '#fff';
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText(opts.symbol, x, y);
+    }else{
+      ctx.fillStyle = opts.color || '#fff';
+      ctx.beginPath(); ctx.arc(x,y,size/2,0,Math.PI*2); ctx.fill();
+    }
+    ctx.restore();
+  });
+}
+function drawConfetti(ctx,canvas,meta){
+  const w=canvas.width,h=canvas.height;
+  const seeds = getParticleSeeds('confetti',50);
+  const t = ((meta && meta.time) ? meta.time : Date.now())/1000;
+  const colors=['#ff5252','#ffca28','#66bb6a','#42a5f5','#ab47bc','#ff7043'];
+  seeds.forEach((s,i)=>{
+    let y = ((s.y*h) + t*90*s.speedT) % (h+40);
+    if(y<-20) y+=h+40;
+    const x = s.x*w + Math.sin(t*2+s.phase)*14;
+    const size = 6+s.sizeT*8;
+    ctx.save();
+    ctx.translate(x,y);
+    ctx.rotate(t*3+s.phase);
+    ctx.fillStyle = colors[i%colors.length];
+    ctx.fillRect(-size/2,-size/3,size,size*0.6);
+    ctx.restore();
+  });
+}
+function fxSnow(ctx,canvas,meta){ drawParticles(ctx,canvas,meta,{count:50, symbol:'❄', color:'#fff', sizeRange:[8,18], speed:40}); }
+function fxEmojiRain(ctx,canvas,meta){ drawParticles(ctx,canvas,meta,{count:22, emojiSet:['🎉','✨','❤️','😂','🔥'], sizeRange:[20,32], speed:70}); }
+function fxSparkle(ctx,canvas,meta){ drawParticles(ctx,canvas,meta,{count:36, symbol:'✦', color:'#fff8c4', sizeRange:[6,14], speed:0, twinkle:true}); }
+function fxConfetti(ctx,canvas,meta){ drawConfetti(ctx,canvas,meta); }
+function fxFire(ctx,canvas,meta){
+  const w=canvas.width,h=canvas.height;
+  const g = ctx.createLinearGradient(0,h,0,h*0.4);
+  g.addColorStop(0,'rgba(255,90,0,0.35)');
+  g.addColorStop(1,'rgba(255,90,0,0)');
+  ctx.fillStyle=g; ctx.fillRect(0,h*0.4,w,h*0.6);
+  drawParticles(ctx,canvas,meta,{count:26, symbol:null, color:'rgba(255,150,40,0.85)', sizeRange:[3,7], speed:-60});
+}
+
+// ---- master filter list, grouped by category ----
+const ALL_FILTERS = [
+  // Basic
+  { id:'original',      cat:'Basic', name:'Original',     css:'none' },
+  { id:'bright_up',      cat:'Basic', name:'Brightness+',  css:'brightness(1.25)' },
+  { id:'bright_down',    cat:'Basic', name:'Brightness-',  css:'brightness(0.75)' },
+  { id:'contrast_up',    cat:'Basic', name:'Contrast+',    css:'contrast(1.35)' },
+  { id:'contrast_down',  cat:'Basic', name:'Contrast-',    css:'contrast(0.7)' },
+  { id:'sat_up',         cat:'Basic', name:'Saturation+',  css:'saturate(1.8)' },
+  { id:'sat_down',       cat:'Basic', name:'Saturation-',  css:'saturate(0.4)' },
+  { id:'vibrance',       cat:'Basic', name:'Vibrance',     css:'saturate(1.4) contrast(1.1)' },
+  { id:'exposure',       cat:'Basic', name:'Exposure',     css:'brightness(1.3) contrast(1.1)' },
+  { id:'gamma',          cat:'Basic', name:'Gamma',        css:'brightness(1.1) contrast(0.95) saturate(1.05)' },
+  // Color
+  { id:'warm',           cat:'Color', name:'Warm',         css:'sepia(0.3) saturate(1.3) brightness(1.05)' },
+  { id:'cool',           cat:'Color', name:'Cool',         css:'hue-rotate(180deg) saturate(1.15)' },
+  { id:'tint',           cat:'Color', name:'Tint',         css:'hue-rotate(15deg) saturate(1.2)' },
+  { id:'hue_rotate',     cat:'Color', name:'Hue Rotate',   css:'hue-rotate(90deg)' },
+  { id:'grayscale',      cat:'Color', name:'Grayscale',    css:'grayscale(1)' },
+  { id:'bw',             cat:'Color', name:'Black & White',css:'grayscale(1) contrast(1.2)' },
+  { id:'sepia',          cat:'Color', name:'Sepia',        css:'sepia(0.8)' },
+  { id:'negative',       cat:'Color', name:'Negative',     css:'invert(1)' },
+  { id:'solarize',       cat:'Color', name:'Solarize',     css:'none', post:(c,cv)=> fxSolarize(c,cv) },
+  { id:'posterize',      cat:'Color', name:'Posterize',    css:'saturate(1.2)', post:(c,cv)=> fxPosterize(c,cv,5) },
+  // Beauty (soft-glow approximation - see note in chat)
+  { id:'skin_smooth',    cat:'Beauty', name:'Skin Smooth',      css:'blur(1.4px) brightness(1.05) saturate(1.05)' },
+  { id:'face_bright',    cat:'Beauty', name:'Face Brightening', css:'brightness(1.15) contrast(1.05)' },
+  { id:'skin_white',     cat:'Beauty', name:'Skin Whitening',   css:'brightness(1.2) saturate(0.85)' },
+  { id:'blemish',        cat:'Beauty', name:'Blemish Removal',  css:'blur(1px) contrast(0.95)' },
+  { id:'acne',           cat:'Beauty', name:'Acne Removal',     css:'blur(1.2px) brightness(1.05)' },
+  { id:'eye_bright',     cat:'Beauty', name:'Eye Brightening',  css:'brightness(1.1) contrast(1.05) saturate(1.1)' },
+  { id:'teeth_white',    cat:'Beauty', name:'Teeth Whitening',  css:'brightness(1.05) saturate(0.9)' },
+  { id:'glow_skin',      cat:'Beauty', name:'Glow Skin',        css:'brightness(1.15) saturate(1.15) blur(0.5px)' },
+  { id:'soft_beauty',    cat:'Beauty', name:'Soft Beauty',      css:'blur(1px) brightness(1.08) saturate(1.05)' },
+  { id:'natural_beauty', cat:'Beauty', name:'Natural Beauty',   css:'brightness(1.05) saturate(1.1) contrast(1.02)' },
+  { id:'hd_beauty',      cat:'Beauty', name:'HD Beauty',        css:'contrast(1.15) saturate(1.1) brightness(1.02)' },
+  { id:'ai_portrait',    cat:'Beauty', name:'AI Portrait',      css:'contrast(1.1) saturate(1.2) brightness(1.05) blur(0.3px)' },
+  // Face (contour-style adjustment; real reshaping needs face-landmark tracking - not included, see chat note)
+  { id:'face_slim',      cat:'Face', name:'Face Slim',      css:'brightness(1.05) contrast(1.05)' },
+  { id:'jawline',        cat:'Face', name:'Jawline Enhance',css:'contrast(1.08) brightness(1.03)' },
+  { id:'nose_slim',      cat:'Face', name:'Nose Slim',      css:'brightness(1.03) contrast(1.05)' },
+  { id:'lip_enhance',    cat:'Face', name:'Lip Enhance',    css:'saturate(1.3) brightness(1.05)' },
+  { id:'eye_enlarge',    cat:'Face', name:'Eye Enlargement',css:'brightness(1.08) contrast(1.05)' },
+  { id:'forehead',       cat:'Face', name:'Forehead Adjust',css:'brightness(1.05)' },
+  { id:'chin',           cat:'Face', name:'Chin Adjust',    css:'contrast(1.05)' },
+  { id:'cheek_smooth',   cat:'Face', name:'Cheek Smooth',   css:'blur(1px) brightness(1.05)' },
+  // Artistic
+  { id:'sketch',         cat:'Artistic', name:'Sketch',        css:'none', post:(c,cv,m)=> runHeavy(c,cv,m,fxSketchCore) },
+  { id:'pencil_sketch',  cat:'Artistic', name:'Pencil Sketch',  css:'contrast(0.9)', post:(c,cv,m)=> runHeavy(c,cv,m,fxSketchCore) },
+  { id:'oil_paint',      cat:'Artistic', name:'Oil Painting',   css:'saturate(1.2)', post:(c,cv,m)=> runHeavy(c,cv,m,fxOilCore) },
+  { id:'watercolor',     cat:'Artistic', name:'Watercolor',     css:'brightness(1.05) saturate(1.15)', post:(c,cv,m)=> runHeavy(c,cv,m,fxWatercolorCore) },
+  { id:'cartoon',        cat:'Artistic', name:'Cartoon',        css:'saturate(1.3)', post:(c,cv,m)=> runHeavy(c,cv,m,(pc,pcv)=>fxCartoonCore(pc,pcv,6)) },
+  { id:'anime',          cat:'Artistic', name:'Anime',          css:'saturate(1.5) contrast(1.2) brightness(1.05)' },
+  { id:'comic',          cat:'Artistic', name:'Comic',          css:'saturate(1.4) contrast(1.1)', post:(c,cv,m)=> runHeavy(c,cv,m,(pc,pcv)=>fxCartoonCore(pc,pcv,4)) },
+  { id:'pixel_art',      cat:'Artistic', name:'Pixel Art',      css:'saturate(1.2)', post:(c,cv)=> fxPixelate(c,cv) },
+  { id:'neon',           cat:'Artistic', name:'Neon',           css:'contrast(1.2) saturate(1.3) brightness(1.05)', post:(c,cv,m)=> runHeavy(c,cv,m,fxNeonCore) },
+  { id:'cyberpunk',      cat:'Artistic', name:'Cyberpunk',      css:'hue-rotate(260deg) saturate(1.8) contrast(1.3) brightness(1.05)' },
+  { id:'pop_art',        cat:'Artistic', name:'Pop Art',        css:'saturate(1.7) contrast(1.2)', post:(c,cv)=> fxPosterize(c,cv,4) },
+  // Vintage
+  { id:'vintage',        cat:'Vintage', name:'Vintage',    css:'sepia(0.4) contrast(1.1) brightness(0.9) saturate(1.2)', post:(c,cv)=> fxVignette(c,cv,0.45) },
+  { id:'retro',          cat:'Vintage', name:'Retro',      css:'sepia(0.25) saturate(1.3) contrast(1.05) hue-rotate(-8deg)', post:(c,cv)=> fxVignette(c,cv,0.3) },
+  { id:'film',           cat:'Vintage', name:'Film',       css:'contrast(1.1) saturate(0.9) brightness(0.95)', post:(c,cv)=> fxGrain(c,cv,14) },
+  { id:'vhs',            cat:'Vintage', name:'VHS',        css:'saturate(1.3) contrast(1.1) hue-rotate(-5deg)', post:(c,cv)=>{ fxScanlines(c,cv); fxGrain(c,cv,10); } },
+  { id:'old_camera',     cat:'Vintage', name:'Old Camera', css:'sepia(0.5) contrast(1.15) brightness(0.85)', post:(c,cv)=>{ fxVignette(c,cv,0.5); fxGrain(c,cv,12); } },
+  { id:'polaroid',       cat:'Vintage', name:'Polaroid',   css:'brightness(1.05) contrast(0.95) saturate(1.1)', post:(c,cv)=> fxPolaroidFrame(c,cv) },
+  { id:'hdr',            cat:'Vintage', name:'HDR',        css:'contrast(1.25) saturate(1.3) brightness(1.05)' },
+  { id:'cinematic',      cat:'Vintage', name:'Cinematic',  css:'contrast(1.2) saturate(1.1) hue-rotate(-5deg)' },
+  { id:'matte',          cat:'Vintage', name:'Matte',      css:'contrast(0.85) brightness(1.05) saturate(0.85)' },
+  // Focus
+  { id:'blur_bg',        cat:'Focus', name:'Blur Background', css:'blur(3px)' },
+  { id:'bokeh',          cat:'Focus', name:'Bokeh',            css:'blur(2px) brightness(1.05) saturate(1.1)' },
+  { id:'lens_blur',      cat:'Focus', name:'Lens Blur',        css:'blur(4px)' },
+  { id:'tilt_shift',     cat:'Focus', name:'Tilt Shift',       css:'saturate(1.2)', post:(c,cv)=> fxTiltShift(c,cv) },
+  { id:'sharpen',        cat:'Focus', name:'Sharpen',          css:'none', post:(c,cv,m)=> runHeavy(c,cv,m,(pc,pcv)=>fxSharpenCore(pc,pcv,0.6)) },
+  { id:'noise_reduction',cat:'Focus', name:'Noise Reduction',  css:'blur(0.6px)' },
+  { id:'hdr_boost',      cat:'Focus', name:'HDR Boost',        css:'contrast(1.3) saturate(1.25) brightness(1.05)' },
+  { id:'clarity',        cat:'Focus', name:'Clarity',          css:'contrast(1.2) saturate(1.05)' },
+  { id:'detail_enhance', cat:'Focus', name:'Detail Enhance',   css:'contrast(1.15) saturate(1.1)' },
+  // Light
+  { id:'low_light',      cat:'Light', name:'Low Light',    css:'brightness(0.7) contrast(1.15)' },
+  { id:'night_vision',   cat:'Light', name:'Night Vision', css:'brightness(1.4) contrast(1.3) saturate(3) hue-rotate(70deg) sepia(0.3)', post:(c,cv)=> fxNightVision(c,cv) },
+  { id:'golden_hour',    cat:'Light', name:'Golden Hour',  css:'sepia(0.3) saturate(1.4) brightness(1.1) hue-rotate(-8deg)' },
+  { id:'sunset',         cat:'Light', name:'Sunset',       css:'sepia(0.35) saturate(1.5) brightness(1.05) hue-rotate(-15deg)' },
+  { id:'sunrise',        cat:'Light', name:'Sunrise',      css:'sepia(0.25) saturate(1.3) brightness(1.15) hue-rotate(-5deg)' },
+  { id:'studio_light',   cat:'Light', name:'Studio Light', css:'brightness(1.15) contrast(1.1) saturate(1.05)' },
+  { id:'ring_light',     cat:'Light', name:'Ring Light',   css:'brightness(1.05)', post:(c,cv)=> fxRingLight(c,cv) },
+  { id:'spotlight',      cat:'Light', name:'Spotlight',    css:'contrast(1.1)', post:(c,cv)=> fxSpotlight(c,cv) },
+  { id:'rainbow_light',  cat:'Light', name:'Rainbow Light',css:'saturate(1.2)', post:(c,cv)=> fxRainbowLight(c,cv) },
+  { id:'glow_effect',    cat:'Light', name:'Glow Effect',  css:'brightness(1.05)', post:(c,cv)=> fxGlow(c,cv,0.35) },
+  { id:'bloom',          cat:'Light', name:'Bloom',        css:'brightness(1.1)', post:(c,cv)=> fxBloom(c,cv) },
+  // Stickers (fixed placement overlay - no live face tracking, see chat note)
+  { id:'sticker_dog',     cat:'Stickers', name:'Dog Ears',    css:'none', post:(c,cv)=> drawSticker(c,cv,'🐶',{yRatio:0.10,size:0.26}) },
+  { id:'sticker_cat',     cat:'Stickers', name:'Cat Face',    css:'none', post:(c,cv)=> drawSticker(c,cv,'🐱',{yRatio:0.42,size:0.4,alpha:0.85}) },
+  { id:'sticker_bunny',   cat:'Stickers', name:'Bunny Ears',  css:'none', post:(c,cv)=> drawSticker(c,cv,'🐰',{yRatio:0.09,size:0.26}) },
+  { id:'sticker_panda',   cat:'Stickers', name:'Panda Face',  css:'none', post:(c,cv)=> drawSticker(c,cv,'🐼',{yRatio:0.42,size:0.4,alpha:0.85}) },
+  { id:'sticker_fox',     cat:'Stickers', name:'Fox Face',    css:'none', post:(c,cv)=> drawSticker(c,cv,'🦊',{yRatio:0.42,size:0.4,alpha:0.85}) },
+  { id:'sticker_lion',    cat:'Stickers', name:'Lion Face',   css:'none', post:(c,cv)=> drawSticker(c,cv,'🦁',{yRatio:0.42,size:0.42,alpha:0.85}) },
+  { id:'sticker_crown',   cat:'Stickers', name:'Crown',       css:'none', post:(c,cv)=> drawSticker(c,cv,'👑',{yRatio:0.08,size:0.28}) },
+  { id:'sticker_glasses', cat:'Stickers', name:'Sunglasses',  css:'none', post:(c,cv)=> drawSticker(c,cv,'🕶️',{yRatio:0.36,size:0.3}) },
+  { id:'sticker_pirate',  cat:'Stickers', name:'Pirate Hat',  css:'none', post:(c,cv)=> drawSticker(c,cv,'🏴‍☠️',{yRatio:0.09,size:0.26}) },
+  { id:'sticker_santa',   cat:'Stickers', name:'Santa Hat',   css:'none', post:(c,cv)=> drawSticker(c,cv,'🎅',{yRatio:0.08,size:0.28}) },
+  { id:'sticker_butterfly',cat:'Stickers', name:'Butterfly',  css:'none', post:(c,cv)=> drawSticker(c,cv,'🦋',{yRatio:0.15,size:0.22}) },
+  { id:'sticker_flower',  cat:'Stickers', name:'Flower Crown',css:'none', post:(c,cv)=> drawSticker(c,cv,'🌸',{yRatio:0.09,size:0.26}) },
+  { id:'sticker_devil',   cat:'Stickers', name:'Devil Horns', css:'none', post:(c,cv)=> drawSticker(c,cv,'😈',{yRatio:0.14,size:0.24}) },
+  { id:'sticker_angel',   cat:'Stickers', name:'Angel Halo',  css:'none', post:(c,cv)=> drawSticker(c,cv,'😇',{yRatio:0.14,size:0.24}) },
+  { id:'sticker_mask',    cat:'Stickers', name:'Face Mask',   css:'none', post:(c,cv)=> drawSticker(c,cv,'😷',{yRatio:0.42,size:0.4,alpha:0.85}) },
+  // Overlay FX (animated in live preview, snapshot when captured)
+  { id:'fx_emoji_rain',  cat:'Overlay FX', name:'Emoji Rain',    css:'none', post:(c,cv,m)=> fxEmojiRain(c,cv,m) },
+  { id:'fx_snow',        cat:'Overlay FX', name:'Snow Effect',   css:'brightness(1.02)', post:(c,cv,m)=> fxSnow(c,cv,m) },
+  { id:'fx_fire',        cat:'Overlay FX', name:'Fire Effect',   css:'contrast(1.05)', post:(c,cv,m)=> fxFire(c,cv,m) },
+  { id:'fx_sparkle',     cat:'Overlay FX', name:'Sparkle Effect',css:'brightness(1.05)', post:(c,cv,m)=> fxSparkle(c,cv,m) },
+  { id:'fx_confetti',    cat:'Overlay FX', name:'Confetti Effect',css:'none', post:(c,cv,m)=> fxConfetti(c,cv,m) },
+];
+const FILTER_CATEGORIES = [...new Set(ALL_FILTERS.map(f=>f.cat))];
+const VIRTUAL_CATEGORIES = ['Favorites', ...FILTER_CATEGORIES];
+
+function getCurrentFilter(){ return ALL_FILTERS.find(f=> f.id === currentFilterId) || ALL_FILTERS[0]; }
+
+function filtersInCurrentCategory(){
+  if(currentCategory === 'Favorites') return ALL_FILTERS.filter(f=> favoriteFilterIds.has(f.id));
+  return ALL_FILTERS.filter(f=> f.cat === currentCategory);
+}
+
+function renderFilterCategories(){
+  const inner = document.getElementById('catTabsInner');
+  inner.innerHTML = '';
+  VIRTUAL_CATEGORIES.forEach(cat=>{
+    const chip = document.createElement('button');
+    chip.type = 'button';
+    chip.className = 'cat-tab' + (cat === currentCategory ? ' active' : '');
+    chip.textContent = cat === 'Favorites' ? ('♥ Favorites') : cat;
+    chip.onclick = ()=>{
+      currentCategory = cat;
+      renderFilterCategories();
+      renderFilterStrip();
+    };
+    inner.appendChild(chip);
+  });
+  const countEl = document.getElementById('snapFilterCountLabel');
+  if(countEl) countEl.textContent = ALL_FILTERS.length + ' looks';
+}
+
+function updateFavButtonState(){
+  const btn = document.getElementById('favFilterBtn');
+  if(!btn) return;
+  btn.classList.toggle('active', favoriteFilterIds.has(currentFilterId));
+}
+
+function renderFilterStrip(){
+  const strip = document.getElementById('filterStrip');
+  strip.innerHTML = '';
+  const list = filtersInCurrentCategory();
+  if(list.length === 0){
+    const empty = document.createElement('div');
+    empty.style.cssText = 'color:rgba(255,255,255,0.6);font-size:0.78rem;padding:14px 4px;';
+    empty.textContent = 'Tap the ♥ on any look to save it here.';
+    strip.appendChild(empty);
+  }
+  list.forEach(f=>{
+    const item = document.createElement('button');
+    item.type = 'button';
+    item.className = 'lens-item' + (f.id === currentFilterId ? ' active' : '');
+    const thumb = document.createElement('span');
+    thumb.className = 'lens-thumb';
+    const thumbImg = document.createElement('span');
+    thumbImg.className = 'lens-thumb-img';
+    thumbImg.dataset.fid = f.id;
+    thumb.appendChild(thumbImg);
+    const label = document.createElement('span');
+    label.textContent = f.name;
+    item.appendChild(thumb);
+    item.appendChild(label);
+    item.onclick = ()=>{
+      currentFilterId = f.id;
+      applyLiveFilter();
+      renderFilterStrip();
+      updateFavButtonState();
+    };
+    strip.appendChild(item);
+  });
+  updateLensThumbnails();
+  updateFavButtonState();
+}
+
+// Renders a tiny live-filtered snapshot of the current camera/gallery frame into
+// each visible lens circle, so the carousel previews each look like real Snapchat lenses.
+function updateLensThumbnails(){
+  const usingGallery = !!galleryImageEl;
+  const source = usingGallery ? galleryImageEl : document.getElementById('snapVideo');
+  const sw = usingGallery ? (source.naturalWidth||0)  : (source.videoWidth||0);
+  const sh = usingGallery ? (source.naturalHeight||0) : (source.videoHeight||0);
+  if(!sw || !sh) return;
+  const SIZE = 96;
+  const src = document.getElementById('thumbSourceCanvas');
+  src.width = SIZE; src.height = SIZE;
+  const sctx = src.getContext('2d');
+  const side = Math.min(sw, sh);
+  const sx = (sw-side)/2, sy = (sh-side)/2;
+  sctx.save();
+  if(!usingGallery && currentFacingMode === 'user'){ sctx.translate(SIZE,0); sctx.scale(-1,1); }
+  sctx.drawImage(source, sx, sy, side, side, 0, 0, SIZE, SIZE);
+  sctx.restore();
+  document.querySelectorAll('#filterStrip .lens-thumb-img').forEach(el=>{
+    const f = ALL_FILTERS.find(x=> x.id === el.dataset.fid);
+    if(!f) return;
+    const t = document.createElement('canvas');
+    t.width = SIZE; t.height = SIZE;
+    const tctx = t.getContext('2d');
+    tctx.filter = f.css || 'none';
+    tctx.drawImage(src,0,0);
+    tctx.filter = 'none';
+    if(f.post){ try{ f.post(tctx, t, {capture:false}); }catch(e){ /* ignore thumb render errors */ } }
+    el.style.backgroundImage = `url(${t.toDataURL('image/jpeg',0.72)})`;
+  });
+}
+function startThumbRefresh(){ stopThumbRefresh(); thumbRefreshTimer = setInterval(updateLensThumbnails, 350); }
+function stopThumbRefresh(){ if(thumbRefreshTimer){ clearInterval(thumbRefreshTimer); thumbRefreshTimer = null; } }
+
+// Live preview: simple CSS filters are applied directly to the <video>/<img> (cheap).
+// Filters that need real pixel work (stickers, particles, artistic/vintage effects, etc.)
+// are rendered every frame onto a canvas that sits on top, using the same object-fit:cover sizing.
+function stopPreviewLoop(){ if(previewRAF){ cancelAnimationFrame(previewRAF); previewRAF = null; } }
+function startPreviewLoop(){
+  stopPreviewLoop();
+  const canvas = document.getElementById('snapLiveCanvas');
+  const ctx = canvas.getContext('2d');
+  function tick(ts){
+    const f = getCurrentFilter();
+    const usingGallery = !!galleryImageEl;
+    const source = usingGallery ? galleryImageEl : document.getElementById('snapVideo');
+    const sw = usingGallery ? source.naturalWidth  : source.videoWidth;
+    const sh = usingGallery ? source.naturalHeight : source.videoHeight;
+    if(sw && sh){
+      if(canvas.width !== sw)  canvas.width  = sw;
+      if(canvas.height !== sh) canvas.height = sh;
+      ctx.save();
+      ctx.filter = f.css || 'none';
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      if(!usingGallery && currentFacingMode === 'user'){ ctx.translate(canvas.width,0); ctx.scale(-1,1); }
+      ctx.drawImage(source,0,0,canvas.width,canvas.height);
+      ctx.restore();
+      ctx.filter = 'none';
+      if(f.post) f.post(ctx, canvas, {time: ts, capture:false});
+    }
+    previewRAF = requestAnimationFrame(tick);
+  }
+  previewRAF = requestAnimationFrame(tick);
+}
+
+function applyLiveFilter(){
+  const f = getCurrentFilter();
+  const video = document.getElementById('snapVideo');
+  const galleryPreview = document.getElementById('snapGalleryPreview');
+  const liveCanvas = document.getElementById('snapLiveCanvas');
+  const usingGallery = !!galleryImageEl;
+  video.style.filter = 'none';
+  galleryPreview.style.filter = 'none';
+  if(f.post){
+    liveCanvas.classList.remove('hidden');
+    video.classList.add('hidden');
+    galleryPreview.classList.add('hidden');
+    startPreviewLoop();
+  }else{
+    stopPreviewLoop();
+    liveCanvas.classList.add('hidden');
+    if(usingGallery){
+      video.classList.add('hidden');
+      galleryPreview.classList.remove('hidden');
+      galleryPreview.style.filter = f.css;
+    }else{
+      galleryPreview.classList.add('hidden');
+      video.classList.remove('hidden');
+      video.style.filter = f.css;
+    }
+  }
+}
+
+// Draws whichever source (camera or gallery photo) is active onto snapCanvas,
+// baking in the selected filter/effect exactly as shown in the live preview.
+function renderFrameToCanvas(sourceIsVideo){
+  const canvas = document.getElementById('snapCanvas');
+  const ctx = canvas.getContext('2d');
+  const source = sourceIsVideo ? document.getElementById('snapVideo') : galleryImageEl;
+  const sw = sourceIsVideo ? source.videoWidth  : source.naturalWidth;
+  const sh = sourceIsVideo ? source.videoHeight : source.naturalHeight;
+  canvas.width = sw; canvas.height = sh;
+  ctx.save();
+  ctx.filter = getCurrentFilter().css || 'none';
+  if(sourceIsVideo && currentFacingMode === 'user'){ ctx.translate(canvas.width,0); ctx.scale(-1,1); }
+  ctx.drawImage(source, 0, 0, sw, sh);
+  ctx.restore();
+  ctx.filter = 'none';
+  const f = getCurrentFilter();
+  if(f.post) f.post(ctx, canvas, {capture:true});
+  return canvas;
+}
+
 async function startSnapCamera(){
   const msgEl = document.getElementById('snapCameraMsg');
   const video = document.getElementById('snapVideo');
   document.getElementById('snapCaptured').classList.add('hidden');
+  document.getElementById('snapGalleryPreview').classList.add('hidden');
+  document.getElementById('snapLiveCanvas').classList.add('hidden');
   document.getElementById('captureSnapBtn').classList.remove('hidden');
+  document.getElementById('useGalleryPhotoBtn').classList.add('hidden');
+  document.getElementById('galleryPickBtn').classList.remove('hidden');
+  document.getElementById('flipCameraBtn').classList.remove('hidden');
   document.getElementById('sendSnapBtn').classList.add('hidden');
   document.getElementById('retakeSnapBtn').classList.add('hidden');
+  document.getElementById('addTextBtn').classList.add('hidden');
+  document.getElementById('downloadSnapBtn').classList.add('hidden');
+  document.getElementById('snapTextInputRow').classList.add('hidden');
+  document.getElementById('snapTextOverlay').classList.add('hidden');
+  document.getElementById('filterCategoryRow').classList.remove('hidden');
+  document.getElementById('filterStrip').classList.remove('hidden');
+  document.getElementById('snapGalleryInput').value = '';
+  galleryImageEl = null;
+  snapText = '';
+  document.getElementById('snapTextInput').value = '';
+  currentFilterId = 'original';
+  currentCategory = 'Basic';
   video.classList.remove('hidden');
   msgEl.textContent = '';
-  try{
-    snapStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
-    video.srcObject = snapStream;
-  }catch(err){
-    msgEl.textContent = 'Camera permission was not granted. Allow camera access in your browser settings and try again.';
-  }
+  panelCollapsed = false;
+  document.getElementById('snapFiltersPanel').classList.remove('collapsed');
+  document.getElementById('collapsePanelBtn').classList.remove('active');
+  const initial = ((currentUserData && currentUserData.name) || (currentUser && currentUser.email) || 'U').charAt(0).toUpperCase();
+  document.getElementById('snapAvatarInitial').textContent = initial;
+  const avImg = document.getElementById('snapAvatarImg');
+  const dpUrl = currentUserData && currentUserData.photoURL;
+  if(dpUrl){ avImg.src = dpUrl; avImg.classList.remove('hidden'); document.getElementById('snapAvatarInitial').classList.add('hidden'); }
+  else { avImg.classList.add('hidden'); document.getElementById('snapAvatarInitial').classList.remove('hidden'); }
+  renderFilterCategories();
+  renderFilterStrip();
+  applyLiveFilter();
+  await openCameraStream();
+  startThumbRefresh();
 }
 
-document.getElementById('captureSnapBtn').addEventListener('click', ()=>{
+async function checkTorchSupport(){
+  const btn = document.getElementById('flashToggleBtn');
+  let supported = false;
+  try{
+    if(snapStream){
+      const track = snapStream.getVideoTracks()[0];
+      if(track && track.getCapabilities){
+        const caps = track.getCapabilities();
+        supported = !!caps.torch;
+      }
+    }
+  }catch(e){ supported = false; }
+  torchOn = false;
+  btn.classList.remove('active');
+  btn.classList.toggle('hidden', !supported);
+}
+
+async function openCameraStream(){
+  const msgEl = document.getElementById('snapCameraMsg');
   const video = document.getElementById('snapVideo');
-  const canvas = document.getElementById('snapCanvas');
-  canvas.width = video.videoWidth; canvas.height = video.videoHeight;
-  canvas.getContext('2d').drawImage(video, 0, 0);
-  canvas.toBlob(blob=>{
-    capturedBlob = blob;
-    const url = URL.createObjectURL(blob);
-    document.getElementById('snapCaptured').src = url;
-    document.getElementById('snapCaptured').classList.remove('hidden');
-    document.getElementById('snapVideo').classList.add('hidden');
-    document.getElementById('captureSnapBtn').classList.add('hidden');
-    document.getElementById('sendSnapBtn').classList.remove('hidden');
-    document.getElementById('retakeSnapBtn').classList.remove('hidden');
-  }, 'image/jpeg', 0.9);
+  video.style.transform = currentFacingMode === 'user' ? 'scaleX(-1)' : 'none';
+  if(snapStream) snapStream.getTracks().forEach(t=>t.stop());
+  try{
+    snapStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: { ideal: currentFacingMode } }, audio: false });
+    video.srcObject = snapStream;
+    msgEl.textContent = '';
+  }catch(err){
+    msgEl.textContent = 'Camera permission denied. Please allow camera access in your browser settings and try again.';
+  }
+  await checkTorchSupport();
+}
+
+document.getElementById('flipCameraBtn').addEventListener('click', async ()=>{
+  currentFacingMode = currentFacingMode === 'user' ? 'environment' : 'user';
+  await openCameraStream();
+  applyLiveFilter();
 });
 
-document.getElementById('retakeSnapBtn').addEventListener('click', ()=>{
-  capturedBlob = null;
-  document.getElementById('snapCaptured').classList.add('hidden');
-  document.getElementById('snapVideo').classList.remove('hidden');
-  document.getElementById('captureSnapBtn').classList.remove('hidden');
-  document.getElementById('sendSnapBtn').classList.add('hidden');
-  document.getElementById('retakeSnapBtn').classList.add('hidden');
+document.getElementById('snapAvatarBtn').addEventListener('click', ()=>{
+  if(snapStream) snapStream.getTracks().forEach(t=>t.stop());
+  stopPreviewLoop(); stopThumbRefresh();
+  goto('profile');
+});
+document.getElementById('snapSearchBtn').addEventListener('click', ()=>{
+  if(snapStream) snapStream.getTracks().forEach(t=>t.stop());
+  stopPreviewLoop(); stopThumbRefresh();
+  goto('search');
+});
+document.getElementById('snapAddFriendBtn').addEventListener('click', ()=>{
+  if(snapStream) snapStream.getTracks().forEach(t=>t.stop());
+  stopPreviewLoop(); stopThumbRefresh();
+  goto('search');
+});
+
+document.getElementById('favFilterBtn').addEventListener('click', ()=>{
+  const id = currentFilterId;
+  const nowFav = !favoriteFilterIds.has(id);
+  if(nowFav) favoriteFilterIds.add(id); else favoriteFilterIds.delete(id);
+  saveFavoriteFilters();
+  updateFavButtonState();
+  if(currentCategory === 'Favorites') renderFilterStrip();
+  showSnapToast(nowFav ? 'Added to favorites ♥' : 'Removed from favorites');
+});
+
+document.getElementById('shareFilterBtn').addEventListener('click', async ()=>{
+  const f = getCurrentFilter();
+  const text = `Trying the "${f.name}" look on Pichat Camera ✨`;
+  if(navigator.share){
+    try{ await navigator.share({ text }); }catch(e){ /* user cancelled share */ }
+  }else{
+    showSnapToast('Sharing not supported on this device');
+  }
+});
+
+document.getElementById('flashToggleBtn').addEventListener('click', async ()=>{
+  if(!snapStream) return;
+  const track = snapStream.getVideoTracks()[0];
+  if(!track) return;
+  try{
+    torchOn = !torchOn;
+    await track.applyConstraints({ advanced: [{ torch: torchOn }] });
+    document.getElementById('flashToggleBtn').classList.toggle('active', torchOn);
+  }catch(e){
+    torchOn = false;
+    showSnapToast('Flash not supported on this device');
+  }
+});
+
+document.getElementById('musicBtn').addEventListener('click', ()=> showSnapToast('Music filters coming soon 🎵'));
+
+document.getElementById('collapsePanelBtn').addEventListener('click', ()=>{
+  panelCollapsed = !panelCollapsed;
+  document.getElementById('snapFiltersPanel').classList.toggle('collapsed', panelCollapsed);
+  document.getElementById('collapsePanelBtn').classList.toggle('active', panelCollapsed);
+});
+
+document.getElementById('galleryPickBtn').addEventListener('click', ()=>{
+  document.getElementById('snapGalleryInput').click();
+});
+
+document.getElementById('snapGalleryInput').addEventListener('change', (e)=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  const img = new Image();
+  img.onload = ()=>{
+    galleryImageEl = img;
+    if(snapStream) snapStream.getTracks().forEach(t=>t.stop());
+    document.getElementById('snapGalleryPreview').src = img.src;
+    document.getElementById('captureSnapBtn').classList.add('hidden');
+    document.getElementById('galleryPickBtn').classList.add('hidden');
+    document.getElementById('flipCameraBtn').classList.add('hidden');
+    document.getElementById('flashToggleBtn').classList.add('hidden');
+    document.getElementById('useGalleryPhotoBtn').classList.remove('hidden');
+    applyLiveFilter();
+  };
+  img.src = URL.createObjectURL(file);
+});
+
+document.getElementById('captureSnapBtn').addEventListener('click', ()=>{
+  const canvas = renderFrameToCanvas(true);
+  canvas.toBlob(blob=> finishCapture(blob), 'image/jpeg', 0.92);
+});
+
+
+document.getElementById('useGalleryPhotoBtn').addEventListener('click', ()=>{
+  if(!galleryImageEl) return;
+  const canvas = renderFrameToCanvas(false);
+  canvas.toBlob(blob=> finishCapture(blob), 'image/jpeg', 0.92);
+});
+
+// Shared "photo is ready for review" step, used by both camera capture and gallery pick.
+function finishCapture(blob){
+  capturedBlob = blob;
+  stopPreviewLoop();
+  stopThumbRefresh();
+  const url = URL.createObjectURL(blob);
+  document.getElementById('snapCaptured').src = url;
+  document.getElementById('snapCaptured').classList.remove('hidden');
+  document.getElementById('snapVideo').classList.add('hidden');
+  document.getElementById('snapGalleryPreview').classList.add('hidden');
+  document.getElementById('snapLiveCanvas').classList.add('hidden');
+  document.getElementById('captureSnapBtn').classList.add('hidden');
+  document.getElementById('useGalleryPhotoBtn').classList.add('hidden');
+  document.getElementById('galleryPickBtn').classList.add('hidden');
+  document.getElementById('flipCameraBtn').classList.add('hidden');
+  document.getElementById('flashToggleBtn').classList.add('hidden');
+  document.getElementById('filterCategoryRow').classList.add('hidden');
+  document.getElementById('filterStrip').classList.add('hidden');
+  document.getElementById('sendSnapBtn').classList.remove('hidden');
+  document.getElementById('retakeSnapBtn').classList.remove('hidden');
+  document.getElementById('addTextBtn').classList.remove('hidden');
+  document.getElementById('downloadSnapBtn').classList.remove('hidden');
+}
+
+document.getElementById('addTextBtn').addEventListener('click', ()=>{
+  const row = document.getElementById('snapTextInputRow');
+  row.classList.toggle('hidden');
+  if(!row.classList.contains('hidden')) document.getElementById('snapTextInput').focus();
+});
+
+document.getElementById('snapTextInput').addEventListener('input', (e)=>{
+  snapText = e.target.value;
+  const overlay = document.getElementById('snapTextOverlay');
+  overlay.textContent = snapText;
+  overlay.classList.toggle('hidden', !snapText);
+});
+
+document.getElementById('retakeSnapBtn').addEventListener('click', async ()=>{
+  await startSnapCamera();
+});
+
+// Draws the captured (already-filtered) image plus any typed text onto a fresh
+// canvas, so the text becomes a permanent part of the photo that gets sent/downloaded.
+function bakeTextIntoImage(blob, text){
+  return new Promise((resolve, reject)=>{
+    if(!text){ resolve(blob); return; }
+    const img = new Image();
+    img.onload = ()=>{
+      const canvas = document.createElement('canvas');
+      canvas.width = img.width; canvas.height = img.height;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0);
+      const fontSize = Math.round(canvas.width * 0.065);
+      ctx.font = `800 ${fontSize}px sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = '#fff';
+      ctx.strokeStyle = 'rgba(0,0,0,0.55)';
+      ctx.lineWidth = fontSize * 0.12;
+      const x = canvas.width / 2;
+      const y = canvas.height * 0.78;
+      const maxWidth = canvas.width * 0.9;
+      ctx.strokeText(text, x, y, maxWidth);
+      ctx.fillText(text, x, y, maxWidth);
+      canvas.toBlob(finalBlob=> resolve(finalBlob), 'image/jpeg', 0.9);
+    };
+    img.onerror = reject;
+    img.src = URL.createObjectURL(blob);
+  });
+}
+
+document.getElementById('downloadSnapBtn').addEventListener('click', async ()=>{
+  if(!capturedBlob) return;
+  const btn = document.getElementById('downloadSnapBtn');
+  btn.disabled = true;
+  try{
+    const finalBlob = await bakeTextIntoImage(capturedBlob, snapText.trim());
+    const url = URL.createObjectURL(finalBlob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `pichat-snap-${Date.now()}.jpg`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(()=> URL.revokeObjectURL(url), 4000);
+  }catch(err){ alert('Error downloading snap: ' + err.message); }
+  finally{ btn.disabled = false; }
 });
 
 document.getElementById('sendSnapBtn').addEventListener('click', async ()=>{
@@ -1511,24 +3886,28 @@ document.getElementById('sendSnapBtn').addEventListener('click', async ()=>{
   const btn = document.getElementById('sendSnapBtn');
   btn.disabled = true; btn.textContent = 'Sending...';
   try{
-    const path = `snaps/${currentUser.uid}/${Date.now()}.jpg`;
-    const ref = storage.ref(path);
-    await ref.put(capturedBlob);
-    const mediaURL = await ref.getDownloadURL();
+    const finalBlob = await bakeTextIntoImage(capturedBlob, snapText.trim());
+    const mediaURL = await uploadToCloudinary(finalBlob, 'image');
     await db.collection('snaps').add({
       uid: currentUser.uid, name: currentUserData.name || 'User',
-      mediaURL: mediaURL, createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      mediaURL: mediaURL, mediaType: 'image', createdAt: firebase.firestore.FieldValue.serverTimestamp()
     });
     alert('Snap sent!');
     goto('');
-  }catch(err){ alert('Error sending snap: ' + err.message); btn.disabled = false; btn.textContent = 'Send Snap'; }
+  }catch(err){ alert('Error sending snap: ' + err.message); btn.disabled = false; btn.textContent = 'Send snap'; }
 });
 
 document.getElementById('backFromSnap').addEventListener('click', ()=>{
   if(snapStream) snapStream.getTracks().forEach(t=>t.stop());
+  stopPreviewLoop();
+  stopThumbRefresh();
+  torchOn = false;
 });
 document.getElementById('closeSnapViewer').addEventListener('click', ()=>{
   document.getElementById('snapViewerOverlay').classList.add('hidden');
+  const vidEl = document.getElementById('snapViewerVideo');
+  vidEl.pause();
+  vidEl.removeAttribute('src');
 });
 
 async function loadSnapsRow(){
@@ -1536,17 +3915,31 @@ async function loadSnapsRow(){
   const snap = await db.collection('snaps').orderBy('createdAt','desc').limit(30).get();
   const row = document.getElementById('storiesRow');
   const seen = new Set();
+  const followingIds = new Set((currentUserData && currentUserData.following) || []);
   snap.forEach(doc=>{
     const s = doc.data();
     if(!s.createdAt || s.createdAt.toDate() < cutoff) return;
     if(s.uid === currentUser.uid || seen.has(s.uid)) return;
+    if(!followingIds.has(s.uid)) return; // only show snaps from people you follow
     seen.add(s.uid);
     const el = document.createElement('div');
     el.className = 'story';
     el.innerHTML = `<div class="ring" style="background:linear-gradient(135deg,#FFB800,#FF4D6D);"><div class="inner">${(s.name||'U').charAt(0).toUpperCase()}</div></div><span>${escapeHTML(s.name)}</span>`;
     el.onclick = ()=>{
       document.getElementById('snapViewerName').textContent = s.name;
-      document.getElementById('snapViewerImg').src = s.mediaURL;
+      const imgEl = document.getElementById('snapViewerImg');
+      const vidEl = document.getElementById('snapViewerVideo');
+      if(s.mediaType === 'video'){
+        imgEl.classList.add('hidden');
+        vidEl.src = s.mediaURL;
+        vidEl.classList.remove('hidden');
+        vidEl.play().catch(()=>{});
+      }else{
+        vidEl.classList.add('hidden');
+        vidEl.pause();
+        imgEl.src = s.mediaURL;
+        imgEl.classList.remove('hidden');
+      }
       document.getElementById('snapViewerOverlay').classList.remove('hidden');
     };
     row.appendChild(el);
@@ -1567,7 +3960,7 @@ async function loadVerifyRequests(){
     const requested = u.verificationRequestedAt ? u.verificationRequestedAt.toDate().toLocaleString('en-IN') : '—';
     const row = document.createElement('tr');
     row.innerHTML = `<td>${escapeHTML(u.name)}</td><td>@${escapeHTML(u.username)}</td><td>${escapeHTML(u.email)}</td><td>${requested}</td>
-      <td><button class="mini-btn" data-id="${doc.id}">Verify (Blue Tick do)</button></td>`;
+      <td><button class="mini-btn" data-id="${doc.id}">Verify (Grant Blue Tick)</button></td>`;
     row.querySelector('button').onclick = async ()=>{
       await db.collection('users').doc(doc.id).update({ verified: true, verificationStatus: 'verified' });
       loadVerifyRequests(); loadUsers();
