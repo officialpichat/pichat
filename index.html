@@ -4832,18 +4832,66 @@ document.getElementById('adminLoginForm').addEventListener('submit', async (e)=>
 document.getElementById('adminLogoutBtn').onclick = ()=> auth.signOut().then(()=> location.reload());
 
 let allUsers = [];
-async function loadUsers(){
-  const snap = await db.collection('users').orderBy('createdAt','desc').get();
-  allUsers = [];
-  snap.forEach(doc=> allUsers.push({ id: doc.id, ...doc.data() }));
-  renderUsers(allUsers);
+let usersUnsubscribe = null;
+let adminKnownUserIds = null; // tracks which uids we've already seen, so we can tell what's genuinely new since the panel opened
+function loadUsers(){
+  if(usersUnsubscribe) usersUnsubscribe(); // avoid stacking a duplicate listener if this gets called again
+  adminKnownUserIds = null;
+  usersUnsubscribe = db.collection('users').orderBy('createdAt','desc').onSnapshot(snap=>{
+    allUsers = snap.docs.map(doc=> ({ id: doc.id, ...doc.data() }));
+
+    // On the very first load, just remember who's here — nothing is "new"
+    // yet, there's simply nothing to compare against. On every load AFTER
+    // that (i.e. this callback firing again because Firestore pushed a real
+    // change), any uid that wasn't in the previous set just signed up while
+    // this panel was open — show a toast for it so admin actually notices.
+    if(adminKnownUserIds === null){
+      adminKnownUserIds = new Set(allUsers.map(u=> u.id));
+    }else{
+      allUsers.forEach(u=>{
+        if(!adminKnownUserIds.has(u.id)){
+          adminKnownUserIds.add(u.id);
+          showAdminNewUserToast(u);
+        }
+      });
+    }
+
+    renderUsers(allUsers);
+    // Keep the dashboard's stat cards (Total Users / Blocked / Today) in sync
+    // from this same live data too, instead of them only refreshing once
+    // when the panel first opens — cheaper than a second Firestore listener.
+    const now = new Date();
+    let blocked = 0, today = 0;
+    allUsers.forEach(u=>{
+      if(u.status === 'blocked') blocked++;
+      if(u.createdAt && u.createdAt.toDate().toDateString() === now.toDateString()) today++;
+    });
+    const statUsersEl = document.getElementById('statUsers');
+    const statBlockedEl = document.getElementById('statBlocked');
+    const statTodayEl = document.getElementById('statToday');
+    if(statUsersEl) statUsersEl.textContent = allUsers.length;
+    if(statBlockedEl) statBlockedEl.textContent = blocked;
+    if(statTodayEl) statTodayEl.textContent = today;
+  }, err=> console.error('Users listener error:', err.message));
+}
+// A little top-of-screen banner so a new signup is impossible to miss while
+// the admin dashboard is open — separate from the row itself just quietly
+// appearing in the (long, scrollable) table below.
+function showAdminNewUserToast(u){
+  const toast = document.createElement('div');
+  toast.style.cssText = 'position:fixed;top:16px;left:50%;transform:translateX(-50%);background:var(--card);border:1.5px solid var(--blue);color:var(--ink);padding:12px 18px;border-radius:999px;box-shadow:var(--shadow-card);z-index:999;font-size:0.85rem;font-weight:600;display:flex;align-items:center;gap:8px;';
+  toast.innerHTML = `🎉 New signup: ${escapeHTML(u.name || u.username || 'Someone')} (@${escapeHTML(u.username || '')})`;
+  document.body.appendChild(toast);
+  setTimeout(()=> toast.remove(), 6000);
 }
 function renderUsers(list){
   const body = document.getElementById('usersTableBody');
   if(list.length === 0){ body.innerHTML = '<tr><td colspan="7" class="loading-row">No users found.</td></tr>'; return; }
   body.innerHTML = '';
+  const dayAgo = Date.now() - 24*60*60*1000;
   list.forEach(u=>{
     const joined = u.createdAt ? u.createdAt.toDate().toLocaleDateString('en-IN') : '—';
+    const isNew = u.createdAt && u.createdAt.toMillis() > dayAgo; // joined in the last 24h — flagged so admin can spot recent signups at a glance, even right after reopening the panel
     const blocked = u.status === 'blocked';
     let verifySource = '';
     if(u.verified){
@@ -4857,8 +4905,9 @@ function renderUsers(list){
       }
     }
     const row = document.createElement('tr');
+    if(isNew) row.style.background = 'color-mix(in srgb, var(--blue) 10%, transparent)';
     row.innerHTML = `
-      <td><div style="display:flex;align-items:center;gap:5px;">${escapeHTML(u.name)}${verifiedBadge(u.verified)}</div>${verifySource}</td><td>@${escapeHTML(u.username)}</td><td>${escapeHTML(u.email)}</td>
+      <td><div style="display:flex;align-items:center;gap:5px;">${escapeHTML(u.name)}${verifiedBadge(u.verified)}${isNew ? '<span style="background:var(--blue);color:#000;font-size:0.65rem;font-weight:700;padding:2px 7px;border-radius:999px;margin-left:4px;">NEW</span>' : ''}</div>${verifySource}</td><td>@${escapeHTML(u.username)}</td><td>${escapeHTML(u.email)}</td>
       <td>🪙 ${u.coins || 0}</td>
       <td>${joined}</td><td><span class="badge ${blocked ? 'blocked' : 'active'}">${blocked ? 'Blocked' : 'Active'}</span></td>
       <td style="display:flex;gap:6px;flex-wrap:wrap;">
@@ -5122,19 +5171,11 @@ async function openAdminChatThread(chatId, title, inspectedUid){
   }
 }
 async function loadStats(){
-  const usersSnap = await db.collection('users').get();
+  // Total users / blocked / today's signups are now kept live by the
+  // loadUsers() listener above (see its onSnapshot callback) — only posts
+  // count still needs its own one-time fetch here.
   const postsSnap = await db.collection('posts').get();
-  let blocked = 0, today = 0;
-  const now = new Date();
-  usersSnap.forEach(doc=>{
-    const u = doc.data();
-    if(u.status === 'blocked') blocked++;
-    if(u.createdAt){ const d = u.createdAt.toDate(); if(d.toDateString() === now.toDateString()) today++; }
-  });
-  document.getElementById('statUsers').textContent = usersSnap.size;
   document.getElementById('statPosts').textContent = postsSnap.size;
-  document.getElementById('statBlocked').textContent = blocked;
-  document.getElementById('statToday').textContent = today;
 }
 
 // ===========================================================
@@ -5453,13 +5494,23 @@ async function loadArchiveComments(){
 async function toggleFollow(otherUid, isFollowing){
   const myRef = db.collection('users').doc(currentUser.uid);
   const otherRef = db.collection('users').doc(otherUid);
-  if(isFollowing){
-    await myRef.update({ following: firebase.firestore.FieldValue.arrayRemove(otherUid) });
-    await otherRef.update({ followers: firebase.firestore.FieldValue.arrayRemove(currentUser.uid) });
-  }else{
-    await myRef.update({ following: firebase.firestore.FieldValue.arrayUnion(otherUid) });
-    await otherRef.update({ followers: firebase.firestore.FieldValue.arrayUnion(currentUser.uid) });
-    awardCoins(2, 'follow_user');
+  // set(..., {merge:true}) instead of update() on the OTHER person's doc: if
+  // their profile document is somehow missing (e.g. an old/broken account —
+  // a post can still reference a uid whose users/{uid} doc no longer exists),
+  // update() throws "No document to update" and following them fails outright.
+  // set-with-merge creates it if missing instead of failing.
+  try{
+    if(isFollowing){
+      await myRef.update({ following: firebase.firestore.FieldValue.arrayRemove(otherUid) });
+      await otherRef.set({ followers: firebase.firestore.FieldValue.arrayRemove(currentUser.uid) }, { merge: true });
+    }else{
+      await myRef.update({ following: firebase.firestore.FieldValue.arrayUnion(otherUid) });
+      await otherRef.set({ followers: firebase.firestore.FieldValue.arrayUnion(currentUser.uid) }, { merge: true });
+      awardCoins(2, 'follow_user');
+    }
+  }catch(err){
+    alert('Failed to follow: ' + err.message);
+    return;
   }
   loadUserProfile(otherUid);
 }
