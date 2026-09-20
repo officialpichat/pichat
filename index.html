@@ -2453,7 +2453,23 @@ async function renderRoute(user){
   // Only fetch from Firestore if user data hasn't already loaded (or the user changed)
   if(!currentUserData || currentUserData._uid !== user.uid){
     const doc = await db.collection('users').doc(user.uid).get();
-    currentUserData = doc.exists ? doc.data() : { name:user.displayName, username:'', verified:false };
+    if(doc.exists){
+      currentUserData = doc.data();
+    }else{
+      // Self-heal: the Firestore user document is missing (e.g. signup got
+      // interrupted right after the Auth account was created, before the
+      // document write finished). Without this, the account is stuck forever —
+      // every action that does doc(uid).update(...) (follow, verify request,
+      // etc.) fails with "No document to update". So recreate it now with the
+      // same default fields used on normal registration.
+      currentUserData = {
+        uid: user.uid, name: user.displayName || '', username: '', email: user.email || '', bio: '',
+        status: 'active', followers: [], following: [], verified: false, verificationStatus: 'none',
+        showActiveStatus: true, screenshotAlertsEnabled: true, onboardingComplete: false,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      };
+      await db.collection('users').doc(user.uid).set(currentUserData);
+    }
     currentUserData._uid = user.uid;
     if(currentUserData.deactivated){
       // Logging back in automatically reactivates a temporarily-deactivated account.
