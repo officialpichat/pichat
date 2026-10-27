@@ -1166,6 +1166,7 @@ html.custom-chat-bg #chatMessages{
         <div class="bc-err" id="bcErr"></div>
       </div>
       <div id="bcGoogle" class="hidden" style="margin-top:12px;"></div>
+      <a href="#" id="bcAlt" class="hidden" style="display:none;margin-top:10px;font-size:0.78rem;color:var(--blue-deep);font-weight:600;">Trouble verifying? Use a quick puzzle instead</a>
       <input type="text" class="bc-trap" id="bcHoney" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
     </div>
 
@@ -3484,6 +3485,7 @@ const botCheck = (function(){
   const honey = document.getElementById('bcHoney');
   const born = Date.now();
   let answer = 0, passedAt = 0, token = '', widgetId = null, userGesture = false;
+  let useGoogle = !!PICHAT_RECAPTCHA_SITE_KEY;
 
   function newPuzzle(){
     const a = 2 + Math.floor(Math.random()*8), b = 2 + Math.floor(Math.random()*8);
@@ -3501,7 +3503,7 @@ const botCheck = (function(){
   }
   function open(){
     if(box.classList.contains('done')) return;
-    if(PICHAT_RECAPTCHA_SITE_KEY) return;
+    if(useGoogle) return;
     userGesture = true;
     newPuzzle(); box.classList.add('asking'); setTimeout(()=> ans.focus(), 50);
   }
@@ -3537,6 +3539,12 @@ const botCheck = (function(){
     const s = document.createElement('script');
     s.src = 'https://www.google.com/recaptcha/api.js?onload=__bcRecaptchaReady&render=explicit';
     s.async = true; s.defer = true; document.head.appendChild(s);
+    // Safety net: if Google's box shows an error or never loads, people can still get in.
+    const alt = document.getElementById('bcAlt'); alt.classList.remove('hidden'); alt.style.display = 'inline-block';
+    alt.addEventListener('click', function(ev){
+      ev.preventDefault(); useGoogle = false; host.classList.add('hidden'); alt.style.display = 'none';
+      row.style.display = ''; token = ''; passedAt = 0; open();
+    });
   }
 
   return {
@@ -3546,7 +3554,7 @@ const botCheck = (function(){
       if(passedAt && Date.now() - passedAt < BOT_CHECK_VALID_MS) return true;
       box.classList.add('shake'); setTimeout(()=> box.classList.remove('shake'), 400);
       box.scrollIntoView({behavior:'smooth', block:'center'});
-      if(!PICHAT_RECAPTCHA_SITE_KEY && !box.classList.contains('done')) open();
+      if(!useGoogle && !box.classList.contains('done')) open();
       return false;
     },
     token(){ return token; },
